@@ -272,8 +272,12 @@ class ComposerStaticInit75cbf4401c2b745aca12c3f01f993712
     );
 
     public static $classMap = array (
+        'ActorsSeeder' => __DIR__ . '/../..' . '/database/seeds/ActorsSeeder.php',
+        'CreateActorsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_07_175456_create_actors_table.php',
         'CreateCriticsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_02_165320_create_critics_table.php',
+        'CreateFilmActorTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_07_180426_create_FilmActor_table.php',
         'CreateFilmsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_02_165307_create_films_table.php',
+        'CreateGenresTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_07_175508_create_genres_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CriticsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CriticsTableSeeder.php',
@@ -281,7 +285,9 @@ class ComposerStaticInit75cbf4401c2b745aca12c3f01f993712
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'FilmActorSeeder' => __DIR__ . '/../..' . '/database/seeds/FilmActorSeeder.php',
         'FilmsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/FilmsTableSeeder.php',
+        'GenresSeeder' => __DIR__ . '/../..' . '/database/seeds/GenresSeeder.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

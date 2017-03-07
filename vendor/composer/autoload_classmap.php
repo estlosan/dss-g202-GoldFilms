@@ -6,8 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ActorsSeeder' => $baseDir . '/database/seeds/ActorsSeeder.php',
+    'CreateActorsTable' => $baseDir . '/database/migrations/2017_03_07_175456_create_actors_table.php',
     'CreateCriticsTable' => $baseDir . '/database/migrations/2017_03_02_165320_create_critics_table.php',
+    'CreateFilmActorTable' => $baseDir . '/database/migrations/2017_03_07_180426_create_FilmActor_table.php',
     'CreateFilmsTable' => $baseDir . '/database/migrations/2017_03_02_165307_create_films_table.php',
+    'CreateGenresTable' => $baseDir . '/database/migrations/2017_03_07_175508_create_genres_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CriticsTableSeeder' => $baseDir . '/database/seeds/CriticsTableSeeder.php',
@@ -15,7 +19,9 @@ return array(
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+    'FilmActorSeeder' => $baseDir . '/database/seeds/FilmActorSeeder.php',
     'FilmsTableSeeder' => $baseDir . '/database/seeds/FilmsTableSeeder.php',
+    'GenresSeeder' => $baseDir . '/database/seeds/GenresSeeder.php',
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
