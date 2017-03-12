@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(GenresSeeder::class);
+        $this->call(ActorsSeeder::class);
         $this->call(FilmsTableSeeder::class);
         $this->call(CriticsTableSeeder::class);
-        $this->call(ActorsTableSeeder::class);
-        $this->call(GenresTableSeeder::class);
-        $this->call(FilmActorTableSeeder::class);
+        $this->call(FilmActorSeeder::class);
     }
 }

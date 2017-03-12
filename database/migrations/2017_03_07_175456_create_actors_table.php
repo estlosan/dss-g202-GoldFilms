@@ -18,6 +18,7 @@ class CreateActorsTable extends Migration
             $table->string('name');
             $table->integer('age');
             $table->string('nacionality');
+            $table->string('gender');
             $table->timestamps();
         });
     }
