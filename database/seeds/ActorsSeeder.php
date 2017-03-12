@@ -36,7 +36,7 @@ class ActorsSeeder extends Seeder
             ['name'=> 'Clive Owen', 'age' =>52 ,'nacionality'=>'Británica','gender'=>'hombre'],
             ['name'=> 'Julianne Moore', 'age' =>56 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
             ['name'=> 'Viggo Mortensen', 'age' =>58 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
-            ['name'=> 'Olando Bloom', 'age' =>40 ,'nacionality'=>'Británica','gender'=>'hombre'],
+            ['name'=> 'Orlando Bloom', 'age' =>40 ,'nacionality'=>'Británica','gender'=>'hombre'],
             ['name'=> 'Elijah Wood', 'age' =>36 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
         ]);
         //
