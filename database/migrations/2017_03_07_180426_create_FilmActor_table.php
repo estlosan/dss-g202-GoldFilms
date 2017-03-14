@@ -13,7 +13,7 @@ class CreateFilmActorTable extends Migration
      */
     public function up()
     {
-        Schema::create('film_actor', function (Blueprint $table) {
+        Schema::create('actor_film', function (Blueprint $table) {
             $table->integer('film_id')->unsigned();
             $table->foreign('film_id')->references('id')->on('films');
             $table->integer('actor_id')->unsigned();
@@ -30,6 +30,6 @@ class CreateFilmActorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('film_actor');
+        Schema::dropIfExists('actor_film');
     }
 }

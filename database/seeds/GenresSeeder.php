@@ -28,6 +28,6 @@ class GenresSeeder extends Seeder
                 ['genre'=>'animación']
         ]
         );
-        //
+        
     }
 }
