@@ -28,7 +28,7 @@
         <p>Actores</p>
         <ul>
             @foreach ($actores as $actor)
-                <li><a href="actors/{{$actor->id}}">{{$actor->name}}</a></li>
+                <li><a href="/actors/{{$actor->id}}">{{$actor->name}}</a></li>
             @endforeach
         </ul>
     </body>
