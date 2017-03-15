@@ -5,16 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Actors</title>
+        <title>Genres</title>
 
             </head>
     <body>
         <?php
-            $actors = DB::table('actors')->get();
+            $genres = DB::table('genres')->get();
         ?>
 
-        @foreach ($actors as $actor)
-            <li><a href="actors/{{$actor->id}}">{{$actor->name}}</a></li>
+        @foreach ($genres as $genre)
+            <li><a href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
         @endforeach
 
         
