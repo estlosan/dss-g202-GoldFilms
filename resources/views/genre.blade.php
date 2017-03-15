@@ -10,7 +10,7 @@
     <body>
         <?php
             $genre = DB::table('genres')->where('id',$id_genre)->first();
-            $peliculas = DB::table('films')->where('genre_id',$id_genre)->get();
+            $films = DB::table('films')->where('genre_id',$id_genre)->get();
         ?>
    
    <h2>Genero: {{$genre->genre}}</h2>
@@ -18,9 +18,9 @@
         <li>Id del genero: {{$genre->id}}</li>
     </ul>
         <h3>Peliculas del genero:</h3>
-        @foreach ($peliculas as $pelicula)
+        @foreach ($films as $film)
             <ul>
-            <li>{{$pelicula->name}}</li>
+            <li><a href="/films/{{$film->id}}">{{$film->name}}</a></li>
             </ul>
         @endforeach
         
