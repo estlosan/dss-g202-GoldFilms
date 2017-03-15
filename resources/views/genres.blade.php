@@ -12,9 +12,11 @@
         <?php
             $genres = DB::table('genres')->get();
         ?>
-
+        <h2>Generos:</h2>
         @foreach ($genres as $genre)
+            <ul>
             <li><a href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
+            </ul>
         @endforeach
 
         
