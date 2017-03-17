@@ -21,7 +21,7 @@
         <p>Peliculas</p>
         </br>
         @foreach ($peliculas as $pelicula)
-            <p>{{$pelicula->name}}</p>
+            <li><a href="/films/{{$pelicula->id}}">{{$pelicula->name}}</a></li>
         @endforeach
         
     </body>
