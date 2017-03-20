@@ -9,9 +9,6 @@
 
     </head>
     <body>
-        <?php
-            $films = DB::table('films')->get();
-        ?>
 
         <h1>Cartelera</h1>
         <ul>

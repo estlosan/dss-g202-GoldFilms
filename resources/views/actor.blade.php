@@ -9,18 +9,11 @@
 
             </head>
     <body>
-        <?php
-            $actor = DB::table('actors')->where('id',$id_actor)->first();
-            $peliculas = DB::table('actor_film') 
-            ->join('films', 'actor_film.film_id', '=','films.id')
-            ->where('actor_id',$id_actor)
-            ->get();
-        ?>
         <p>Nombre:{{$actor->name}}</br>Edad:{{$actor->age}}</br>Nacionalidad:{{$actor->nacionality}}</br>Sexo:{{$actor->gender}}</p>
         </br></br>
         <p>Peliculas</p>
         </br>
-        @foreach ($peliculas as $pelicula)
+        @foreach ($actor->films as $pelicula)
             <li><a href="/films/{{$pelicula->id}}">{{$pelicula->name}}</a></li>
         @endforeach
         

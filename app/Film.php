@@ -10,7 +10,7 @@ class Film extends Model
         return $this->hasMany('App\Critic');
     }
 
-    public function genres(){
+    public function genre(){
         return $this->belongsTo('App\Genre');
     }
 

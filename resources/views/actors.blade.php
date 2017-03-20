@@ -9,9 +9,6 @@
 
             </head>
     <body>
-        <?php
-            $actors = DB::table('actors')->get();
-        ?>
 
         @foreach ($actors as $actor)
             <li><a href="actors/{{$actor->id}}">{{$actor->name}}</a></li>
