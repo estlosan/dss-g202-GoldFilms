@@ -16,7 +16,7 @@
         <li>País: {{$film->country}}</li>
         <li>Director: {{$film->director}}</li>
         <li>Puntuación: {{$film->rating}}</li>
-        <li>Género: {{$film->genre->genre}}</li>
+        <li>Género: <a href="/genres/{{$film->genre_id}}">{{$film->genre->genre}}</a></li>
     </ul>
         <p>Actores</p>
         <ul>
