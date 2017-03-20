@@ -48,6 +48,15 @@ Route::get('/genres/{id_genre}', function($id_genre){
     return view('genre',['genre' => $genre]);
 });
 
+
+Route::get('/users',function(){
+    $users= \App\User::get();
+    return view('users',['users' => $users]);
+});
+Route::get('/users/{id}',function($id){
+    $user=\App\User::find($id);
+    return view('user',['user' => $user]);
+});
 // Route::get('/film/{id}', function($id) {
 //     return '<pre>' . var_dump(\App\Film::find($id)->actors) . '</pre>';
 // });
