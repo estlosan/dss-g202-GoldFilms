@@ -2,21 +2,39 @@
 
 @section('content')
 
-    <h1>Film</h1>
+    <h1> {{$film->name}}</h1>
 
-    <ul>
-        <li>Titulo: {{$film->name}}</li>
+
+<div class="media">
+   <a href="#" class="pull-left">
+      <img src="/images/{{$film->name}}.jpg" class="media-object" alt="imagen">
+   </a>
+   <div class="media-body">
+     <ul>
         <li>Año: {{$film->year}}</li>
         <li>Descripción: {{$film->description}}</li>
         <li>País: {{$film->country}}</li>
         <li>Director: {{$film->director}}</li>
         <li>Puntuación: {{$film->rating}}</li>
         <li>Género: <a href="/genres/{{$film->genre_id}}">{{$film->genre->genre}}</a></li>
-    </ul>
-        <p>Actores</p>
-        <ul>
+        <li> Actores: 
             @foreach ($film->actors as $actor)
-                <li><a href="/actors/{{$actor->id}}">{{$actor->name}}</a></li>
+                <a href="/actors/{{$actor->id}}">{{$actor->name}}</a>
             @endforeach
-        </ul>
+        </li>
+    </ul>
+   </div>
+</div>
+
+<div class="panel panel-default">
+  @foreach ($film->critics as $critic)
+        <div class="panel-heading"> {{$critic->user->username}}</div>
+        <div class="panel-body">
+            {{$critic->comment}}
+        </div>
+  @endforeach  
+</div>
+
+
+
 @endsection

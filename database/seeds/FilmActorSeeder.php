@@ -82,7 +82,7 @@ class FilmActorSeeder extends Seeder
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
 
 
-        $film_id = DB::table('films')->where('name','Señor de los anillos:El retorno del Rey')->first();
+        $film_id = DB::table('films')->where('name','Señor de los anillos,El retorno del Rey')->first();
         $actor_id = DB::table('actors')->where('name','Viggo Mortensen')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
         $actor_id = DB::table('actors')->where('name','Orlando Bloom')->first();

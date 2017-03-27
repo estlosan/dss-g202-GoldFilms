@@ -36,7 +36,7 @@ class FilmsTableSeeder extends Seeder
                 ['name'=> 'El caso Slevin','year' => 2006,'description' => 'Crimen','country' =>'USA', 'director' =>'Paul McGuigan', 'rating' => 8,'genre_id'=>$genrecrimen->id],
                 ['name'=> 'Hancock','year' =>2008,'description' => 'Fantastico','country' =>'USA', 'director' =>'Peter Berf', 'rating' => 8,'genre_id'=>$genrefantasia->id],
                 ['name'=> 'Hijos de los hombres','year' => 2006,'description' => 'Ciencia Ficción','country' =>'Reino Unido', 'director' =>'Alfonso Cuaron', 'rating' => 7,'genre_id'=>$genrecficcion->id],
-                ['name'=> 'Señor de los anillos:El retorno del Rey','year' => 2003,'description' => 'Fantasia','country' =>'USA', 'director' =>'Peter Jackson', 'rating' => 9,'genre_id'=>$genrefantasia->id],
+                ['name'=> 'Señor de los anillos,El retorno del Rey','year' => 2003,'description' => 'Fantasia','country' =>'USA', 'director' =>'Peter Jackson', 'rating' => 9,'genre_id'=>$genrefantasia->id],
             ]
             
         );
