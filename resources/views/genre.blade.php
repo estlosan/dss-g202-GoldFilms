@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Genres</title>
-    </head>
-    <body>
-   
-   <h2>Genero: {{$genre->genre}}</h2>
+@section('content')
+<div class='info_genero'>
+<h2>Genero: {{$genre->genre}}</h2>
     <ul>
         <li>Id del genero: {{$genre->id}}</li>
     </ul>
@@ -19,6 +12,6 @@
             <li><a href="/films/{{$film->id}}">{{$film->name}}</a></li>
             </ul>
         @endforeach
-        
-    </body>
-</html>
+</div>  
+
+@endsection

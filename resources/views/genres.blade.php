@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Genres</title>
+@section('content')
+    <h1>Genres</h1>
 
-            </head>
-    <body>
-        <?php
-            $genres = DB::table('genres')->get();
-        ?>
-        <h2>Generos:</h2>
+    <table class="table table-condensed table-striped table-bordered">
+
+    <thead>
+        <tr>
+            <th>Genre</th>
+            <th>Id</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach ($genres as $genre)
-            <ul>
-            <li><a href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
-            </ul>
+        <tr>
+            <td><a href="genres/{{$genre->id}}">{{$genre->genre}}</a></td>
+            <td>{{$genre->id}}
+            <td>
+                <a class="btn btn-success btn-xs">Create</a>
+                <a class="btn btn-primary btn-xs">Edit</a>
+                <a class="btn btn-danger btn-xs">Delete</a>
         @endforeach
+        </tr>
+    </tbody>
+    </table>  
+    </div>
 
-        
-    </body>
-</html>
+@endsection
