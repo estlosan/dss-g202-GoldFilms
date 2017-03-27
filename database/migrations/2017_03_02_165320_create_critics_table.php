@@ -18,10 +18,8 @@ class CreateCriticsTable extends Migration
             $table->string('comment');
             $table->integer('film_id')->unsigned();
             $table->foreign('film_id')->references('id')->on('films');
-            $table->string('film_name');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users'); 
-            $table->string('user_name');
             $table->timestamps();
         });
     }

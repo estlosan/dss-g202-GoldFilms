@@ -24,19 +24,16 @@ class CriticsTableSeeder extends Seeder
         DB::table('critics')->delete();
         DB::table('critics')->insert(
             [
-
-
-                ['comment'=> 'Es bastante impactante,pero no me ha gustado','film_id' => $saw->id,'film_name'=> $saw->name,'user_id' => $agus->id,'user_name' => $agus->username],
-                ['comment'=>'Muy interesante, te mantiene atrapado durante toda la película','film_id' => $batman->id,'film_name'=> $batman->name,'user_id' => $Oscar->id, 'user_name' => $Oscar->username],
-                ['comment'=> 'Muy gore todo!!','film_id' => $saw->id,'film_name'=> $saw->name,'user_id' => $esteban->id, 'user_name' => $esteban->username],
-                ['comment'=> 'La historia no tiene un buen argumento,típica de acción/superhéroes','film_id' => $batman->id ,'film_name'=> $batman->name,'user_id' => $agus->id,'user_name' => $agus->username],
-                ['comment'=> 'Muy buen película,me ha sorprendido mucho!','film_id' => $Celda ->id,'film_name'=> $Celda->name,'user_id' => $jordi->id, 'user_name' => $jordi->username],
-                ['comment'=> 'Una trama muy extraña,sorprende','film_id' => $saw->id,'film_name'=> $saw->name,'user_id' => $esteban->id,'user_name' => $esteban->username],
-                ['comment'=> 'Me ha sorprendido mucho,puesto que no soy muy de películas españolas.','film_id' => $Celda->id,'film_name'=> $Celda->name,'user_id' => $agus->id,'user_name' => $agus->username],
-                ['comment'=> 'Muy floja','film_id' => $Caso->id,'film_name'=> $Caso->name,'user_id' => $Oscar->id, 'user_name' => $Oscar->username],
-                ['comment'=> 'Me esperaba algo bastante peor, peor lo cierto es que es muy decente!!','film_id' => $Celda->id,'film_name'=> $Celda->name,'user_id' => $Julian->id,'user_name' => $Julian->username],
-                ['comment'=> 'Peliculón!!!','film_id' => $Rock->id,'film_name'=> $Rock->name,'user_id' => $Oscar->id,'user_name' => $Oscar->username],
-            ]
-        );
+                ['comment'=> 'Es bastante impactante,pero no me ha gustado','film_id' => $saw->id,'user_id' => $agus->id],
+                ['comment'=>'Muy interesante, te mantiene atrapado durante toda la película','film_id' => $batman->id,'user_id' => $Oscar->id],
+                ['comment'=> 'Muy gore todo!!','film_id' => $saw->id,'user_id' => $esteban->id],
+                ['comment'=> 'La historia no tiene un buen argumento,típica de acción/superhéroes','film_id' => $batman->id,'user_id' => $agus->id],
+                ['comment'=> 'Muy buen película,me ha sorprendido mucho!','film_id' => $Celda ->id,'user_id' => $jordi->id],
+                ['comment'=> 'Una trama muy extraña,sorprende','film_id' => $saw->id,'user_id' => $esteban->id],
+                ['comment'=> 'Me ha sorprendido mucho,puesto que no soy muy de películas españolas.','film_id' => $Celda->id,'user_id' => $agus->id],
+                ['comment'=> 'Muy floja','film_id' => $Caso->id,'user_id' => $Oscar->id],
+                ['comment'=> 'Me esperaba algo bastante peor, peor lo cierto es que es muy decente!!','film_id' => $Celda->id,'user_id' => $Julian->id],
+                ['comment'=> 'Peliculón!!!','film_id' => $Rock->id,'user_id' => $Oscar->id],
+            ]);
     }
 }
