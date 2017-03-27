@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Films</title>
+        <input type="button" onclick="location.href='/film/new';" value="Crear">
 
     </head>
     <body>

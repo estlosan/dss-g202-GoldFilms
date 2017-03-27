@@ -37,6 +37,11 @@ Route::get('/films/{id_film}', function($id_film){
     return view('film', ['film' => $film]);
 });
 
+Route::get('/film/new', function(){
+    $genres = \App\Genre::get();
+    return view('create_film', ['genres' => $genres]);
+});
+
 //Generos
 Route::get('/genres', function(){
     $genres = \App\Genre::get();
@@ -57,6 +62,4 @@ Route::get('/users/{id}',function($id){
     $user=\App\User::find($id);
     return view('user',['user' => $user]);
 });
-// Route::get('/film/{id}', function($id) {
-//     return '<pre>' . var_dump(\App\Film::find($id)->actors) . '</pre>';
-// });
+
