@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>GoldFilms</title>
+@section('content')
 
-    </head>
-    <body>
+    <h1>Film</h1>
+
     <ul>
         <li>Titulo: {{$film->name}}</li>
         <li>Año: {{$film->year}}</li>
@@ -24,5 +19,4 @@
                 <li><a href="/actors/{{$actor->id}}">{{$actor->name}}</a></li>
             @endforeach
         </ul>
-    </body>
-</html>
+@endsection
