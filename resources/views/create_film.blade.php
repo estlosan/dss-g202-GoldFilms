@@ -4,7 +4,7 @@
 
 
 <h1>Nueva Película</h1>
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" method="post">
   <div class="form-group">
     <label for="name" class="col-lg-1 control-label">Nombre</label>
     <div class="col-lg-5">
@@ -63,11 +63,17 @@
     </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">
-      <input type="button"  onclick="location.href='/film/new/create';"value="Crear">
+      <input type="button" id="{{$film->id}}" value="Añadir" onclick="añadirPelicula();">
       <input type="button" onclick="location.href='/films';" value="Cancelar">
     </div>
   </div>
   {{ csrf_field() }}
 
 </form>
+
+<script>
+    function añadirPelicula(){
+        window.location.href="/films/new/create";
+    }
+</script>
 @endsection

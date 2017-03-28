@@ -32,33 +32,15 @@ Route::get('/actors/{id_actor}', function($id_actor){
 
 //Peliculas
 Route::get('/films','FilmsController@showAllFilms');
-
+Route::get('/films/delete', 'FilmsController@findFilm');
+Route::get('/films/delete/{id}', 'FilmsController@deleteFilm');
+Route::post('/film/new', 'FilmsController@showForm');
+Route::post('/film/new/create', 'FilmsController@addFilm');
 Route::get('/films/{id_film}', function($id_film){
     $film = \App\Film::find($id_film);
     return view('film', ['film' => $film]);
 });
 
-Route::get('/film/new', function(){
-    $genres = \App\Genre::get();
-    $actors = \App\Actor::get();
-    return view('create_film', ['genres' => $genres, 'actors' => $actors]);
-});
-
-Route::post('/film/new/create', function() {
-    try {
-        $film = new \App\Film;
-        $film->name = Input::get('name');
-        $film->year = Input::get('year');
-        $film->description = Input::get('description');
-        $film->genre = Input::get('genre');
-        $film->country = Input::get('country');
-        $film->rating = Input::get('rating');
-        $film->save();
-    } catch (Exception $e) {
-        return "Error: " . $e;
-    }
-    return view('confirm-create', ['film' => $film]);
-});
 
 //Generos
 Route::get('/genres', function(){
