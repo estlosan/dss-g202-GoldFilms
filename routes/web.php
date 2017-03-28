@@ -36,7 +36,24 @@ Route::get('/films/{id_film}', function($id_film){
 
 Route::get('/film/new', function(){
     $genres = \App\Genre::get();
-    return view('create_film', ['genres' => $genres]);
+    $actors = \App\Actor::get();
+    return view('create_film', ['genres' => $genres, 'actors' => $actors]);
+});
+
+Route::post('/film/new/create', function() {
+    try {
+        $film = new \App\Film;
+        $film->name = Input::get('name');
+        $film->year = Input::get('year');
+        $film->description = Input::get('description');
+        $film->genre = Input::get('genre');
+        $film->country = Input::get('country');
+        $film->rating = Input::get('rating');
+        $film->save();
+    } catch (Exception $e) {
+        return "Error: " . $e;
+    }
+    return view('confirm-create', ['film' => $film]);
 });
 
 //Generos
