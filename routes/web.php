@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('principal');
 });
 
+Route::get('/principal', function () {
+    return view('principal');
+});
+
 //Actores
 Route::get('/actors', function(){
     $actors = \App\Actor::get();
@@ -50,7 +54,22 @@ Route::get('/genres/{id_genre}', function($id_genre){
     return view('genre',['genre' => $genre]);
 });
 
+Route::get('/genre/new', function(){
+    $genres = \App\Genre::get();
+    return view('create_genre', ['genres' => $genres]);
+});
 
+Route::get('/genre/delete', function(){
+    $genres = \App\Genre::get();
+    return view('delete_genre', ['genres' => $genres]);
+});
+
+Route::get('/genre/edit', function(){
+    $genres = \App\Genre::get();
+    return view('edit_genre', ['genres' => $genres]);
+});
+
+//USERS
 Route::get('/users',function(){
     $users= \App\User::get();
     return view('users',['users' => $users]);
