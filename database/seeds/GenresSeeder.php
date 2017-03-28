@@ -14,18 +14,18 @@ class GenresSeeder extends Seeder
         DB::table('genres')->delete();
         DB::table('genres')->insert (
             [
-                ['genre'=>'terror'],
-                ['genre'=>'suspense'],
-                ['genre'=>'fantasía'],
-                ['genre'=>'acción'],
-                ['genre'=>'comedia'],
-                ['genre'=>'drama'],
-                ['genre'=>'crimen'],
-                ['genre'=>'misterio'],
-                ['genre'=>'documental'],
-                ['genre'=>'ciencia ficción'],
-                ['genre'=>'cine negro'],
-                ['genre'=>'animación']
+                ['genre'=>'Terror'],
+                ['genre'=>'Suspense'],
+                ['genre'=>'Fantasía'],
+                ['genre'=>'Acción'],
+                ['genre'=>'Comedia'],
+                ['genre'=>'Drama'],
+                ['genre'=>'Crimen'],
+                ['genre'=>'Misterio'],
+                ['genre'=>'Documental'],
+                ['genre'=>'Ciencia ficción'],
+                ['genre'=>'Cine negro'],
+                ['genre'=>'Animación']
         ]
         );
         

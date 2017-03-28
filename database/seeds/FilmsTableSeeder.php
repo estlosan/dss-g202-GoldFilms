@@ -14,13 +14,13 @@ class FilmsTableSeeder extends Seeder
         DB::table('films')->delete();
 
 
-        $genreterror = DB::table('genres')->where('genre','terror')->first();
-        $genrefantasia = DB::table('genres')->where('genre','fantasía')->first();
-        $genreaccion = DB::table('genres')->where('genre','acción')->first();
-        $genrecrimen = DB::table('genres')->where('genre','crimen')->first();
-        $genrecficcion = DB::table('genres')->where('genre','ciencia ficción')->first();
-        $genredrama = DB::table('genres')->where('genre','drama')->first();
-        $genresuspense = DB::table('genres')->where('genre','suspense')->first();
+        $genreterror = DB::table('genres')->where('genre','Terror')->first();
+        $genrefantasia = DB::table('genres')->where('genre','Fantasía')->first();
+        $genreaccion = DB::table('genres')->where('genre','Acción')->first();
+        $genrecrimen = DB::table('genres')->where('genre','Crimen')->first();
+        $genrecficcion = DB::table('genres')->where('genre','Ciencia ficción')->first();
+        $genredrama = DB::table('genres')->where('genre','Drama')->first();
+        $genresuspense = DB::table('genres')->where('genre','Suspense')->first();
 
 
 
