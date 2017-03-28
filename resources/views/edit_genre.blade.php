@@ -12,7 +12,7 @@
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     @foreach ($genres as $genre)
-                        <li><a href="{{route('genres.edit', $genre->id)}}" genres/{{$genre->id}}>{{$genre->genre}}</a></li>
+                        <li><a genres/{{$genre->id}}>{{$genre->genre}}</a></li>
                     @endforeach
                 </ul>
             </div> 
