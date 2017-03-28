@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/principal', function () {
+Route::get('/', function () {
     return view('principal');
 });
 
