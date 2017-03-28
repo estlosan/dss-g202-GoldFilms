@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layout')
 
-        <title>GoldFilms</title>
-
-    </head>
-    <body>
-    
-    <li><h1>Nombre: {{$user->username}}</h1></li>
+@section ('content')
+<div class="container-fluis">
+<div class="row">
+    <div class="col-md-12"<li><h1> Nombre: {{$user->username}}</h1></li></div>
+    </div>
         <ul>
       <li>id: {{$user->id}}</li>
       <li>Email: {{$user->email}}</li>
       <li>password: {{$user->password}}</li>
       </ul>
-</body>
-</html>
+@endsection

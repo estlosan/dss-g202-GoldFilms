@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-<body>
-<h1>Usuarios Registrados:</h1>
-<ul>
-@foreach ($users as $user)
-    <li>
-    <a href="users/{{$user->id}}"> {{ $user->username}} </a>
-    </li>
+@extends ('layout')
 
-    @endforeach
-</ul>
-</body>
-</html>
+@section('content')
+
+<div class= "container-fluid">
+<div class="row">
+<div class="col-md-16"><h1>Usuarios Registrados:</h1></div>
+@foreach ($users as $user)
+<div class="col-md-16">
+<a href=" {{action('UsersController@showUser',[$user->id])}}">
+ <ul>{{ $user->username }}</ul> </div> </a>
+@endforeach
+    </div>
+    </div>
+        {{  $users->links() }}
+
+@endsection

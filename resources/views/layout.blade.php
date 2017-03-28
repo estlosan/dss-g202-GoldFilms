@@ -37,6 +37,7 @@
             <li><a href="/films">Films</a></li>
             <li><a href="/actors">Actors</a></li>
             <li><a href="/genres">Genres</a></li>
+            <li><a href="/users">Users</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
