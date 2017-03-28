@@ -69,12 +69,8 @@ Route::get('/genre/edit', function(){
 });
 
 //USERS
-Route::get('/users',function(){
-    $users= \App\User::get();
-    return view('users',['users' => $users]);
-});
-Route::get('/users/{id}',function($id){
-    $user=\App\User::find($id);
-    return view('user',['user' => $user]);
-});
+Route::get('/users','UsersController@showUsers');
+
+
+Route::get('/user/{id}','UsersController@showUser');
 
