@@ -2,15 +2,22 @@
 
 @section('content')
 
-<h1>Cartelera</h1>
-
-
+<div class="row">
+  <div class="col-md-9">
+    <h1>Cartelera</h1>
+  </div>
+  <div class="col-md-3">
+    <a href="/film/new"<button type="button" onclick="/film/new" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
+    <button type="button" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar</button>
+    <button type="button" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Editar</button>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-sm-12">
   @foreach ($films as $film)
     <a href="/films/{{$film->id}}" class="text-center" >
-      <img style="width :150px; width: 150px;
+      <img style="width: 150px;
     height: 220px;
     margin-left: 10px;
     margin-right: 10px;
@@ -19,6 +26,7 @@
     </a>
   @endforeach
   </div>
+  {{$films->links()}}
 </div>
 
 

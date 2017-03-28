@@ -27,10 +27,7 @@ Route::get('/actors/{id_actor}', function($id_actor){
 });
 
 //Peliculas
-Route::get('/films', function() {
-    $films = \App\Film::get();
-    return view('films', ['films' => $films]);
-});
+Route::get('/films','FilmsController@showAllFilms');
 
 Route::get('/films/{id_film}', function($id_film){
     $film = \App\Film::find($id_film);
