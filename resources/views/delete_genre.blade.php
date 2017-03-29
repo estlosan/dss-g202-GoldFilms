@@ -26,7 +26,7 @@
     function eliminar(){
     <?php
         if(isset($_POST['checkbox'])){//Si el array del checklist no esta vacio
-            foreach($_POST['checkbox'] as $id){//Recorre el array sacando los id
+            foreach($_POST['checkbox'] as $id){//Recorre el array sacando los id y borrandolos
                 echo 'window.location.href="/genres/delete/" + id;';
             }
         }
