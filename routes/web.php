@@ -43,6 +43,8 @@ Route::get('/films/{id_film}', function($id_film){
 
 
 //Generos
+Route::get('/genres/delete', 'GenresController@findGenre');
+Route::get('/genres/delete/{id}', 'GenresController@deleteGenre');
 Route::get('/genres', function(){
     $genres = \App\Genre::get();
     return view('genres',['genres' => $genres]);
