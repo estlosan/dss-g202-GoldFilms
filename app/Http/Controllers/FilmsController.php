@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Film;
+use App\Genre;
 use Illuminate\Support\Facades\Redirect;
 
 class FilmsController extends Controller
@@ -29,15 +30,21 @@ class FilmsController extends Controller
         return Redirect::to('/films/delete');
     }
 
-    public function addFilm(){
+    public function addFilm(Request $request){
         $film = new Film;
-        $film->name = Input::get('name');
-        $film->year = Input::get('year');
-        $film->description = Input::get('description');
-        $film->genre = Input::get('genre');
-        $film->country = Input::get('country');
-        $film->rating = Input::get('rating');
+        $film->name = $request->input('name');
+        $film->year = $request->input('year');
+        $film->description = $request->input('description');
+        $film->country = $request->input('country');
+        $film->rating = $request->input('rating');
+        $film->director = $request->input('director');
+        $film->genre_id = $request->input('genre');
         $film->save();
+
+        foreach(array($request->input('actors')) as $actor) {
+            $actors_array[] = \App\Actor::where('id', $actor)->first()->id; 
+        }
+        $film->actors()->attach($actors_array);
 
         return Redirect::to('/films');
     }

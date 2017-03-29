@@ -34,7 +34,7 @@ Route::get('/actors/{id_actor}', function($id_actor){
 Route::get('/films','FilmsController@showAllFilms');
 Route::get('/films/delete', 'FilmsController@findFilm');
 Route::get('/films/delete/{id}', 'FilmsController@deleteFilm');
-Route::post('/film/new', 'FilmsController@showForm');
+Route::get('/film/new', 'FilmsController@showForm');
 Route::post('/film/new/create', 'FilmsController@addFilm');
 Route::get('/films/{id_film}', function($id_film){
     $film = \App\Film::find($id_film);
