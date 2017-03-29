@@ -41,6 +41,11 @@ class FilmsController extends Controller
         $film->genre_id = $request->input('genre');
         $film->save();
 
+        foreach(array($request->input('actors')) as $actor) {
+            $actors_array[] = \App\Actor::where('id', $actor)->first()->id; 
+        }
+        $film->actors()->attach($actors_array);
+
         return Redirect::to('/films');
     }
 
