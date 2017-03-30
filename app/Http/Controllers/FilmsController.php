@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Film;
 use App\Genre;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Input;
 
 class FilmsController extends Controller
 {
@@ -16,6 +17,11 @@ class FilmsController extends Controller
     public function showAllFilms(){
         $films = DB::table('films')->paginate(5);
         return view('films',['films' => $films]);
+    }
+
+    public function showFilm($id_film){
+        $film = \App\Film::find($id_film);
+        return view('film', ['film' => $film]);
     }
 
     public function findFilm(){
@@ -27,7 +33,7 @@ class FilmsController extends Controller
         $film = Film::find($id);
         $film->delete();
 
-        return Redirect::to('/films/delete');
+        return Redirect::to('/films');
     }
 
     public function addFilm(Request $request){
@@ -53,5 +59,29 @@ class FilmsController extends Controller
         $genres = \App\Genre::get();
         $actors = \App\Actor::get();
         return view('create_film', ['genres' => $genres, 'actors' => $actors]);
+    }
+
+    public function editFilm($id=null){
+        $film = Film::find($id);
+        return view('edit_film', array('film' => $film));
+    }
+
+    public function saveFilm(Request $request, $id=null){
+        if($_POST)
+        {
+            Film::where('id', '=', $request->input('film_changed'))->update(
+                array(
+                    'name' => $request->input('name'),
+                    'year' => $request->input('year'),
+                    'description' => $request->input('description'),
+                    'country' => $request->input('country'),
+                    'rating' => $request->input('rating'),
+                    'director' => $request->input('director'),
+                    'genre_id' => 1,
+                )
+            );
+
+            return Redirect::to('/films');
+        }
     }
 }

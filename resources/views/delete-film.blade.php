@@ -13,6 +13,7 @@
             <tr>
                 <td> {{ $film->name}} </td>
                 <td> <input type="button" id="{{$film->id}}" value="Borrar" onclick="eliminarPelicula(this.id);"></td>
+                <td> <input type="button" id="{{$film->id}}" value="Editar" onclick="editarPelicula(this.id);"></td>
             </tr>
         @endforeach
         
@@ -25,6 +26,10 @@
 <script>
     function eliminarPelicula(id){
         window.location.href="/films/delete/" + id;
+    }
+
+    function editarPelicula(id){
+        window.location.href="/films/edit/" + id;
     }
 </script>
 

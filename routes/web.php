@@ -32,15 +32,13 @@ Route::get('/actors/{id_actor}', function($id_actor){
 
 //Peliculas
 Route::get('/films','FilmsController@showAllFilms');
-Route::get('/films/delete', 'FilmsController@findFilm');
+Route::get('/films/actions', 'FilmsController@findFilm');
 Route::get('/films/delete/{id}', 'FilmsController@deleteFilm');
 Route::get('/film/new', 'FilmsController@showForm');
 Route::post('/film/new/create', 'FilmsController@addFilm');
-Route::get('/films/{id_film}', function($id_film){
-    $film = \App\Film::find($id_film);
-    return view('film', ['film' => $film]);
-});
-
+Route::get('/films/{id_film}', 'FilmsController@showFilm');
+Route::get('/films/edit/{id?}', 'FilmsController@editFilm');
+Route::post('/film/edit/{id}/save', 'FilmsController@saveFilm');
 
 //Generos
 Route::get('/genres/delete', 'GenresController@findGenre');

@@ -8,8 +8,7 @@
   </div>
   <div class="col-md-3">
     <a href="/film/new"<button type="button" onclick="/film/new" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
-    <a href="/films/delete"<button type="button" onclick="/films/delete" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar</a></button>
-    <button type="button" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Editar</button>
+    <a href="/films/actions"<button type="button" onclick="/films/actions" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
   </div>
 </div>
 
