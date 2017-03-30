@@ -43,6 +43,9 @@ Route::post('/film/edit/{id}/save', 'FilmsController@saveFilm');
 //Generos
 Route::get('/genres/delete', 'GenresController@findGenre');
 Route::get('/genres/delete/{id}', 'GenresController@deleteGenre');
+Route::get('/genre/new', 'GenresController@showForm');
+Route::post('/genre/new/create', 'GenresController@addGenre');
+
 Route::get('/genres', function(){
     $genres = \App\Genre::get();
     return view('genres',['genres' => $genres]);
@@ -53,20 +56,6 @@ Route::get('/genres/{id_genre}', function($id_genre){
     return view('genre',['genre' => $genre]);
 });
 
-Route::get('/genre/new', function(){
-    $genres = \App\Genre::get();
-    return view('create_genre', ['genres' => $genres]);
-});
-
-Route::get('/genre/delete', function(){
-    $genres = \App\Genre::get();
-    return view('delete_genre', ['genres' => $genres]);
-});
-
-Route::get('/genre/edit', function(){
-    $genres = \App\Genre::get();
-    return view('edit_genre', ['genres' => $genres]);
-});
 
 //USERS
 Route::get('/users','UsersController@showUsers');

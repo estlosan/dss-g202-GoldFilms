@@ -25,4 +25,17 @@ class GenresController extends Controller
         $genre->delete();
         return Redirect::to('/genres/delete');
     }
+
+    public function addGenre(Request $request){
+        $genre = new Genre;
+        $genre->genre = $request->input('genre');
+        $genre->save();
+
+        return Redirect::to('/genres');
+    }
+
+    public function showForm(){
+        $genres = \App\Genre::get();
+        return view('create_genre', ['genres' => $genres]);
+    }
 }

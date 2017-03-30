@@ -2,18 +2,21 @@
 
 @section('content')
 
-<form role="form">
-    <h1>Create<span class="label label-default"></span></h1>
+<h1>Create<span class="label label-default"></span></h1>
 
-    <div class="formulario_crear_genero">
-
+<form class="form" action="{{url('/genre/new/create')}}" role="form" method="POST">
+{{ csrf_field()}}
+{{ method_field('POST')}}
+    
+    <div class="form-group">
         <label for="label_genero">Genre</label>
-        <input type="text" class="input_genero" id="input_genero" placeholder="Insert the new genre" required>
+        <input type="text" name="genre" id="genre" placeholder="Insert the new genre" required>
     </div>
-    <br></br>
-    <div class="formulario_boton">
-        <button type="sumbit" class="btn btn-default">Create</button>
+
+    <div class="form-group">
+        <button type="sumbit" value="create" class="btn btn-default">Create</button>
     </div>
+
 </form>
 
 @endsection
