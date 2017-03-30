@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class GenresController extends Controller
 {
+    private $genres;
+
     public function showAllGenres(){
         $genres = DB::table('genres')->paginate(5);
         return view('genres',['genres' => $genres]);
@@ -38,4 +40,21 @@ class GenresController extends Controller
         $genres = \App\Genre::get();
         return view('create_genre', ['genres' => $genres]);
     }
+
+     public function showEdit(){
+        $genres = \App\Genre::get();
+        return view('edit_genre', ['genres' => $genres]);
+    }
+
+    public function editGenre($id=null){
+        $genre = Genre::find($id);
+        return view('edit_genre', array('genre' => $genre));
+    }
+
+     public function saveGenre(Request $request, $id=null){
+        if($_POST){
+            //Genre::update('genre' => $request->input('genre'));
+            return Redirect::to('/genres');
+        }
+     }
 }

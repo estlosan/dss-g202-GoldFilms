@@ -15,7 +15,7 @@
 </br>
 
 <a class="btn btn-success" href="/genre/new">Create</a>
-<a class="btn btn-primary" href="/genre/edit">Edit</a>
+<a class="btn btn-primary" href="/genres/edit">Edit</a>
 <a class="btn btn-danger"  href="/genre/delete">Delete</a>
 </div>
 

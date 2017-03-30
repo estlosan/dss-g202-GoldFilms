@@ -2,38 +2,37 @@
 
 @section('content')
 
-<form role="form">
-    <h1>Edit<span class="label label-default"></span></h1>
+<h1>Edit<span class="label label-default"></span></h1>
 
-    <div class="formulario_edit_genero">
+<form class="form" action="{{url('/genre/edit/save')}}" role="form" method="POST">
+{{ csrf_field()}}
+{{ method_field('POST')}}
+<?php
+    $nombre = '';
+?>
+    <div class="form-group">
         <label for="label_genero">Genre</label>
              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a genre
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    @foreach ($genres as $genre)
-                        <li><a genres/{{$genre->id}}>{{$genre->genre}}</a></li>
+                    <select id="test" onchange="document.getElementById('text_content').value=this.options[this.selectedIndex].text">
+                    @foreach($genres as $genre)
+                        <option value="{{$genre->genre}}">{{$genre->genre}}</option>
                     @endforeach
-                </ul>
+                </select>
             </div> 
 
-            <br></br>
-            <label>Genre name</label>
+<script>
+    public function mostrar(genero){
+        $nombre = "hola";
+    }
+</script>
 
-    <div class="input_name">
-        <input type="text" class="input_genero" id="input_genero" value="" required>
+    <label>Genre name</label>
+
+    <div class="form-group">
+        <input type="text" name="test_text" id="text_content" value="" />
     </div>
 
-    <br></br>
-    <label>Genre id</label>
-
-    <div class="id">
-        <input type="text" class="input_genero" id="input_genero" required>
-    </div>
-
-    </div>
-    <br></br>
-    <div class="formulario_boton">
+    <div class="form-group">
         <button type="sumbit" class="btn btn-default">Edit</button>
     </div>
 </form>
