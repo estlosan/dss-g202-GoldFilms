@@ -20,15 +20,16 @@ Route::get('/principal', function () {
 });
 
 //Actores
-Route::get('/actors', function(){
-    $actors = \App\Actor::get();
-    return view('actors', ['actors' => $actors]);
-});
 
-Route::get('/actors/{id_actor}', function($id_actor){
-    $actor = \App\Actor::find($id_actor);
-    return view('actor',['actor' => $actor]);
-});
+Route::get('/actors', 'ActorsController@showAllActors');
+Route::get('/actors/{id_actor}','ActorsController@showActor');
+Route::get('/actors/delete/{id}','ActorsController@deleteActor');
+Route::get('/actors/actions', 'ActorsController@findActor');
+Route::get('/actor/new', 'ActorsController@showForm');
+Route::post('/actor/new/create', 'ActorsController@addActor');
+Route::get('/actors/edit/{id?}', 'ActorsController@editActor');
+Route::post('/actors/edit/{id}/save', 'ActorsController@saveActor');
+
 
 //Peliculas
 Route::get('/films','FilmsController@showAllFilms');
