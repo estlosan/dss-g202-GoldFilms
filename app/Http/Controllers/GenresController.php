@@ -51,9 +51,10 @@ class GenresController extends Controller
         return view('edit_genre', array('genre' => $genre));
     }
 
-     public function saveGenre(Request $request, $id=null){
+     public function saveGenre(Request $request,$id=NULL){
         if($_POST){
-            //Genre::update('genre' => $request->input('genre'));
+            Genre::where('id', '=', $request->input('genero'))->update(
+                array('genre' => $request->input('genero_nombre')));
             return Redirect::to('/genres');
         }
      }
