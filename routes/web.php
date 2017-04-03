@@ -30,7 +30,6 @@ Route::post('/actor/new/create', 'ActorsController@addActor');
 Route::get('/actors/edit/{id?}', 'ActorsController@editActor');
 Route::post('/actor/edit/{id}/save', 'ActorsController@saveActor');
 
-
 //Peliculas
 Route::get('/films','FilmsController@showAllFilms');
 Route::get('/films/actions', 'FilmsController@findFilm');
