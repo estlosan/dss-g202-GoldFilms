@@ -28,13 +28,20 @@
 
 <div class="panel panel-default">
   @foreach ($film->critics as $critic)
-        <div class="panel-heading"> {{$critic->user->username}}</div>
+        <div class="panel-heading"> {{$critic->user->username}}
+                <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
+        </div>
         <div class="panel-body">
             {{$critic->comment}}
         </div>
   @endforeach  
 </div>
 
+<script>
+    function eliminarComentario(id){
+        window.location.href="/critic/delete/" + id;
+    }
+</script>
 
 
 @endsection

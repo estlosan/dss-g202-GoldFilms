@@ -19,6 +19,10 @@ Route::get('/principal', function () {
     return view('principal');
 });
 
+//Criticas
+
+Route::get('/critic/delete/{id}', 'CriticsController@deleteComment');
+
 //Actores
 
 Route::get('/actors', 'ActorsController@showAllActors');
