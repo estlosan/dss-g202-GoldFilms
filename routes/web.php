@@ -43,7 +43,7 @@ Route::post('/film/edit/{id}/save', 'FilmsController@saveFilm');
 
 //Generos
 Route::get('/genres/delete', 'GenresController@findGenre');
-Route::get('/genres/delete/{id}', 'GenresController@deleteGenre');
+Route::post('/genre/delete', 'GenresController@deleteGenre');
 Route::get('/genre/new', 'GenresController@showForm');
 Route::get('/genres/edit', 'GenresController@showEdit');
 Route::post('/genre/new/create', 'GenresController@addGenre');

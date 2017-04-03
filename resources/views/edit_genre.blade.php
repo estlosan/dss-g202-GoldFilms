@@ -7,9 +7,7 @@
 <form class="form" action="{{url('/genre/edit/save')}}" role="form" method="POST">
 {{ csrf_field()}}
 {{ method_field('POST')}}
-<?php
-    $nombre = '';
-?>
+
     <div class="form-group">
         <label for="label_genero">Genre</label>
              <div class="dropdown">
@@ -19,12 +17,6 @@
                     @endforeach
                 </select>
             </div> 
-
-<script>
-    public function mostrar(genero){
-        $nombre = "hola";
-    }
-</script>
 
     <label>Genre name</label>
 

@@ -18,14 +18,19 @@ class GenresController extends Controller
     }
 
     public function findGenre(){
-        $genres = DB::table('genres')->paginate(8);
+        $genres = DB::table('genres')->paginate(15);
         return view('delete_genre', ['genres' => $genres]);
     }
     
-    public function deleteGenre($id = null){
-        $genre = Genre::find($id);
-        $genre->delete();
-        return Redirect::to('/genres/delete');
+    public function deleteGenre(Request $request){
+        if($_POST){
+            foreach($request->input('generos') as $generos){
+                Genre::where('id', $generos)->delete();
+            } 
+
+            return Redirect::to('/genres');
+        }
+
     }
 
     public function addGenre(Request $request){
