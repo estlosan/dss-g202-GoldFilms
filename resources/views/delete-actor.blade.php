@@ -9,27 +9,27 @@
         <th>Accion</th>
     </thead>
     <tbody>
-        @foreach($films as $film)
+        @foreach($actors as $actor)
             <tr>
-                <td> {{ $film->name}} </td>
-                <td> <input type="button" id="{{$film->id}}" value="Borrar" onclick="eliminarPelicula(this.id);"></td>
-                <td> <input type="button" id="{{$film->id}}" value="Editar" onclick="editarPelicula(this.id);"></td>
+                <td> {{ $actor->name}} </td>
+                <td> <input type="button" id="{{$actor->id}}" value="Borrar" onclick="eliminarActor(this.id);"></td>
+                <td> <input type="button" id="{{$actor->id}}" value="Editar" onclick="editarActor(this.id);"></td>
             </tr>
         @endforeach
         
     </tbody>
     
 </table>
-{{$films->links()}}
+{{$actors->links()}}
 </div>
 
 <script>
-    function eliminarPelicula(id){
-        window.location.href="/films/delete/" + id;
+    function eliminarActor(id){
+        window.location.href="/actors/delete/" + id;
     }
 
-    function editarPelicula(id){
-        window.location.href="/films/edit/" + id;
+    function editarActor(id){
+        window.location.href="/actors/edit/" + id;
     }
 </script>
 

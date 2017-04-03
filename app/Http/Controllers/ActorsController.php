@@ -24,7 +24,7 @@ class ActorsController extends Controller
     }
 
     public function findActor(){
-        $actors = DB::table('actor');
+        $actors = DB::table('actors')->paginate(8);
         return view('delete-actor', ['actors' => $actors]);
     }
 
@@ -41,10 +41,10 @@ class ActorsController extends Controller
         return view('create_actor', ['films' => $films, 'actors' => $actors]);
     }
 
-    public function addActor(){
+    public function addActor(Request $request){
         $actor = new Actor;
         $actor->name = $request->input('name');
-        $actor->year = $request->input('year');
+        $actor->age = $request->input('age');
         $actor->nacionality = $request->input('nacionality');
         $actor->gender = $request->input('radio_button');
         $actor->save();
@@ -60,7 +60,7 @@ class ActorsController extends Controller
         return view('edit_actor', array('actor' => $actor));
     }
 
-    public function saveActor(){
+    public function saveActor(Request $request, $id = null){
         if($_POST)
         {
             Actor::where('id', '=', $request->input('actor_changed'))->update(

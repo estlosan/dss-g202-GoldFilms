@@ -18,7 +18,7 @@
   <div class="form-group">
     <label for="year" class="col-lg-1 control-label">Año</label>
     <div class="col-lg-5">
-      <input type="number" class="form-control" name="year" id="year" placeholder="Edad" value="{{$actor->age}}">
+      <input type="number" class="form-control" name="age" id="age" placeholder="Edad" value="{{$actor->age}}">
     </div>
   </div>
 
@@ -32,7 +32,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">
-      <input type="submit" value="Crear">
+      <input type="submit" value="Guardar">
       <input type="button" onclick="location.href='/actors';" value="Cancelar">
     </div>
   </div>
