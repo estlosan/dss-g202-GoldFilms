@@ -15,17 +15,17 @@ class ActorsController extends Controller
 {
     public function showAllActors(){
         $actors = \App\Actor::get();
-        return view('actors', ['actors' => $actors]);
+        return view('Actor.actors', ['actors' => $actors]);
     }
     
     public function showActor($id_actor){
         $actor = \App\Actor::find($id_actor);
-        return view('actor',['actor' => $actor]);
+        return view('Actor.actor',['actor' => $actor]);
     }
 
     public function findActor(){
         $actors = DB::table('actors')->paginate(8);
-        return view('delete-actor', ['actors' => $actors]);
+        return view('Actor.delete-actor', ['actors' => $actors]);
     }
 
     public function deleteActor($id=null){
@@ -38,7 +38,7 @@ class ActorsController extends Controller
     public function showForm(){
         $films = \App\Film::get();
         $actors = \App\Actor::get();
-        return view('create_actor', ['films' => $films, 'actors' => $actors]);
+        return view('Actor.create_actor', ['films' => $films, 'actors' => $actors]);
     }
 
     public function addActor(Request $request){
@@ -57,7 +57,7 @@ class ActorsController extends Controller
 
     public function editActor($id=null){
         $actor = Actor::find($id);
-        return view('edit_actor', array('actor' => $actor));
+        return view('Actor.edit_actor', array('actor' => $actor));
     }
 
     public function saveActor(Request $request, $id = null){

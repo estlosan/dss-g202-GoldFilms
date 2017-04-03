@@ -16,17 +16,17 @@ class FilmsController extends Controller
 
     public function showAllFilms(){
         $films = DB::table('films')->paginate(5);
-        return view('films',['films' => $films]);
+        return view('Film.films',['films' => $films]);
     }
 
     public function showFilm($id_film){
         $film = \App\Film::find($id_film);
-        return view('film', ['film' => $film]);
+        return view('Film.film', ['film' => $film]);
     }
 
     public function findFilm(){
         $films = DB::table('films')->paginate(8);
-        return view('delete-film', ['films' => $films]);
+        return view('Film.delete-film', ['films' => $films]);
     }
 
     public function deleteFilm($id=null){
@@ -58,12 +58,12 @@ class FilmsController extends Controller
     public function showForm(){
         $genres = \App\Genre::get();
         $actors = \App\Actor::get();
-        return view('create_film', ['genres' => $genres, 'actors' => $actors]);
+        return view('Film.create_film', ['genres' => $genres, 'actors' => $actors]);
     }
 
     public function editFilm($id=null){
         $film = Film::find($id);
-        return view('edit_film', array('film' => $film));
+        return view('Film.edit_film', array('film' => $film));
     }
 
     public function saveFilm(Request $request, $id=null){

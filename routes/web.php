@@ -41,6 +41,8 @@ Route::get('/films/edit/{id?}', 'FilmsController@editFilm');
 Route::post('/film/edit/{id}/save', 'FilmsController@saveFilm');
 
 //Generos
+Route::get('/genres/{id_genre}', 'GenresController@showGenre');
+Route::get('/genres','GenresController@showAllGenres');
 Route::get('/genres/delete', 'GenresController@findGenre');
 Route::post('/genre/delete', 'GenresController@deleteGenre');
 Route::get('/genre/new', 'GenresController@showForm');
@@ -48,16 +50,6 @@ Route::get('/genres/edit', 'GenresController@showEdit');
 Route::post('/genre/new/create', 'GenresController@addGenre');
 Route::get('/genres/edit/{id?}', 'GenresController@editGenre');
 Route::post('/genre/edit/save', 'GenresController@saveGenre');
-
-Route::get('/genres', function(){
-    $genres = \App\Genre::get();
-    return view('genres',['genres' => $genres]);
-});
-
-Route::get('/genres/{id_genre}', function($id_genre){
-    $genre = \App\Genre::find($id_genre);
-    return view('genre',['genre' => $genre]);
-});
 
 //USERS
 Route::get('/users','UsersController@showUsers');

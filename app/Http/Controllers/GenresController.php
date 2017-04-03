@@ -7,19 +7,25 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Genre;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Input;
 
 class GenresController extends Controller
 {
     private $genres;
 
     public function showAllGenres(){
-        $genres = DB::table('genres')->paginate(5);
-        return view('genres',['genres' => $genres]);
+        $genres = DB::table('genres')->paginate(6);
+        return view('Genre.genres',['genres' => $genres]);
+    }
+
+    public function showGenre($id_genre){
+        $genre = \App\Genre::find($id_genre);
+        return view('Genre.genre', ['genre' => $genre]);
     }
 
     public function findGenre(){
-        $genres = DB::table('genres')->paginate(15);
-        return view('delete_genre', ['genres' => $genres]);
+        $genres = DB::table('genres');
+        return view('Genre.delete_genre', ['genres' => $genres]);
     }
     
     public function deleteGenre(Request $request){
@@ -27,10 +33,9 @@ class GenresController extends Controller
             foreach($request->input('generos') as $generos){
                 Genre::where('id', $generos)->delete();
             } 
-
+            
             return Redirect::to('/genres');
         }
-
     }
 
     public function addGenre(Request $request){
@@ -43,17 +48,17 @@ class GenresController extends Controller
 
     public function showForm(){
         $genres = \App\Genre::get();
-        return view('create_genre', ['genres' => $genres]);
+        return view('Genre.create_genre', ['genres' => $genres]);
     }
 
      public function showEdit(){
         $genres = \App\Genre::get();
-        return view('edit_genre', ['genres' => $genres]);
+        return view('Genre.edit_genre', ['genres' => $genres]);
     }
 
     public function editGenre($id=null){
         $genre = Genre::find($id);
-        return view('edit_genre', array('genre' => $genre));
+        return view('Genre.edit_genre', array('genre' => $genre));
     }
 
      public function saveGenre(Request $request,$id=NULL){
