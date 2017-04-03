@@ -47,7 +47,7 @@ class FilmsController extends Controller
         $film->genre_id = $request->input('genre');
         $film->save();
 
-        foreach(array($request->input('actors')) as $actor) {
+        foreach($request->input('actors') as $actor) {
             $actors_array[] = \App\Actor::where('id', $actor)->first()->id; 
         }
         $film->actors()->attach($actors_array);
@@ -63,7 +63,9 @@ class FilmsController extends Controller
 
     public function editFilm($id=null){
         $film = Film::find($id);
-        return view('Film.edit_film', array('film' => $film));
+        $genres = \App\Genre::get();
+        $actors = \App\Actor::get();
+        return view('Film.edit_film', ['film' => $film,'genres' => $genres, 'actors' => $actors]);
     }
 
     public function saveFilm(Request $request, $id=null){
@@ -77,7 +79,7 @@ class FilmsController extends Controller
                     'country' => $request->input('country'),
                     'rating' => $request->input('rating'),
                     'director' => $request->input('director'),
-                    'genre_id' => 1,
+                    'genre_id' => $request->input('genre')
                 )
             );
 

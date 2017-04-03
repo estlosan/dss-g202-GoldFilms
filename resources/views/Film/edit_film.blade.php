@@ -27,6 +27,20 @@
      <textarea class="form-control" rows="4" name="description" id="description" placeholder="Descripción">{{$film->description}}</textarea>
     </div>
   </div>
+    <div class="row">
+      <label for="genre" class="col-lg-1 control-label">Género</label>
+      <div class="col-lg-2">
+        <input type="name" class="form-control" name="genre_new" id="genre_new" disabled="disabled" placeholder="Género" value="{{$film->genre->genre}}">
+      </div>
+
+      <div class="col-lg-2">     
+        <select name="genre" onchange="document.getElementById('genre_new').value=this.options[this.selectedIndex].text">
+            @foreach($genres as $genre)
+                <option value="{{ $genre->id}}">{{$genre->genre}}</option>
+            @endforeach
+        </select>
+      </div>
+    </div>
 
     <div class="form-group">
         <label for="country" class="col-lg-1 control-label">País</label>
@@ -44,6 +58,14 @@
         <label for="rating" class="col-lg-1 control-label">Puntuación</label>
         <div class="col-lg-5">
             <input type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación" value="{{$film->rating}}">
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="actors" class="col-lg-1 control-label">Actores</label>
+        <div class="col-lg-5">
+            @foreach ($actors as $actor)
+                <label class="checkbox-inline"><input type="checkbox" name="actors[]" value="{{$actor->id}}">{{$actor->name}}</label>
+            @endforeach
         </div>
     </div>
   <div class="form-group">

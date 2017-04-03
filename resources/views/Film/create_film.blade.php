@@ -57,7 +57,7 @@
         <label for="actors" class="col-lg-1 control-label">Actores</label>
         <div class="col-lg-5">
             @foreach ($actors as $actor)
-                <label class="checkbox-inline"><input type="checkbox" name="actors" value="{{$actor->id}}">{{$actor->name}}</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actors[]" value="{{$actor->id}}">{{$actor->name}}</label>
             @endforeach
         </div>
     </div>
