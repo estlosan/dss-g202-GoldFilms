@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>Actor</h1>
+
 <div class="row">
   <div class="col-sm-12">
       <img style="width: 180px;

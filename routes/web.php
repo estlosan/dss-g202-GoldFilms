@@ -24,11 +24,11 @@ Route::get('/principal', function () {
 Route::get('/actors', 'ActorsController@showAllActors');
 Route::get('/actors/{id_actor}','ActorsController@showActor');
 Route::get('/actors/delete/{id}','ActorsController@deleteActor');
-Route::get('/actors/actions', 'ActorsController@findActor');
+Route::get('/actor/edit_borrar', 'ActorsController@findActor');
 Route::get('/actor/new', 'ActorsController@showForm');
 Route::post('/actor/new/create', 'ActorsController@addActor');
 Route::get('/actors/edit/{id?}', 'ActorsController@editActor');
-Route::post('/actors/edit/{id}/save', 'ActorsController@saveActor');
+Route::post('/actor/edit/{id}/save', 'ActorsController@saveActor');
 
 
 //Peliculas

@@ -15,9 +15,9 @@
   </div>
 
   <div class="form-group">
-    <label for="year" class="col-lg-1 control-label">Año</label>
+    <label for="age" class="col-lg-1 control-label">Año</label>
     <div class="col-lg-5">
-      <input type="number" class="form-control" name="year" id="year" placeholder="Edad">
+      <input type="number" class="form-control" name="age" id="age" placeholder="Edad">
     </div>
   </div>
 
@@ -31,8 +31,8 @@
 <div class="form-group">
     <label for="genero" class="col-lg-1 control-label">Genero</label>
     <div class="col-lg-5">
-        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio">Hombre</label>
-        <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio">Mujer</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre</label>
+        <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
     </div>
 </div>
 
