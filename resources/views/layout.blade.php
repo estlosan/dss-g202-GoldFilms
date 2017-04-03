@@ -31,6 +31,7 @@
           </button>
           <a class="navbar-brand" href="/principal">GoldFilms</a>
         </div>
+
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/principal">Home</a></li>
@@ -38,6 +39,18 @@
             <li><a href="/actors">Actors</a></li>
             <li><a href="/genres">Genres</a></li>
             <li><a href="/users">Users</a></li>
+          </ul>
+
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter film name">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
