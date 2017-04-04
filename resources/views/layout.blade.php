@@ -40,12 +40,10 @@
             <li id="menu-genres"><a href="/genres">Genres</a></li>
             <li id="menu-users"><a href="/users">Users</a></li>
           </ul>
-
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Enter film name">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
+          <!--/Buscador-->
+          <form class="navbar-form navbar-left"  action="/search" method="get">
+            <input type="text"  name="q" placeholder="Search film..."/>
+            <button type="submit">Search</button>
           </form>
 
           <ul class="nav navbar-nav navbar-right">

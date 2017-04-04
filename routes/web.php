@@ -19,6 +19,9 @@ Route::get('/principal', function () {
     return view('principal');
 });
 
+//Buscador
+Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
+
 //Criticas
 Route::get('/critic/delete/{id}', 'CriticsController@deleteComment');
 
