@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1>Nueva Película</h1>
+<h1>Nueva Actor</h1>
 <form class="form-horizontal" action="{{url('/actor/new/create')}}" role="form" method="POST">
 {{ csrf_field()}}
 {{ method_field('POST')}}
@@ -54,6 +54,11 @@
     </div>
   </div>
   
-
 </form>
+
+<script>
+window.onload = function() {
+    document.getElementById('menu-actors').className = 'active';
+};
+</script>
 @endsection

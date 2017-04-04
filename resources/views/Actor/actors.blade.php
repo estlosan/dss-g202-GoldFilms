@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
   <div class="col-md-9">
-    <h1>Cartelera</h1>
+    <h1>Actors</h1>
     <ul>
   </div>
   <div class="col-md-3">
@@ -23,9 +23,14 @@
         margin-top: 10px;
         margin-bottom: 10px;" src="/images/Actores/{{$actor->name}}.jpg" >
         </a>
-
     @endforeach
   </div>
 {{$actors->links()}}
 </div>
+
+<script>
+window.onload = function() {
+    document.getElementById('menu-actors').className = 'active';
+};
+</script>
 @endsection

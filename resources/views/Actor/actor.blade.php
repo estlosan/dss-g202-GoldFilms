@@ -37,5 +37,11 @@
   </div>
   
 </div>
+
+<script>
+window.onload = function() {
+    document.getElementById('menu-actors').className = 'active';
+};
+</script>
         
 @endsection
