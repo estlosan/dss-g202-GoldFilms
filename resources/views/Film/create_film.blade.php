@@ -71,4 +71,9 @@
   
 
 </form>
+<script>
+window.onload = function() {
+    document.getElementById('menu-films').className = 'active';
+};
+</script>
 @endsection

@@ -10,6 +10,7 @@ use App\Genre;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Input;
 use App\Critic;
+use App\Actor;
 
 class FilmsController extends Controller
 {
@@ -84,11 +85,13 @@ class FilmsController extends Controller
                 )
             );
 
-            $film = Film::where('id', '=', $request->input('film_changed'))->get();
+            $film = Film::where('id', '=', $request->input('film_changed'))->first();
+
+            $actors_array = [];
             foreach($request->input('actors') as $actor) {
                 $actors_array[] = \App\Actor::where('id', $actor)->first()->id; 
             }
-            $film->actors()->attach($actors_array);
+            $film->actors()->sync($actors_array);
 
             return Redirect::to('/films');
         }

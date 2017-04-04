@@ -34,11 +34,11 @@
 
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/principal">Home</a></li>
-            <li><a href="/films">Films</a></li>
-            <li><a href="/actors">Actors</a></li>
-            <li><a href="/genres">Genres</a></li>
-            <li><a href="/users">Users</a></li>
+            <li id="menu-home"><a href="/principal">Home</a></li>
+            <li id="menu-films"><a href="/films">Films</a></li>
+            <li id="menu-actors"><a href="/actors">Actors</a></li>
+            <li id="menu-genres"><a href="/genres">Genres</a></li>
+            <li id="menu-users"><a href="/users">Users</a></li>
           </ul>
 
           <form class="navbar-form navbar-left">

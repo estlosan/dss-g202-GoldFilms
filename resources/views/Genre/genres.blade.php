@@ -18,5 +18,9 @@
         <a class="btn btn-danger"  href="/genres/delete">Delete</a>
     </div>
 </div>
-
+<script>
+window.onload = function() {
+    document.getElementById('menu-films').className = 'active';
+};
+</script>
 @endsection

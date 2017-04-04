@@ -28,5 +28,9 @@
   {{$films->links()}}
 </div>
 
-
+<script>
+window.onload = function() {
+    document.getElementById('menu-films').className = 'active';
+};
+</script>
 @endsection

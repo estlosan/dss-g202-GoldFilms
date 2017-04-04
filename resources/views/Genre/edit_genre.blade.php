@@ -29,4 +29,9 @@
     </div>
 </form>
 
+<script>
+window.onload = function() {
+    document.getElementById('menu-genres').className = 'active';
+};
+</script>
 @endsection

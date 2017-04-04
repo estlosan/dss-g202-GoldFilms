@@ -41,6 +41,10 @@
     function eliminarComentario(id){
         window.location.href="/critic/delete/" + id;
     }
+
+    window.onload = function() {
+        document.getElementById('menu-films').className = 'active';
+    };
 </script>
 
 
