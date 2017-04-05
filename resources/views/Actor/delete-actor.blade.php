@@ -25,7 +25,12 @@
 
 <script>
     function eliminarActor(id){
-        window.location.href="/actors/delete/" + id;
+        r= confirm('¿Esta seguro de desea elmininar esto?');
+        if(r == true){
+             window.location.href="/actors/delete/" + id;
+        }else{
+            window.location.href="/actors";
+        }
     }
 
     function editarActor(id){

@@ -23,7 +23,7 @@
 <br></br>
 
 <div class="form-group">
-    <button type="sumbit" name="borrar" class="btn btn-danger">Delete</button>
+    <button type="sumbit" name="borrar" onclick="return confirm('¿Esta seguro de desea elmininar esto?')" class="btn btn-danger">Delete</button>
 </div>
 
 </form>

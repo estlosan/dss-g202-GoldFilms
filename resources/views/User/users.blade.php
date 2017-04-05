@@ -14,7 +14,7 @@
 <a href=" {{action('UsersController@showUser',[$user->id])}}">
  <ul>{{ $user->username }} </a></div>
  <div class="col-md-6">
- <a href="{{action('UsersController@DeleteUser',[$user->id])}}" role="button" class="btn btn-default">Borrar</a>
+ <a href="{{action('UsersController@DeleteUser',[$user->id])}}"  onclick="return confirm('¿Esta seguro de desea elmininar esto?')" role="button" class="btn btn-default">Borrar</a>
  <a href="{{action('UsersController@EditUser',[$user->id])}}" role="button" class="btn btn-default">Editar</a>
  </ul> </div></div>
 @endforeach

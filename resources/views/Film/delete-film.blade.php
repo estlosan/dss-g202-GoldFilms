@@ -25,7 +25,13 @@
 
 <script>
     function eliminarPelicula(id){
+
+        r= confirm('¿Esta seguro de desea elmininar esto?');
+        if(r == true){
         window.location.href="/films/delete/" + id;
+        }else{
+          window.location.href="/films";
+        }
     }
 
     function editarPelicula(id){
