@@ -12,21 +12,21 @@ class UsersController extends Controller
 {
     public function showUsers(){
         $users=DB::table('users')->paginate(5);
-        return view('users',['users' =>$users]);
+        return view('User.users',['users' =>$users]);
     }
     public function showUser($id){
         $user=User::findOrFail($id);
-        return view('user',['user' => $user]);
+        return view('User.user',['user' => $user]);
     }
 
     public function AddUser(){
-        return view('create_user');
+        return view('User.create_user');
     }
 
 
     public function EditUser($id){
         $user=User::FindOrFail($id);
-        return view('edit_user',['user' => $user]);
+        return view('User.edit_user',['user' => $user]);
     }
 
     public function DeleteUser($id){
