@@ -62,7 +62,11 @@ Route::get('/genres/{id_genre}', function($id_genre){
 
 //USERS
 Route::get('/users','UsersController@showUsers');
-
-
 Route::get('/user/{id}','UsersController@showUser');
+Route::get('/users/create_user','UsersController@AddUser');
+Route::post('/users/create_user','UsersController@ValidateAddUser');
+Route::get('/users/edit_user/{id}','UsersController@EditUser');
+Route::post('/users/edit_user{id}','UsersController@EditUserValidate');
+Route::get('users/delete_user/{id}','UsersController@DeleteUser');
+
 
