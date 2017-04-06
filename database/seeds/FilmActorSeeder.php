@@ -90,6 +90,86 @@ class FilmActorSeeder extends Seeder
         $actor_id = DB::table('actors')->where('name','Elijah Wood')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
 
-        
+        $film_id = DB::table('films')->where('name','Harry Potter y la piedra filosofal')->first();
+        $actor_id = DB::table('actors')->where('name','Daniel Radcliffe')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Rupert Grint')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Emma Watson')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','El exorcista')->first();
+        $actor_id = DB::table('actors')->where('name','Linda Blair')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Ellen Burstyn')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Ouija, El origen del mal')->first();
+        $actor_id = DB::table('actors')->where('name','Annalise Basso')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Elizabeth Reaser')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','No respires')->first();
+        $actor_id = DB::table('actors')->where('name','Jane Levy')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Lobezno 3')->first();
+        $actor_id = DB::table('actors')->where('name','Hugh Jackman')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Patrick Stewart')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Torrente 5, Operación Eurovegas')->first();
+        $actor_id = DB::table('actors')->where('name','Santiago Segura')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Julián Lopez')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Solo en casa')->first();
+        $actor_id = DB::table('actors')->where('name','Macaulay Culkin')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Sully, Hazaña en el Hudson')->first();
+        $actor_id = DB::table('actors')->where('name','Tom Hanks')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Aaron Eckhart')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Forrest Gump')->first();
+        $actor_id = DB::table('actors')->where('name','Tom Hanks')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','El sexto sentido')->first();
+        $actor_id = DB::table('actors')->where('name','Bruce Willis')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Haley Joel Osment')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Resident Evil, Capítulo final')->first();
+        $actor_id = DB::table('actors')->where('name','Milla Jovovich')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Hombres de negro 3')->first();
+        $actor_id = DB::table('actors')->where('name','Will Smith')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Josh Brolin')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Pulp Fiction')->first();
+        $actor_id = DB::table('actors')->where('name','Bruce Willis')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','John Travolta')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Uma Thurman')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Mechanic, Resurrection')->first();
+        $actor_id = DB::table('actors')->where('name','Jason Statham')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Fast & Furious 7')->first();
+        $actor_id = DB::table('actors')->where('name','Jason Statham')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
     }
 }

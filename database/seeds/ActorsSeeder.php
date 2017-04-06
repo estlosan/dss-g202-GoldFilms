@@ -38,6 +38,27 @@ class ActorsSeeder extends Seeder
             ['name'=> 'Viggo Mortensen', 'age' =>58 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
             ['name'=> 'Orlando Bloom', 'age' =>40 ,'nacionality'=>'Británica','gender'=>'hombre'],
             ['name'=> 'Elijah Wood', 'age' =>36 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Daniel Radcliffe', 'age' =>27 ,'nacionality'=>'Británica','gender'=>'hombre'],
+            ['name'=> 'Rupert Grint', 'age' =>28 ,'nacionality'=>'Británica','gender'=>'hombre'],
+            ['name'=> 'Emma Watson', 'age' =>26 ,'nacionality'=>'Británica','gender'=>'mujer'],
+            ['name'=> 'Linda Blair', 'age' =>58 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+            ['name'=> 'Ellen Burstyn', 'age' =>84 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+            ['name'=> 'Annalise Basso', 'age' =>18 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+            ['name'=> 'Elizabeth Reaser', 'age' =>41 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+            ['name'=> 'Jane Levy', 'age' =>27 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+            ['name'=> 'Hugh Jackman', 'age' =>48 ,'nacionality'=>'Australiano','gender'=>'hombre'],
+            ['name'=> 'Patrick Stewart', 'age' =>76 ,'nacionality'=>'Británica','gender'=>'hombre'],
+            ['name'=> 'Santiago Segura', 'age' =>51 ,'nacionality'=>'Española','gender'=>'hombre'],
+            ['name'=> 'Julián Lopez', 'age' =>38 ,'nacionality'=>'Española','gender'=>'hombre'],
+            ['name'=> 'Macaulay Culkin', 'age' =>36 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Tom Hanks', 'age' =>60 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Aaron Eckhart', 'age' =>49 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Haley Joel Osment', 'age' =>28 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Milla Jovovich', 'age' =>41 ,'nacionality'=>'Ucraniense','gender'=>'mujer'],
+            ['name'=> 'Josh Brolin', 'age' =>49 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'John Travolta', 'age' =>63 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Uma Thurman', 'age' =>46 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
+        
         ]);
         //
     }
