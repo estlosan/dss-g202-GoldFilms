@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
@@ -16,12 +20,7 @@
   <div class="col-sm-12">
   @foreach ($films as $film)
     <a href="/films/{{$film->id}}" class="text-center" >
-      <img style="width: 150px;
-    height: 220px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;" src="/images/{{$film->name}}.jpg" >
+      <img class = "image_films" src="/images/{{$film->name}}.jpg" >
     </a>
   @endforeach
   </div>
