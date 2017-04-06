@@ -11,8 +11,8 @@
     <h1>Cartelera</h1>
   </div>
   <div class="col-md-3">
-    <a href="/film/new"<button type="button" onclick="/film/new" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
-    <a href="/films/actions"<button type="button" onclick="/films/actions" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
+    <a class="btn btn-success" href="/film/new"<button type="button" onclick="/film/new" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
+    <a class="btn btn-danger" href="/films/actions"<button type="button" onclick="/films/actions" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
   </div>
 </div>
 

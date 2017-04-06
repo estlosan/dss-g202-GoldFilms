@@ -12,8 +12,8 @@
         @foreach($films as $film)
             <tr>
                 <td> {{ $film->name}} </td>
-                <td> <input type="button" id="{{$film->id}}" value="Borrar" onclick="eliminarPelicula(this.id);"></td>
-                <td> <input type="button" id="{{$film->id}}" value="Editar" onclick="editarPelicula(this.id);"></td>
+                <td> <input class="btn btn-primary" type="button" id="{{$film->id}}" value="Borrar" onclick="eliminarPelicula(this.id);"></td>
+                <td> <input class="btn btn-danger" type="button" id="{{$film->id}}" value="Editar" onclick="editarPelicula(this.id);"></td>
             </tr>
         @endforeach
         
