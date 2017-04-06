@@ -1,8 +1,9 @@
 @extends('layout')
 
-
-
 @section('content')
+
+<h1>Create user<span class="label label-default"></span></h1>
+
 <div class="container">
 <form class="form-horizontal" action= "{{action('UsersController@ValidateAddUser')}}"   method="POST">
 {{csrf_field()}}

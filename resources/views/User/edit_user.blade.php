@@ -1,8 +1,8 @@
 @extends ('layout')
 
-
-
 @section('content')
+
+<h1>Edit user<span class="label label-default"></span></h1>
 
 <div class="container">
 <form class="form-horizontal" action= "{{action('UsersController@EditUserValidate',[$user->id])}}"   method="POST">
