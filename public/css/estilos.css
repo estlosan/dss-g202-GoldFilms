@@ -1,0 +1,67 @@
+.delete_genre{
+    max-height: 400px;
+    max-width: 700px;
+    overflow: auto;
+}
+
+.films_row{
+    width:200px; 
+    margin:auto; 
+    display:inline-block; 
+    vertical-align: middle;
+}
+
+.thumbnail{
+    width:150px; 
+    height:278px;
+}
+
+.caption{
+    text-align:center;
+}
+
+.table-striped{
+    margin-top: 40px;
+}
+
+.panel-default{
+    margin-top: 20px;
+}
+
+.boton_pelicula{
+    margin-top: 20px;
+}
+
+.row_peliculas{
+    text-align:center; 
+    margin-top:10px;
+}
+
+.row_actores{
+    margin-top: 10px;
+}
+
+.actors_row{
+    width:200px; 
+    margin:auto; 
+    display:inline-block; 
+    vertical-align: middle;
+}
+
+.form_usuario{
+    padding-top:15px
+}
+
+.row_usuarios{
+    text-align:center; 
+    margin-top:15px;
+}
+
+.table-hover{
+    text-align: center;
+}
+
+.col_usuario{
+    float:left;
+     margin-left: 15px;
+}

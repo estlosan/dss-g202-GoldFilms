@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends ('layout')
 
 @section('content')
@@ -10,7 +14,7 @@
 {{csrf_field()}}
 {{ method_field('POST')}}
 
-<div class="form-group" style="padding-top:15px">
+<div class="form-group form_usuario">
     <label for="nombre" class="control-label col-md-4">Nombre de Usuario</label>
         <div class="col-md-8">
         <input type="text" name="nombre" class="form-control" id="nombre" value="{{$user->username}}" placeholder="{{$user->username}}">

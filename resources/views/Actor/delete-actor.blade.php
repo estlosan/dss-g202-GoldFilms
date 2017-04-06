@@ -1,9 +1,13 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
 
 <div class="row">
-<table class="table table-striped" style="margin-top: 40px;">
+<table class="table table-striped" >
     <thead>
         <th>Nombre</th>
         <th>Accion</th>

@@ -11,10 +11,10 @@
     <h3>Peliculas del genero:</h3>
     
     @foreach ($genre->film as $film)
-    <div class="films_row" style="width:200px; margin:auto; display:inline-block; vertical-align: middle;">
-        <div class="thumbnail" style="width:150px; height:278px;">
+    <div class="films_row">
+        <div class="thumbnail">
             <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
-                <div class="caption" style="text-align:center;">
+                <div class="caption">
                     <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
                 </div>
          </div>

@@ -16,12 +16,12 @@
   </div>
 </div>
 
-<div class="row" style="text-align:center; margin-top:10px;">
+<div class="row row_peliculas">
 @foreach ($actors as $actor)
-  <div class="actors_row" style="width:200px; margin:auto; display:inline-block; vertical-align: middle;">
-    <div class="thumbnail" style="width:150px; height:278px;">
+  <div class="actors_row">
+    <div class="thumbnail">
         <a href="/actors/{{$actor->id}}"><img src="/images/Actores/{{$actor->name}}.jpg" style="width:150px; height:200px;"></a>
-        <div class="caption" style="text-align:center;">
+        <div class="caption">
         <p><a href="/actors/{{$actor->id}}"> {{$actor->name}}</a></p>
         </div>
     </div>

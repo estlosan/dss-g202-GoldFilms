@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
@@ -26,7 +30,7 @@
    </div>
 </div>
 
-<div class="panel panel-default" style="margin-top: 20px;">
+<div class="panel panel-default">
   @foreach ($film->critics as $critic)
         <div class="panel-heading"> {{$critic->user->username}}
                 <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      

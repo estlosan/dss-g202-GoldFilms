@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
@@ -8,7 +12,7 @@
 {{ csrf_field()}}
 {{ method_field('POST')}}
 
-<div class="form-group" style="max-height: 400px;max-width: 700px;overflow: auto;">
+<div class="form-group delete_genre">
 
     <ul class="list-group checked-list-box">
     @foreach ($genres as $genre)
