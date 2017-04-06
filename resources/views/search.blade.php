@@ -5,14 +5,14 @@
 <h1>Search results:</h1>
 
 <div class="Caratulas">
-    <a href="/films/{{$film->id}}" class="text-center" >
-        <img style="width: 150px;
-            height: 220px;
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;" src="/images/{{$film->name}}.jpg" >
-    </a>
+     <div class="films_row" style="width:200px; margin:auto; display:inline-block; vertical-align: middle;">
+    <div class="thumbnail" style="width:150px; height:278px;">
+        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+        <div class="caption" style="text-align:center;">
+        <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+        </div>
+    </div>
+  </div>
 </div>
 
 @endsection
