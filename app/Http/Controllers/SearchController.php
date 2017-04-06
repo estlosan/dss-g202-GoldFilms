@@ -22,11 +22,15 @@ class SearchController extends BaseController {
                 return view('search', ['film' => $film]);
             }
             else{
-                $film = \App\Film::where('year',$keyword)->first();
-                return view('search', ['film' => $film]);
+                $film2 = \App\Film::where('year',$keyword)->first();
+
+                if($film2 != NULL){
+                    return view('search', ['film' => $film2]);
+                }
+                else{
+                    return view('error');
+                }                
             }
-            
-            return view('search', ['film' => $film]);
         }
         else{
             return view('error');
