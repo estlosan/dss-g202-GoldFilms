@@ -33,6 +33,7 @@ class FilmsController extends Controller
 
     public function deleteFilm($id=null){
         $film = Film::find($id);
+	$film->critics()->delete();
         $film->delete();
 
         return Redirect::to('/films');
