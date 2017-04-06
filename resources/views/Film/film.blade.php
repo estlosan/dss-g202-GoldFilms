@@ -26,7 +26,7 @@
    </div>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default" style="margin-top: 20px;">
   @foreach ($film->critics as $critic)
         <div class="panel-heading"> {{$critic->user->username}}
                 <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
@@ -39,7 +39,12 @@
 
 <script>
     function eliminarComentario(id){
+        r= confirm('¿Esta seguro que desea elmininar esto?');
+        if(r == true){
         window.location.href="/critic/delete/" + id;
+        }else{
+          window.location.href="/films/" + id;
+        }
     }
 
     window.onload = function() {

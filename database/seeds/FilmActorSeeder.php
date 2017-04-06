@@ -146,7 +146,7 @@ class FilmActorSeeder extends Seeder
         $actor_id = DB::table('actors')->where('name','Haley Joel Osment')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
 
-        $film_id = DB::table('films')->where('name','Resident Evil, Capítulo final')->first();
+        $film_id = DB::table('films')->where('name','Resident Evil, Capitulo final')->first();
         $actor_id = DB::table('actors')->where('name','Milla Jovovich')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
 

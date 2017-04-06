@@ -8,25 +8,33 @@
 
 <h1>Actor</h1>
 
-<div class="row">
-  <div class="col-sm-12">
-      <img class = "image_actor" src="/images/Actores/{{$actor->name}}.jpg" >
-    </a>
-  </div>
+<div class="media">
+   <a href="#" class="pull-left">
+      <img src="/images/Actores/{{$actor->name}}.jpg" class="media-object" alt="imagen">
+   </a>
+   <div class="media-body">
+     <ul>
+        <li>Nombre: {{$actor->name}}</li>
+        <li>Edad: {{$actor->age}}</li>
+        <li>Nacionalidad: {{$actor->nacionality}}</li>
+        <li>Sexo: {{$actor->gender}}</li>
+    </ul>
+   </div>
 </div>
 
-<p>Nombre:{{$actor->name}}</br>Edad:{{$actor->age}}</br>Nacionalidad:{{$actor->nacionality}}</br>Sexo:{{$actor->gender}}</p>
-</br></br>
-<p>Peliculas</p>
-</br>
 
-
-<div class="row">
+<div class="row" style="margin-top: 10px;">
+  <h3>Peliculas</h3>
   <div class="col-sm-12">
   @foreach ($actor->films as $film)
-    <a href="/films/{{$film->id}}" class="text-center" >
-      <img class ="image_films" src="/images/{{$film->name}}.jpg" >
-    </a>
+  <div class="films_row" style="width:200px; margin:auto; display:inline-block; vertical-align: middle;">
+    <div class="thumbnail" style="width:150px; height:278px;">
+        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+        <div class="caption" style="text-align:center;">
+        <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+        </div>
+    </div>
+  </div>
   @endforeach
   </div>
   
