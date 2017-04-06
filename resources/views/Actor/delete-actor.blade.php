@@ -12,8 +12,8 @@
         @foreach($actors as $actor)
             <tr>
                 <td> {{ $actor->name}} </td>
-                <td> <input class="btn btn-primary" type="button" id="{{$actor->id}}" value="Borrar" onclick="eliminarActor(this.id);"></td>
-                <td> <input class="btn btn-danger" type="button" id="{{$actor->id}}" value="Editar" onclick="editarActor(this.id);"></td>
+                <td> <input class="btn btn-danger" type="button" id="{{$actor->id}}" value="Borrar" onclick="eliminarActor(this.id);"></td>
+                <td> <input class="btn btn-primary" type="button" id="{{$actor->id}}" value="Editar" onclick="editarActor(this.id);"></td>
             </tr>
         @endforeach
         
