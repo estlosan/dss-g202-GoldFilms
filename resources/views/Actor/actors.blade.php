@@ -16,14 +16,20 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    @foreach ($actors as $actor)
-        <a href="actors/{{$actor->id}}">{{$actor->name}}
-        <img class = "image_actors" src="/images/Actores/{{$actor->name}}.jpg" >
-        </a>
-    @endforeach
-  </div>
+<div class="row" style="text-align:center; margin-top:10px;">
+@foreach ($actors as $actor)
+  <div class="actors_row" style="width:200px; margin:auto; display:inline-block; vertical-align: middle;">
+    <div class="thumbnail" style="width:150px; height:278px;">
+        <a href="/actors/{{$actor->id}}"><img src="/images/Actores/{{$actor->name}}.jpg" style="width:150px; height:200px;"></a>
+        <div class="caption" style="text-align:center;">
+        <p><a href="/actors/{{$actor->id}}"> {{$actor->name}}</a></p>
+        </div>
+    </div>
+</div>
+  @endforeach
+</div>
+
+<div class="paginate_actors">
 {{$actors->links()}}
 </div>
 

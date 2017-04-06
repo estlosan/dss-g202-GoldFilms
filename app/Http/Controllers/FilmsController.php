@@ -17,7 +17,7 @@ class FilmsController extends Controller
     private $films;
 
     public function showAllFilms(){
-        $films = DB::table('films')->paginate(5);
+        $films = DB::table('films')->paginate(10);
         return view('Film.films',['films' => $films]);
     }
 
