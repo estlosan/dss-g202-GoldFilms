@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\View;
 class SearchController extends BaseController {
 
     public function getSearch(){
-        //get keywords input for search
+        //El buscador busca por el nombre de la pelicula y por el año
         $keyword=Input::get('q');
 
         if($keyword != NULL){
-            //search that student in Database
+
             $film = \App\Film::where('name',$keyword)->first();
 
             if($film != NULL){
