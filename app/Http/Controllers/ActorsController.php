@@ -57,7 +57,8 @@ class ActorsController extends Controller
 
     public function editActor($id=null){
         $actor = Actor::find($id);
-        return view('Actor.edit_actor', array('actor' => $actor));
+        $films = Film::get();
+        return view('Actor.edit_actor',['actor' => $actor ,'films' =>$films]);
     }
 
     public function saveActor(Request $request, $id = null){
@@ -68,8 +69,17 @@ class ActorsController extends Controller
                     'name' => $request->input('name'),
                     'age' => $request->input('age'),
                     'nacionality' => $request->input('nacionality'),
+                    'gender' => $request->input('radio_button'),
                 )
             );
+
+            $actor = Actor::where('id', '=', $request->input('actor_changed'))->first();
+
+            $films_array = [];
+            foreach(array($request->input('films')) as $film) {
+                $films_array[] = Actor::where('id', $film)->first()->id; 
+            }
+            $actor->films()->sync($films_array);
 
             return Redirect::to('/actors');
         }
