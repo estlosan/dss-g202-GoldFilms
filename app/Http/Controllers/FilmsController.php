@@ -67,7 +67,16 @@ class FilmsController extends Controller
     public function editFilm($id=null){
         $film = Film::find($id);
         $genres = \App\Genre::get();
-        $actors = \App\Actor::get();
+        $actors = \App\Actor::orderBy('name','asc')->get();
+        foreach ($actors as $actor) {
+            $actor->checked = '';
+            foreach ($film->actors as $film_actor) {
+                if ($film_actor->id == $actor->id) {
+                    $actor->checked = 'checked';
+                    break;
+                }
+            }
+        }
         return view('Film.edit_film', ['film' => $film,'genres' => $genres, 'actors' => $actors]);
     }
 

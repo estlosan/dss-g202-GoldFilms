@@ -60,14 +60,18 @@
             <input type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación" value="{{$film->rating}}">
         </div>
     </div>
-    <div class="form-group">
-      <label for="actors" class="col-lg-1 control-label">Actores</label>
-        <div class="col-lg-5">
-            @foreach ($actors as $actor)
-                <label class="checkbox-inline"><input type="checkbox" name="actors[]" value="{{$actor->id}}">{{$actor->name}}</label>
-            @endforeach
-        </div>
+    <div class="form-group"><label for="actors" class="col-lg-1 control-label">Actores</label> 
+          <div class="col-lg-5">
+              @foreach ($actors as $actor)
+                <div class="checkbox checkbox-inline">
+                  <input type="checkbox" name="actors[]" id="actor-{{$actor->id}}" value="{{$actor->id}}" {{$actor->checked}}>
+                  <label for="actor-{{$actor->id}}">{{$actor->name}}</label>
+                 </div>
+              @endforeach
+          </div>
+     
     </div>
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">
       <input type="submit" value="Guardar">
