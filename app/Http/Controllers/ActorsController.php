@@ -57,7 +57,17 @@ class ActorsController extends Controller
 
     public function editActor($id=null){
         $actor = Actor::find($id);
-        $films = Film::get();
+
+        $films = \App\Film::orderBy('name','asc')->get();
+        foreach ($films as $film) {
+            $film->checked = '';
+            foreach ($actor->films as $actor_film) {
+                if ($actor_film->id == $film->id) {
+                    $film->checked = 'checked';
+                    break;
+                }
+            }
+        }
         return view('Actor.edit_actor',['actor' => $actor ,'films' =>$films]);
     }
 

@@ -37,15 +37,17 @@
     </div>
 </div>
 
-  <div class="form-group">
-    <label for="films" class="col-lg-1 control-label">Películas</label>
-      <div class="col-lg-5">
-            @foreach($films as $film)
-                <label class="checkbox-inline"><input type="checkbox" name="films" value="{{$film->id}}">{{$film->name}}</label>
-            @endforeach
-        </select>
-      </div>
-  </div>
+    <div class="form-group"><label for="films" class="col-lg-1 control-label">Peliculas</label> 
+          <div class="col-lg-5">
+              @foreach ($films as $film)
+                <div class="checkbox checkbox-inline">
+                  <input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>
+                  <label for="film-{{$film->id}}">{{$film->name}}</label>
+                 </div>
+              @endforeach
+          </div>
+     
+    </div>
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
   <div class="form-group">

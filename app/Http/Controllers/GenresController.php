@@ -25,9 +25,21 @@ class GenresController extends Controller
     
     public function deleteGenre(Request $request){
         if($_POST){
+            $films = \App\Film::get();
+            $singenero = DB::table('genres')->where('genre','Sin género')->first();
+            
             foreach($request->input('generos') as $generos){
                 Genre::where('id', $generos)->delete();
-            } 
+            }
+
+            foreach($request->input('generos') as $generos){
+                foreach($films as $film){
+                    if($film->genre_id == $generos){
+                        $film->genre_id = $singenero->id;
+                        $film->save();
+                    }
+                }
+            }
 
             return Redirect::to('/genres');
         }

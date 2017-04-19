@@ -23,6 +23,7 @@ class FilmsController extends Controller
 
     public function showFilm($id_film){
         $film = \App\Film::find($id_film);
+        
         return view('Film.film', ['film' => $film]);
     }
 

@@ -25,6 +25,7 @@ class GenresSeeder extends Seeder
                 ['genre'=>'Documental'],
                 ['genre'=>'Ciencia ficción'],
                 ['genre'=>'Cine negro'],
+                ['genre'=>'Sin género'],
         ]
         );
         
