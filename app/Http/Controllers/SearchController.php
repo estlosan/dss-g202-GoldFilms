@@ -16,16 +16,19 @@ class SearchController extends BaseController {
 
         if($keyword != NULL){
 
-            $film = \App\Film::where('name',$keyword)->first();
+            $films = [];
+            $films2 = [];
 
-            if($film != NULL){
-                return view('search', ['film' => $film]);
+            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->get();
+
+            if(sizeof($films) != 0){
+                return view('search', ['films' => $films]);
             }
             else{
-                $film2 = \App\Film::where('year',$keyword)->first();
+                $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->get();
 
-                if($film2 != NULL){
-                    return view('search', ['film' => $film2]);
+                if(sizeof($films2) != 0){
+                    return view('search', ['films' => $films2]);
                 }
                 else{
                     return view('error');
