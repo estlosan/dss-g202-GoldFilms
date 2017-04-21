@@ -2,11 +2,12 @@
 
 @section('content')
 
-
 <h1>Editar Actor</h1>
+
 <form class="form-horizontal" action="{{url('/actor/edit/{id}/save')}}" role="form" method="POST">
 {{ csrf_field()}}
 {{ method_field('POST')}}
+
     <input type="hidden" id="actor_changed" name="actor_changed" value="{{$actor->id}}">
   <div class="form-group">
     <label for="name" class="col-lg-1 control-label">Nombre</label>
@@ -37,19 +38,26 @@
     </div>
 </div>
 
-    <div class="form-group"><label for="films" class="col-lg-1 control-label">Peliculas</label> 
-          <div class="col-lg-5">
-              @foreach ($films as $film)
-                <div class="checkbox checkbox-inline">
-                  <input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>
-                  <label for="film-{{$film->id}}">{{$film->name}}</label>
-                 </div>
-              @endforeach
-          </div>
-     
+<div class="form-group"><label for="films" class="col-lg-1 control-label"></label> 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="button-group">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-film"> Peliculas</span> <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+          @foreach ($films as $film)
+            <div class="checkbox checkbox-inline">
+            <li><input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>{{$film->name}}</li>
+            </div>
+          @endforeach
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
+  <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">
       <input type="submit" value="Guardar">
@@ -57,7 +65,6 @@
     </div>
   </div>
   
-
 </form>
 
 <script>
