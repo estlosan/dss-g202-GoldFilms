@@ -48,6 +48,28 @@ class ActorsController extends Controller
         $actor->nacionality = $request->input('nacionality');
         $actor->gender = $request->input('radio_button');
         $actor->save();
+
+        $name       = $_FILES['fileToUpload']['name'];  
+        $temp_name  = $_FILES['fileToUpload']['tmp_name'];  
+        if(isset($name)){
+            if(!empty($name)){
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    echo "File is an image - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                }
+                else {
+                    return view('error');//Cambiar
+                }      
+                $location = '../public/images/Actores/';      
+                if(move_uploaded_file($temp_name, $location.$name)){
+                    echo 'File uploaded successfully';
+                }
+            }       
+        }  else {
+            return view('error');//Cambiar
+        }
+
         foreach(array($request->input('films')) as $film) {
             $film_array[] = \App\Film::where('id', $film)->first()->id; 
         }

@@ -4,9 +4,11 @@
 
 
 <h1>Nueva Actor</h1>
-<form class="form-horizontal" action="{{url('/actor/new/create')}}" role="form" method="POST">
+<form class="form-horizontal" action="{{url('/actor/new/create')}}" id="uploadForm" action="" method="post"  enctype= "multipart/form-data">
+
 {{ csrf_field()}}
 {{ method_field('POST')}}
+
   <div class="form-group">
     <label for="name" class="col-lg-1 control-label">Nombre</label>
     <div class="col-lg-5">
@@ -35,6 +37,33 @@
         <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
     </div>
 </div>
+
+ <div class="form-group">
+        <label for="rating" class="col-lg-1 control-label">Foto</label>
+        <div class="col-lg-5">
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Informacion</button>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">¿Como subir una foto de un actor?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>El nombre de la imagen debe de ser el mismo que el nombre del actor o actriz.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
   <div class="form-group">
     <label for="films" class="col-lg-1 control-label">Películas</label>
