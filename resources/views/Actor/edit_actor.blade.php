@@ -33,8 +33,8 @@
 <div class="form-group">
     <label for="genero" class="col-lg-1 control-label">Genero</label>
     <div class="col-lg-5">
-        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre</label>
-        <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre" {{$actor->hombreChecked}}>Hombre</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="mujer_radio" value="mujer" {{$actor->mujerChecked}}>Mujer</label>
     </div>
 </div>
 
@@ -71,5 +71,6 @@
 window.onload = function() {
     document.getElementById('menu-actors').className = 'active';
 };
+
 </script>
 @endsection

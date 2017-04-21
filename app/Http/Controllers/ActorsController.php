@@ -90,6 +90,14 @@ class ActorsController extends Controller
                 }
             }
         }
+        $actor->hombreChecked = '';
+        $actor->mujerChecked = '';
+        if($actor->gender == 'hombre'){
+            $actor->hombreChecked = 'checked';
+        }
+        else{
+            $actor->mujerChecked = 'checked';
+        }
         return view('Actor.edit_actor',['actor' => $actor ,'films' =>$films]);
     }
 

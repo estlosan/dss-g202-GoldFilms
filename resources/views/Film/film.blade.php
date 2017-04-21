@@ -11,7 +11,7 @@
 
 <div class="media">
    <a href="#" class="pull-left">
-      <img src="/images/{{$film->name}}.jpg" class="media-object" alt="imagen">
+      <img src="/images/{{$film->name}}.jpg" class="media-object" alt="imagen" width="142" height="232">
    </a>
    <div class="media-body">
      <ul>
@@ -54,6 +54,7 @@
     window.onload = function() {
         document.getElementById('menu-films').className = 'active';
     };
+
 </script>
 
 
