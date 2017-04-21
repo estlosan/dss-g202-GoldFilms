@@ -57,6 +57,8 @@
   </div>
 </div>
 
+
+
   <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">

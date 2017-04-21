@@ -69,7 +69,7 @@
     <label for="films" class="col-lg-1 control-label">Películas</label>
       <div class="col-lg-5">
             @foreach($films as $film)
-                <label class="checkbox-inline"><input type="checkbox" name="films" value="{{$film->id}}">{{$film->name}}</label>
+                <label class="checkbox-inline"><input type="checkbox" name="films[]" value="{{$film->id}}">{{$film->name}}</label>
             @endforeach
         </select>
       </div>
