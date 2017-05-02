@@ -7,57 +7,87 @@
 @section('content')
 
 <br>
-<br>
+<h1>Últimos estrenos</h1>
+<div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+                <div id="Carousel" class="carousel slide" data-interval="5000">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row">
+					@foreach($films1 as $film)
+                	  <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a>
+                      </div>
+                      
+					@endforeach
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                 
+                <div class="item">
+                	<div class="row">
+                	@foreach($films2 as $film)
+                	  <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a></div>
+					@endforeach
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control" style="width: 70px; height: 280px;"></a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control" style="width: 70px; height: 280px;"></a>
+                </div><!--.Carousel-->
+                 
+		</div>
+	</div>
+</div><!--.container-->
 
 <div class="container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#inicio">Inicio</a></li>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#mensajes">Mensajes</a></li>
+    </ul>
 
-<div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form">
-			<h2>Please Sign Up <small>GoldFilms</small></h2>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
-			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-					</div>
-				</div>
-			</div>
-
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
-			</div>
-		</form>
-	</div>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="inicio">
+            <div class="row row_peliculas">
+            @foreach ($films1 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-
+ 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
+    $(document).ready(function(){
+        $('.Carousel').carousel()
+    });
+
+    $(document).ready(function(){
+        $("Carousel").carousel({
+         interval : 1000
+        });
+    });
+
 window.onload = function() {
     document.getElementById('menu-home').className = 'active';
 };

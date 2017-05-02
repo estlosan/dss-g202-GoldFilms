@@ -128,4 +128,23 @@ class FilmsController extends Controller
             return Redirect::to('/films');
         }
     }
+
+    public function showPrincipalFilms(){
+        $films = Film::orderBy('created_at','desc')->paginate(10);
+        $count = 0;
+        $films1 = [];
+        $films2 = [];
+        foreach($films as $film) {
+            if($count <= 4 ){
+                $films1[] = $film; 
+            }
+            else{
+                $films2[] = $film; 
+            }
+            $count++;
+            
+        }
+
+        return view('principal', ['films1' => $films1, 'films2' => $films2]);
+    }
 }

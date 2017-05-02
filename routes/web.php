@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/principal', function () {
-    return view('principal');
-});
+Route::get('/principal', 'FilmsController@showPrincipalFilms');;
 
 //Buscador
 Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
