@@ -10,28 +10,28 @@
 {{ method_field('POST')}}
 
   <div class="form-group">
-    <label for="name" class="col-lg-1 control-label">Nombre</label>
+    <label for="name" class="col-lg-1 control-label">Nombre:</label>
     <div class="col-lg-5">
       <input type="name"class="form-control" name="name"id="name" placeholder="Nombre">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="age" class="col-lg-1 control-label">Año</label>
+    <label for="age" class="col-lg-1 control-label">Año:</label>
     <div class="col-lg-5">
       <input type="number" class="form-control" name="age" id="age" placeholder="Edad">
     </div>
   </div>
 
 <div class="form-group">
-    <label for="nacionality" class="col-lg-1 control-label">Nacionalidad</label>
+    <label for="nacionality" class="col-lg-1 control-label">Nacionalidad:</label>
     <div class="col-lg-5">
         <input type="name" class="form-control" name="nacionality" id="nacionality"  placeholder="Nacionalidad">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="genero" class="col-lg-1 control-label">Genero</label>
+    <label for="genero" class="col-lg-1 control-label">Genero:</label>
     <div class="col-lg-5">
         <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre</label>
         <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
@@ -39,12 +39,12 @@
 </div>
 
  <div class="form-group">
-        <label for="rating" class="col-lg-1 control-label">Foto</label>
+        <label for="rating" class="col-lg-1 control-label">Foto:</label>
         <div class="col-lg-5">
             <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
         </div>
         <div class="container">
-            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Informacion</button>
+            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
                 <!-- Modal content-->
@@ -65,15 +65,23 @@
         </div>
     </div>
 
-  <div class="form-group">
-    <label for="films" class="col-lg-1 control-label">Películas</label>
-      <div class="col-lg-5">
-            @foreach($films as $film)
-                <label class="checkbox-inline"><input type="checkbox" name="films[]" value="{{$film->id}}">{{$film->name}}</label>
+
+<div class="form-group">
+    <label for="rating" class="col-lg-1 control-label">Seleccione:</label>
+        <div class="col-lg-5">
+            <div class="button-group">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Películas</span> <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+            @foreach ($films as $film)
+                <div class="checkbox checkbox-inline">
+                <li><input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>{{$film->name}}</li>
+                </div>
             @endforeach
-        </select>
-      </div>
-  </div>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
   <div class="form-group">
