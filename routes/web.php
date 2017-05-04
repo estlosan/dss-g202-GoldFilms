@@ -68,3 +68,7 @@ Route::post('/users/edit_user{id}','UsersController@EditUserValidate');
 Route::get('users/delete_user/{id}','UsersController@DeleteUser');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
