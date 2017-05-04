@@ -42,7 +42,7 @@ class UsersController extends Controller
         $user->username=$request->input('nombre');
         $user->email=$request->input('email');
         if($user->password != NULL){
-        $user->password=$request->input('password');
+        $user->password=bcrypt($request->input('password'));
         }
         
         $user->save();
@@ -61,7 +61,7 @@ class UsersController extends Controller
         $user=new User ;
         $user->username = $request->input('nombre');
         $user->email= $request->input('email');
-        $user->password = $request->input('password');
+        $user->password = bcrypt($request->input('password'));
         $user->save();
 
         return Redirect::to('/users');

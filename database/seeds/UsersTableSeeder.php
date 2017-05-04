@@ -15,16 +15,16 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
         DB::table('users')->insert(
             [
-                ['username'=> 'Pepe','password' => 'pepe1','email' => 'pepe@hotmail.com'],
-                ['username'=> 'Jordi','password' => 'jordi1','email' => 'jordi@hotmail.com'],
-                ['username'=> 'Agus','password' => 'agus1','email' => 'agus@hotmail.com'],
-                ['username'=> 'Esteban','password' => 'esteban1','email' => 'esteban@hotmail.com'],
-                ['username'=> 'Oscar','password' => 'Oscar1','email' => 'oscar@hotmail.com'],
-                ['username'=> 'Juanfer','password' => 'Juanfer1','email' => 'juanfer@hotmail.com'],
-                ['username'=> 'Carlos','password' => 'Carlos1','email' => 'carlos@hotmail.com'],
-                ['username'=> 'Alejandro','password' => 'Alejandro1','email' => 'alejandro@hotmail.com'],
-                ['username'=> 'Francisco','password' => 'Francisco1','email' => 'francisco@hotmail.com'],
-                ['username'=> 'Julian','password' => 'Julian1','email' => 'julian@hotmail.com'],
+                ['username'=> 'Pepe','password' => bcrypt('pepe1'),'email' => 'pepe@hotmail.com'],
+                ['username'=> 'Jordi','password' => bcrypt('jordi1'),'email' => 'jordi@hotmail.com'],
+                ['username'=> 'Agus','password' => bcrypt('agus1'),'email' => 'agus@hotmail.com'],
+                ['username'=> 'Esteban','password' => bcrypt('esteban1'),'email' => 'esteban@hotmail.com'],
+                ['username'=> 'Oscar','password' => bcrypt('Oscar1'),'email' => 'oscar@hotmail.com'],
+                ['username'=> 'Juanfer','password' => bcrypt('Juanfer1'),'email' => 'juanfer@hotmail.com'],
+                ['username'=> 'Carlos','password' => bcrypt('Carlos1'),'email' => 'carlos@hotmail.com'],
+                ['username'=> 'Alejandro','password' => bcrypt('Alejandro1'),'email' => 'alejandro@hotmail.com'],
+                ['username'=> 'Francisco','password' => bcrypt('Francisco1'),'email' => 'francisco@hotmail.com'],
+                ['username'=> 'Julian','password' => bcrypt('Julian1'),'email' => 'julian@hotmail.com'],
 
             ]
         );
