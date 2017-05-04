@@ -45,6 +45,11 @@
             <input type="text"  name="q" placeholder="Search film..."/>
             <button type="submit">Search</button>
           </form>
+          @if(Auth::check())
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/users">{{Auth::User()->username}}</a></li>
+          </ul>
+          @endif
         </div><!--/.nav-collapse -->
       </div>
     </nav>

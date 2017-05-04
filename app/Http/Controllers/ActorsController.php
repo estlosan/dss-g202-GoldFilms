@@ -11,16 +11,17 @@ use App\Actor;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Input;
 
+
 class ActorsController extends Controller
 {
     public function showAllActors(){
-        $actors = DB::table('actors')->paginate(10);
-        return view('Actor.actors', ['actors' => $actors]);
+            $actors = DB::table('actors')->paginate(10);
+            return view('Actor.actors', ['actors' => $actors]);
     }
     
     public function showActor($id_actor){
-        $actor = \App\Actor::find($id_actor);
-        return view('Actor.actor',['actor' => $actor]);
+            $actor = \App\Actor::find($id_actor);
+            return view('Actor.actor',['actor' => $actor]);
     }
 
     public function findActor(){
