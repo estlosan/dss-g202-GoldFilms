@@ -1,23 +1,36 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
 
-<div class="lista_generos">
-<h1>Genres</h1>
+<h1>Género</h1>
 
-<ul>
-@foreach ($genres as $genre)
-    <li><a href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
-@endforeach
-</ul>
+<div class="z-movie">
+  <div class="margin-ntabs">
+    <ul class="ntabs">
+    </ul>
+  </div>
 
-<div class="paginacion">
-    {{$genres->links()}}
-</div>
+  <dt class="peliculas_genero">Lista de géneros<dt>
+    <br>
 
-<a class="btn btn-success" href="/genre/new">Create</a>
-<a class="btn btn-primary" href="/genres/edit">Edit</a>
-<a class="btn btn-danger"  href="/genres/delete">Delete</a>
+    <ul>
+    @foreach ($genres as $genre)
+        <li><a style="font-weight: normal;" href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
+    @endforeach
+    </ul>
+
+    <div class="paginacion">
+        {{$genres->links()}}
+    </div>
+
+    <a class="btn btn-success" href="/genre/new">Crear</a>
+    <a class="btn btn-primary" href="/genres/edit">Editar</a>
+    <a class="btn btn-danger"  href="/genres/delete">Borrar</a>
+    
 </div>
 
 <script>

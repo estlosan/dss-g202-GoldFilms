@@ -15,7 +15,7 @@ use App\Http\Controllers\Input;
 class ActorsController extends Controller
 {
     public function showAllActors(){
-            $actors = DB::table('actors')->paginate(10);
+            $actors = DB::table('actors')->paginate(8);
             return view('Actor.actors', ['actors' => $actors]);
     }
     
