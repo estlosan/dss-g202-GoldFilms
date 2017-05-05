@@ -60,7 +60,9 @@
          <div class="panel panel-default">
             @foreach ($film->critics as $critic)
                 <div class="panel-heading"> {{$critic->user->username}}
-                    <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
+                    @if(\Auth::user()->email == "admin@hotmail.com")
+                        <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
+                    @endif
                 </div>
                 <div class="panel-body">
                     {{$critic->comment}}

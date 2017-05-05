@@ -26,11 +26,11 @@
     <div class="paginacion">
         {{$genres->links()}}
     </div>
-
-    <a class="btn btn-success" href="/genre/new">Crear</a>
-    <a class="btn btn-primary" href="/genres/edit">Editar</a>
-    <a class="btn btn-danger"  href="/genres/delete">Borrar</a>
-    
+    @if(\Auth::user()->email == "admin@hotmail.com")
+        <a class="btn btn-success" href="/genre/new">Crear</a>
+        <a class="btn btn-primary" href="/genres/edit">Editar</a>
+        <a class="btn btn-danger"  href="/genres/delete">Borrar</a>
+    @endif
 </div>
 
 <script>

@@ -10,10 +10,12 @@
     <h1>Actors</h1>
     <ul>
   </div>
+  @if(\Auth::user()->email == "admin@hotmail.com")
   <div class="col-md-3">
      <a class="btn btn-success" href="/actor/new"<button type="button" onclick="/actor/new" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
      <a class="btn btn-danger" href="/actor/edit_borrar"<button type="button" onclick="/actor/edit_borrar" style ="margin-top: 20px;" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
   </div>
+  @endif
 </div>
 
 <div class="row row_peliculas">

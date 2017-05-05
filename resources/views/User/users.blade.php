@@ -14,7 +14,9 @@
         </ul>
     </div>
 
-    <a class="btn btn-success" style="float:right;" role"button" href="{{action('UsersController@AddUser')}}" >Añadir Usuario</button></a>
+    @if(\Auth::user()->email == "admin@hotmail.com")
+        <a class="btn btn-success" style="float:right;" role"button" href="{{action('UsersController@AddUser')}}" >Añadir Usuario</button></a>
+    @endif
 
     <div id="left-column">
         <table class="table table-hover" id="dev-table">
@@ -33,10 +35,12 @@
                 <td><a href=" {{action('UsersController@showUser',[$user->id])}}">{{$user->username}}</a></td>
                 <td>{{$user->email}}</td>
                 <td>
+                @if(\Auth::user()->email == "admin@hotmail.com")
                 <div class="botones_usuarios">
                     <a class="btn btn-danger" href="{{action('UsersController@DeleteUser',[$user->id])}}"  onclick="return confirm('¿Esta seguro de desea elmininar esto?')" role="button" class="btn btn-default">Borrar</a>
                     <a class="btn btn-primary" href="{{action('UsersController@EditUser',[$user->id])}}" role="button" class="btn btn-default">Editar</a>
                 </div>
+                @endif
                 </td>
             </tr>
         @endforeach
