@@ -159,4 +159,13 @@ ul.ntabs {
     font-weight: normal;
 }
 
+.formulario_peli{
+    margin-left: 30px;
+}
+
+.dropdown-menu{
+    min-width: 200px;
+    width: 700px;
+}
+
 
