@@ -15,7 +15,8 @@ Route::group(['middleware' => 'auth'],function(){
         return view('principal');
     });
 
-    Route::get('/principal', 'FilmsController@showPrincipalFilms');;
+    Route::get('/principal', 'FilmsController@showPrincipalFilms');
+    Route::get('/principal/valoradas', 'FilmsController@showValoradasFilms');
 
     //Buscador
     Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);

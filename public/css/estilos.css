@@ -28,6 +28,77 @@
 
 }
 
+.see-more-principal{
+    text-align: right;
+    display: block;
+    margin-right: 110px;
+    margin-bottom: 20px;
+}
+
+.movie-card{
+    position: relative;
+}
+
+.caratula{
+    display: inline-block;
+}
+
+.titulo-pelicula{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+}
+
+.info-pelicula{
+    display: inline-block;
+    width: 70%;
+    margin-left: 20px;
+    vertical-align: top;
+    min-height: 145px;
+}
+
+.diseño-puntuacion{
+
+    background: #447CAD;
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    width: 2em;
+    height: 1.6em;
+    line-height: 1.6em;
+    margin: 0 auto;
+    border-radius: .3em;
+    box-sizing: border-box;
+    border: 1px solid #447CAD;
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 5px;
+
+}
+
+.credits{
+    line-height: 20px
+}
+
+.nb{
+    line-height: 20px
+}
+
+.puntuacion-pelicula{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.director{
+    height: 20px;
+    line-height: 20px;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    margin-left: 130px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    margin-top: 29px;
+    margin-left: 20px
+}
 .caption{
     text-align:center;
 }

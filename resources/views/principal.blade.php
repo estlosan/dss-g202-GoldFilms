@@ -52,15 +52,15 @@
 
 <div class="container">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#inicio">Inicio</a></li>
-        <li><a href="#perfil">Perfil</a></li>
-        <li><a href="#mensajes">Mensajes</a></li>
+        <li class="active"><a href="#inicio" data-toggle="tab">Las más valoradas</a></li>
+        <li><a href="#perfil" data-toggle="tab">Últimas peliculas</a></li>
+        <li><a href="#mensajes" data-toggle="tab">Mensajes</a></li>
     </ul>
 
     <div class="tab-content">
         <div class="tab-pane fade in active" id="inicio">
             <div class="row row_peliculas">
-            @foreach ($films1 as $film)
+            @foreach ($films3 as $film)
                 <div class="films_row">
                     <div class="thumbnail">
                         <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
@@ -71,8 +71,29 @@
                 </div>
             @endforeach
             </div>
+            <div class="see-more-principal">
+                <a href="/films"> Ver más >> </a>
+            </div>
         </div>
-    </div>
+
+        <div class="tab-pane fade" id="perfil">
+            <div class="row row_peliculas">
+            @foreach ($films4 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            <div class="see-more-principal">
+                <a href="/principal/valoradas"> Ver más >> </a>
+            </div>
+        </div>
+</div>   
 </div>
  
 <script src="js/jquery.js"></script>

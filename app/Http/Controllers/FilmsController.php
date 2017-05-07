@@ -17,7 +17,7 @@ class FilmsController extends Controller
     private $films;
 
     public function showAllFilms(){
-        $films = DB::table('films')->paginate(8);
+        $films = DB::table('films')->paginate(12);
         return view('Film.films',['films' => $films]);
     }
 
@@ -144,7 +144,15 @@ class FilmsController extends Controller
             $count++;
             
         }
+        $films3 = \App\Film::orderBy('rating','desc')->paginate(10);
+        $films4 = \App\Film::orderBy('year','desc')->paginate(10);
 
-        return view('principal', ['films1' => $films1, 'films2' => $films2]);
+        return view('principal', ['films1' => $films1, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4]);
+    }
+
+    public function showValoradasFilms(){
+        $films = \App\Film::orderBy('rating','desc')->get();
+
+        return view('Film.film-valoradas',['films' => $films]);
     }
 }
