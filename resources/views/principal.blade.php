@@ -6,11 +6,20 @@
 
 @section('content')
 
-<br>
 <h1>Últimos estrenos</h1>
-<div class="container">
+
+<!--<hr align="left" width="100%" noshade>-->
+
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
+    </div>
+
+    <div id="left-column">
+       <div class="container">
     <div class="row">
-    	<div class="col-md-12">
+        <div class="col-md-12">
                 <div id="Carousel" class="carousel slide" data-interval="5000">
                  
                 <ol class="carousel-indicators">
@@ -23,22 +32,22 @@
                 <div class="carousel-inner">
                     
                 <div class="item active">
-                	<div class="row">
-					@foreach($films1 as $film)
-                	  <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a>
+                    <div class="row">
+                    @foreach($films1 as $film)
+                      <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a>
                       </div>
                       
-					@endforeach
-                	</div><!--.row-->
+                    @endforeach
+                    </div><!--.row-->
                 </div><!--.item-->
                  
                  
                 <div class="item">
-                	<div class="row">
-                	@foreach($films2 as $film)
-                	  <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a></div>
-					@endforeach
-                	</div><!--.row-->
+                    <div class="row">
+                    @foreach($films2 as $film)
+                      <div class="col-md-2" style="margin-left: 30px;"><a href="/films/{{$film->id}}" class="thumbnail"><img src="/images/{{$film->name}}.jpg" alt="Image" style="max-width:100%;"></a></div>
+                    @endforeach
+                    </div><!--.row-->
                 </div><!--.item-->
                  
                 </div><!--.carousel-inner-->
@@ -46,15 +55,15 @@
                   <a data-slide="next" href="#Carousel" class="right carousel-control" style="width: 70px; height: 280px;"></a>
                 </div><!--.Carousel-->
                  
-		</div>
-	</div>
+        </div>
+    </div>
 </div><!--.container-->
 
 <div class="container">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#inicio" data-toggle="tab">Las más valoradas</a></li>
-        <li><a href="#perfil" data-toggle="tab">Últimas peliculas</a></li>
-        <li><a href="#mensajes" data-toggle="tab">Mensajes</a></li>
+        <li class="active"><a href="#inicio" data-toggle="tab">Cartelera España</a></li>
+        <li><a href="#perfil" data-toggle="tab">Próximos estrenos</a></li>
+        <li><a href="#mensajes" data-toggle="tab">Las más valoradas</a></li>
     </ul>
 
     <div class="tab-content">
@@ -90,12 +99,32 @@
             @endforeach
             </div>
             <div class="see-more-principal">
+                <a href="/films"> Ver más >> </a>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="mensajes">
+            <div class="row row_peliculas">
+            @foreach ($films5 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            <div class="see-more-principal">
                 <a href="/principal/valoradas"> Ver más >> </a>
             </div>
         </div>
-</div>   
+
+    </div>
 </div>
- 
+</div>
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>

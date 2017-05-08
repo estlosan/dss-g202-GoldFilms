@@ -153,15 +153,19 @@ class FilmsController extends Controller
             $count++;
             
         }
-        $films3 = \App\Film::orderBy('rating','desc')->paginate(10);
+        $films3 = \App\Film::where('country','=','España')->paginate(10);
         $films4 = \App\Film::orderBy('year','desc')->paginate(10);
+        $films5 = \App\Film::where('rating','>=','8')->paginate(10);
 
-        return view('principal', ['films1' => $films1, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4]);
+        return view('principal', ['films1' => $films1, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4,'films5' => $films5]);
     }
 
     public function showValoradasFilms(){
-        $films = \App\Film::orderBy('rating','desc')->get();
+        $films = \App\Film::where('rating','>=','8')->get();
+        $films2 = \App\Film::where('rating','>=','8')->orderBy('year','desc')->get();
+        $films4 = \App\Film::where('rating','>=','8')->orderBy('year','asc')->get();
+        $films3 = \App\Film::where('rating','>=','8')->orderBy('rating','desc')->get();
 
-        return view('Film.film-valoradas',['films' => $films]);
+        return view('Film.film-valoradas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4]);
     }
 }
