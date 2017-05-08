@@ -24,6 +24,12 @@
     <label for="name" class="col-lg-1 control-label">Nombre:</label>
     <div class="col-lg-6 formulario_peli">
       <input type="name"class="form-control" name="name"id="name" placeholder="Nombre">
+       @if ($errors->has('name'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Pon un nombre de película</div>
+@endif
     </div>
   </div>
 
@@ -31,6 +37,12 @@
     <label for="year" class="col-lg-1 control-label">Año:</label>
     <div class="col-lg-6 formulario_peli">
       <input type="number" class="form-control" name="year" id="year" placeholder="Año">
+       @if ($errors->has('year'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Pon un año de película válido</div>
+@endif
     </div>
   </div>
 
@@ -56,6 +68,12 @@
         <label for="country" class="col-lg-1 control-label">País:</label>
         <div class="col-lg-6 formulario_peli">
             <input type="name" class="form-control" name="country" id="country"  placeholder="País">
+             @if ($errors->has('country'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade un país válido a la película</div>
+@endif
         </div>
     </div>
 
@@ -63,6 +81,12 @@
         <label for="director" class="col-lg-1 control-label">Director:</label>
         <div class="col-lg-6 formulario_peli">
             <input type="name" class="form-control" name="director" id="director"  placeholder="Director">
+            @if ($errors->has('director'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade un director a la película</div>
+@endif
         </div>
     </div>
 
@@ -70,6 +94,12 @@
         <label for="rating" class="col-lg-1 control-label">Puntuación:</label>
         <div class="col-lg-6 formulario_peli">
             <input type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación">
+            @if ($errors->has('rating'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade una puntuación a la película</div>
+@endif
         </div>
     </div>
 

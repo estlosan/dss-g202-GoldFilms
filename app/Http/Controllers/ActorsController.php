@@ -43,6 +43,11 @@ class ActorsController extends Controller
     }
 
     public function addActor(Request $request){
+	$this->validate($request,[
+            'name' => 'required',
+            'age' => 'required',
+            'nacionality' => 'required',
+            ]);
         $actor = new Actor;
         $actor->name = $request->input('name');
         $actor->age = $request->input('age');

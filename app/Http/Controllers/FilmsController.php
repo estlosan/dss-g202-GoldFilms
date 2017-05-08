@@ -41,6 +41,15 @@ class FilmsController extends Controller
     }
 
     public function addFilm(Request $request){
+ 	$this->validate($request,[
+                'name' => 'required|unique:films',
+                'year' => 'required',
+                'description' => 'required',
+                'country' => 'required',
+                'rating' => 'required',
+                'director' => 'required',
+                'genre_id' =>'required',
+        ]);
         $film = new Film;
         $film->name = $request->input('name');
         $film->year = $request->input('year');
