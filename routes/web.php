@@ -55,7 +55,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::post('/actor/edit/{id}/save', 'ActorsController@saveActor');
 
         //Films ADMIN
-        Route::get('/films/actions', 'FilmsController@findFilm');
+        Route::get('/film/edit_borrar', 'FilmsController@findFilm');
         Route::get('/films/delete/{id}', 'FilmsController@deleteFilm');
         Route::get('/film/new', 'FilmsController@showForm');
         Route::post('/film/new/create', 'FilmsController@addFilm');
@@ -64,12 +64,12 @@ Route::group(['middleware' => 'auth'],function(){
 
         //Genre ADMIN
 
-        Route::get('/genres/delete', 'GenresController@findGenre');
+        Route::get('/genre/delete', 'GenresController@findGenre');
         Route::post('/genre/delete', 'GenresController@deleteGenre');
         Route::get('/genre/new', 'GenresController@showForm');
-        Route::get('/genres/edit', 'GenresController@showEdit');
+        Route::get('/genre/edit', 'GenresController@showEdit');
         Route::post('/genre/new/create', 'GenresController@addGenre');
-        Route::get('/genres/edit/{id?}', 'GenresController@editGenre');
+        Route::get('/genre/edit/{id?}', 'GenresController@editGenre');
         Route::post('/genre/edit/save', 'GenresController@saveGenre');
 
         //Users ADMIN

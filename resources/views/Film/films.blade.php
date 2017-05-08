@@ -13,7 +13,7 @@
   @if(\Auth::user()->email == "admin@hotmail.com")
   <div class="col-md-3">
     <a class="btn btn-success boton_pelicula" href="/film/new"<button type="button" onclick="/film/new" class="btn btn-default" aria-label="Alinear a la derecha">Crear</a></button>
-    <a class="btn btn-danger boton_pelicula" href="/films/actions"<button type="button" onclick="/films/actions" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
+    <a class="btn btn-danger boton_pelicula" href="/film/edit_borrar"<button type="button" onclick="/film/edit_borrar" class="btn btn-default" aria-label="Alinear a la derecha">Borrar/Editar</a></button>
   </div>
   @endif
 </div>
