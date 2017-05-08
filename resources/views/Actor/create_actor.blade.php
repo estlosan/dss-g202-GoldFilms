@@ -24,6 +24,12 @@
     <label for="name" class="col-lg-1 control-label">Nombre</label>
     <div class="col-lg-6 formulario_peli">
       <input type="name"class="form-control" name="name"id="name" placeholder="Inserta el nombre">
+       @if ($errors->has('name'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Pon un nombre válido</div>
+@endif
     </div>
   </div>
 
@@ -31,6 +37,12 @@
     <label for="year" class="col-lg-1 control-label">Edad</label>
     <div class="col-lg-6 formulario_peli">
       <input type="number" class="form-control" name="age" id="age" placeholder="Inserta la edad">
+       @if ($errors->has('age'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade un año válido</div>
+@endif
     </div>
   </div>
 
@@ -38,6 +50,12 @@
     <label for="description" class="col-lg-1 control-label">Nacionalidad</label>
     <div class="col-lg-6 formulario_peli">
         <input type="name" class="form-control" name="nacionality" id="nacionality"  placeholder="Inserta la nacionalidad">
+         @if ($errors->has('nacionality'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade una nacionalidad</div>
+@endif
     </div>
   </div>
 
