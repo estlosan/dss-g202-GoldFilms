@@ -10,7 +10,7 @@
 <table class="table table-striped" >
     <thead>
         <th>Nombre</th>
-        <th>Accion</th>
+        <th>Acciones</th>
     </thead>
     <tbody>
         @foreach($actors as $actor)

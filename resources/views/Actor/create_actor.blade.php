@@ -1,53 +1,63 @@
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
+
 @extends('layout')
 
 @section('content')
 
+<h1>Nuevo actor</h1>
 
-<h1>Nueva Actor</h1>
 <form class="form-horizontal" action="{{url('/actor/new/create')}}" id="uploadForm" action="" method="post"  enctype= "multipart/form-data">
-
 {{ csrf_field()}}
 {{ method_field('POST')}}
 
-  <div class="form-group">
-    <label for="name" class="col-lg-1 control-label">Nombre:</label>
-    <div class="col-lg-5">
-      <input type="name"class="form-control" name="name"id="name" placeholder="Nombre">
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+    <label for="name" class="col-lg-1 control-label">Nombre</label>
+    <div class="col-lg-6 formulario_peli">
+      <input type="name"class="form-control" name="name"id="name" placeholder="Inserta el nombre">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="age" class="col-lg-1 control-label">Año:</label>
-    <div class="col-lg-5">
-      <input type="number" class="form-control" name="age" id="age" placeholder="Edad">
+    <label for="year" class="col-lg-1 control-label">Edad</label>
+    <div class="col-lg-6 formulario_peli">
+      <input type="number" class="form-control" name="age" id="age" placeholder="Inserta la edad">
     </div>
   </div>
 
-<div class="form-group">
-    <label for="nacionality" class="col-lg-1 control-label">Nacionalidad:</label>
-    <div class="col-lg-5">
-        <input type="name" class="form-control" name="nacionality" id="nacionality"  placeholder="Nacionalidad">
+  <div class="form-group">
+    <label for="description" class="col-lg-1 control-label">Nacionalidad</label>
+    <div class="col-lg-6 formulario_peli">
+        <input type="name" class="form-control" name="nacionality" id="nacionality"  placeholder="Inserta la nacionalidad">
     </div>
-</div>
+  </div>
 
-<div class="form-group">
-    <label for="genero" class="col-lg-1 control-label">Genero:</label>
-    <div class="col-lg-5">
+    <div class="form-group">
+    <label for="genero" class="col-lg-1 control-label">Genero</label>
+    <div class="col-lg-6 formulario_peli">
         <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre</label>
-        <label class="radio-inline"><input checked type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
     </div>
 </div>
 
  <div class="form-group">
-        <label for="rating" class="col-lg-1 control-label">Foto:</label>
-        <div class="col-lg-5">
+        <label for="rating" class="col-lg-1 control-label">Foto</label>
+        <div class="col-lg-6 formulario_peli">
             <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
         </div>
         <div class="container">
             <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -65,33 +75,37 @@
         </div>
     </div>
 
-
-<div class="form-group">
-    <label for="rating" class="col-lg-1 control-label">Seleccione:</label>
-        <div class="col-lg-5">
-            <div class="button-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Películas</span> <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-            @foreach ($films as $film)
-                <div class="checkbox checkbox-inline">
-                <li><input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>{{$film->name}}</li>
-                </div>
-            @endforeach
-            </ul>
-            </div>
+    <div class="form-group">
+      <label for="rating" class="col-lg-1 control-label">Seleccione</label>
+      <div class="col-lg-6 formulario_peli">
+        <div class="button-group">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-film"> Películas</span> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+                <ul class='list-inline'>
+                  @foreach ($films as $film)
+                    <li>
+                    <input type="checkbox" name="films[]" id="film-{{$film->id}}" value="{{$film->id}}" {{$film->checked}}>{{$film->name}}
+                    </li>
+                  @endforeach
+                </ul>
         </div>
+      </div>
     </div>
-</div>
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-5">
-      <input type="submit" value="Crear">
+      <input type="submit" value="Crear" name="submit">
       <input type="button" onclick="location.href='/actors';" value="Cancelar">
     </div>
   </div>
-  
+
+</div>
+
 </form>
+
 
 <script>
 window.onload = function() {

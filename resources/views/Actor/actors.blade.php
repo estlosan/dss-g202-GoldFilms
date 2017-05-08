@@ -7,8 +7,7 @@
 @section('content')
 <div class="row">
   <div class="col-md-9">
-    <h1>Actors</h1>
-    <ul>
+    <h1>Actores</h1>
   </div>
   @if(\Auth::user()->email == "admin@hotmail.com")
   <div class="col-md-3">
