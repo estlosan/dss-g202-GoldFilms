@@ -6,7 +6,7 @@
 
 @section('content')
 
-<h1>Género</h1>
+<h1>Géneros</h1>
 
 <div class="z-movie">
   <div class="margin-ntabs">
@@ -14,24 +14,38 @@
     </ul>
   </div>
 
-  <dt class="peliculas_genero">Lista de géneros<dt>
-    <br>
+  <br>
 
-    <ul>
     @foreach ($genres as $genre)
-        <li><a style="font-weight: normal;" href="genres/{{$genre->id}}">{{$genre->genre}}</a></li>
+    <div clas="hola">
+    <label class="letras_editar" for="name">{{$genre->genre}}</label>
+    <hr>
+    </div>
+    <?php $genre = \App\Genre::find($genre->id); ?>
+    @foreach ($genre->film as $film)
+    <div class="films_row">
+        <div class="thumbnail">
+            <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                <div class="caption">
+                    <p><a style="font-weight: normal;" href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                </div>
+         </div>
+    </div>
     @endforeach
-    </ul>
+    @endforeach
 
     <div class="paginacion">
         {{$genres->links()}}
     </div>
+
+    <br>
+    
     @if(\Auth::user()->email == "admin@hotmail.com")
         <a class="btn btn-success" href="/genre/new">Crear</a>
         <a class="btn btn-primary" href="/genre/edit">Editar</a>
         <a class="btn btn-danger"  href="/genre/delete">Borrar</a>        
     @endif
-</div>
+  </div>
 
 <script>
 window.onload = function() {

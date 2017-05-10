@@ -14,7 +14,7 @@ class GenresController extends Controller
     private $genres;
 
     public function showAllGenres(){
-        $genres = DB::table('genres')->paginate(6);
+        $genres = DB::table('genres')->paginate(2);
         return view('Genre.genres',['genres' => $genres]);
     }
 

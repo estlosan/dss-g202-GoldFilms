@@ -243,4 +243,29 @@ ul.ntabs {
     margin-left: 116px;
 }
 
+.letras_editar{
+    font-size: large;
+}
+
+.div_carrousel{
+    width: 825px;
+    height: 400px;
+    margin: auto;
+}
+
+.contenido_principal{
+    height: 400px;
+}
+
+.row_peliculas_principal{
+    width: 825px;
+    height: auto;
+    margin-top: 15px; 
+}
+
+.filtros{
+    width: 825px;
+    height: 550px;
+}
+
 

@@ -139,12 +139,12 @@ class FilmsController extends Controller
     }
 
     public function showPrincipalFilms(){
-        $films = Film::orderBy('created_at','desc')->paginate(10);
+        $films = Film::orderBy('created_at','desc')->paginate(8);
         $count = 0;
         $films1 = [];
         $films2 = [];
         foreach($films as $film) {
-            if($count <= 4 ){
+            if($count <= 3 ){
                 $films1[] = $film; 
             }
             else{
@@ -153,9 +153,9 @@ class FilmsController extends Controller
             $count++;
             
         }
-        $films3 = \App\Film::where('country','=','España')->paginate(10);
-        $films4 = \App\Film::orderBy('year','desc')->paginate(10);
-        $films5 = \App\Film::where('rating','>=','8')->paginate(10);
+        $films3 = \App\Film::where('country','=','España')->paginate(8);
+        $films4 = \App\Film::orderBy('year','desc')->paginate(8);
+        $films5 = \App\Film::where('rating','>=','8')->paginate(8);
 
         return view('principal', ['films1' => $films1, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4,'films5' => $films5]);
     }
