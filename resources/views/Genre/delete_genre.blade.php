@@ -6,11 +6,20 @@
 
 @section('content')
 
-<h1>Delete<span class="label label-default"></span></h1>
+<h1>Borrar género</h1>
 
 <form class="form" action="{{url('/genre/delete')}}" role="form" method="POST">
 {{ csrf_field()}}
 {{ method_field('POST')}}
+
+
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
+    </div>
+
+    <br>
 
 <div class="form-group delete_genre">
 
@@ -24,12 +33,13 @@
     </ul>
 </div>
 
-<br></br>
-
 <div class="form-group">
-    <button type="sumbit" name="borrar" onclick="return confirm('¿Esta seguro de desea elmininar esto?')" class="btn btn-danger">Delete</button>
-</div>
+    <button type="sumbit" class="btn btn-default" name="borrar" onclick="return confirm('¿Esta seguro de desea elmininar esto?')">Borrar</button>
+    <input type="button" class="btn btn-default" onclick="location.href='/genres';" value="Cancelar">
+  </div>
 
+
+</div>
 </form>
 
 <script>

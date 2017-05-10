@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends BaseController {
 
@@ -19,13 +20,13 @@ class SearchController extends BaseController {
             $films = [];
             $films2 = [];
 
-            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->get();
+            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->paginate(8);
 
             if(sizeof($films) != 0){
                 return view('search', ['films' => $films]);
             }
             else{
-                $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->get();
+                $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->paginate(8);
 
                 if(sizeof($films2) != 0){
                     return view('search', ['films' => $films2]);

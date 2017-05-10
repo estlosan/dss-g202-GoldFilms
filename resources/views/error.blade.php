@@ -1,8 +1,20 @@
-@extends ('layout')
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
 
-@section ('content')
+@extends('layout')
 
-<h1>Search results:</h1>
-<h2>No result found</h2>
+@section('content')
 
+<h1>Resultados de la búsqueda</h1>
+
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
+    </div>
+
+    <h2>Ningún resultado encontrado</h2>
+
+</div>
 @endsection

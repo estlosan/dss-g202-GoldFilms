@@ -1,19 +1,46 @@
-@extends ('layout')
+<head>
+  <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
+</head>
 
-@section ('content')
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-12"<li><h1> Nombre: {{$user->username}}</h1></li></div>
+@extends('layout')
+
+@section('content')
+
+<h1>Usuario: {{$user->username}}</h1>
+
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
     </div>
-        <ul>
-      <li>id: {{$user->id}}</li>
-      <li>Email: {{$user->email}}</li>
-      <li>password: {{$user->password}}</li>
-      </ul>
-@endsection
+
+    <br>
+
+    <div id="left-column">
+        <dl class="movie-info">
+
+        <dt>Id</dt>
+        <dd>{{$user->id}}</dd>
+
+        <dt>Nombre</dt>
+        <dd>{{$user->username}}</dd>
+
+        <dt>Contraseña</dt>
+        <dd>{{$user->password}}</dd>
+
+        <dt>Email</dt>
+        <dd>{{$user->email}}</dd>
+
+      </dl>
+    </div>
+
+
+</div>
+</form>
 
 <script>
 window.onload = function() {
     document.getElementById('menu-users').className = 'active';
 };
 </script>
+@endsection

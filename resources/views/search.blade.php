@@ -6,19 +6,30 @@
 
 @section ('content')
 
-<h1>Search results:</h1>
+<h1>Resultados de la búsqueda</h1>
 
-<div class="row row_peliculas">
-@foreach ($films as $film)
-  <div class="films_row">
-    <div class="thumbnail">
-        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
-        <div class="caption">
-        <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
-        </div>
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
     </div>
-  </div>
-  @endforeach
-</div>
 
+    <div class="row row_peliculas">
+    @foreach ($films as $film)
+      <div class="films_row">
+        <div class="thumbnail">
+            <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+            <div class="caption">
+            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+            </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+  <div class="paginate_films">
+    {{$films->links()}}
+  </div>
+
+</div>
 @endsection
