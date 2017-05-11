@@ -69,29 +69,32 @@
             <input type="text"  name="q" placeholder="Search film..."/>
             <button type="submit">Search</button>
           </form>
-           @if(Auth::check())
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    {{ Auth::user()->username }} <span class="caret"></span>
-                </a>
 
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="{{ route('logout') }}"
+          <div class="nav navbar-nav navbar-right">
+            <div class="dropdown">
+
+              @if(Auth::check())
+              <a class="dropdown-toggle"  data-toggle="dropdown">
+
+              <img src="/images/Users/{{ Auth::user()->username}}.jpg" class="img-circle" style="width:45px; height:45px; margin-top: 2px;">
+              {{ Auth::user()->username }}
+              <span class="caret"></span>
+              </a> 
+
+              <ul class="dropdown-menu menu_usuarios">
+                <li><a href="/user/{{ Auth::user()->id}}">Mi perfil</a></li>
+                <li><a href="/users/edit_user/{{ Auth::user()->id}}">Editar perfil</a></li>
+                <li><a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                                      Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </ul>
-            </li>
-            </ul>
-          @endif
+                                      document.getElementById('logout-form').submit();">Cerrar sesión</a></li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+              </ul>
+              @endif
+              </div><!--/.dropdown -->
+            </div><!--/.menu_usuario -->
+           
         </div><!--/.nav-collapse -->
       </div>
     </nav>

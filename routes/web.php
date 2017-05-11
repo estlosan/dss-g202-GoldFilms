@@ -11,9 +11,7 @@
 |
 */
 Route::group(['middleware' => 'auth'],function(){
-    Route::get('/', function () {
-        return view('principal');
-    });
+    Route::get('/', 'FilmsController@showPrincipalFilms');
 
     Route::get('/principal', 'FilmsController@showPrincipalFilms');
     Route::get('/principal/valoradas', 'FilmsController@showValoradasFilms');
