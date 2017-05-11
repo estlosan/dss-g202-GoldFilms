@@ -18,38 +18,49 @@
         </ul>
     </div>
 
+    <div id="right-column2">
+        <div id="movie-main-image-container">
+             <a class="lightbox">
+                <img src="/images/Users/{{$user->username}}.jpg" class="img-circle">
+                <br>
+                <button type="button" class="btn btn-primary" style="margin-left: 30px;">Cambiar imagen</button>
+            </a>
+        </div>
+    </div>
+
     <br>
 
 
-    <div class="form-group">
-        <label for="name" class="col-lg-1 control-label">Nombre</label>
-        <div class="col-lg-6 formulario_peli">
-            <input type="text" name="nombre" class="form-control" id="nombre" value="{{$user->username}}" placeholder="{{$user->username}}">
+    <div id="left-column2">
+        <div class="form-group form_editar_user">
+            <label for="name" class="col-lg-1 control-label">Nombre</label>
+            <div class="col-lg-6 formulario_peli">
+                <input type="text" class="form-control placeholder_usuarios" name="nombre" id="nombre" value="{{$user->username}}" placeholder="{{$user->username}}">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <label for="name" class="col-lg-1 control-label">Contraseña</label>
-        <div class="col-lg-6 formulario_peli">
-            <input type="password"  name="password" id="password" value="{{$user->password}}" class="form-control">
+        <div class="form-group form_editar_user">
+            <label for="name" class="col-lg-1 control-label">Contraseña</label>
+            <div class="col-lg-6 formulario_peli">
+                <input type="password" class="form-control placeholder_usuarios"  name="password" id="password" value="{{$user->password}}">
+            </div>
         </div>
-    </div>
 
-
-    <div class="form-group">
-        <label for="name" class="col-lg-1 control-label">Email</label>
-        <div class="col-lg-6 formulario_peli">
-        <input type="email" name="email" id="email" class="form-control" value="{{$user->email}}" placeholder="{{$user->email}}">
+        <div class="form-group form_editar_user">
+            <label for="name" class="col-lg-1 control-label">Email</label>
+            <div class="col-lg-6 formulario_peli">
+            <input type="email" class="form-control placeholder_usuarios" name="email" id="email" value="{{$user->email}}" placeholder="{{$user->email}}">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="btn-group formilario_usuarios" role="group">
-            <button type="submit"  class="btn btn-default">Aceptar</button>
-            <a href="{{action('UsersController@showUsers')}}" class="btn btn-default pull-right" role="button">Cancelar</a>
+        <div class="form-group">
+            <div class="btn-group formilario_usuarios_botones" role="group">
+                <button type="submit"  class="btn btn-default">Aceptar</button>
+                <a href="{{action('UsersController@showUsers')}}" class="btn btn-default pull-right" role="button">Cancelar</a>
+            </div>
         </div>
-    </div>
 
+    </div>
 </div>
 </form>
 

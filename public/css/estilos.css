@@ -201,6 +201,19 @@ ul.ntabs {
     margin: 0px;
 }
 
+.z-movie #left-column2{
+    width: 500px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.z-movie #right-column2{
+    float: right;
+    margin-right: 50px;
+    width: 180px;
+    margin-top: 8px;
+}
+
 .z-movie #left-column .movie-info {
     position: relative;
     padding: 0;
@@ -247,6 +260,10 @@ ul.ntabs {
     font-size: large;
 }
 
+.placeholder_usuarios{
+    margin-left:50px;
+}
+
 .div_carrousel{
     width: 825px;
     height: 400px;
@@ -272,5 +289,12 @@ ul.ntabs {
     width: 100px;
 }
 
+.form_editar_user{
+    height: 55px;
+}
+
+.formilario_usuarios_botones{
+    margin-left: 165px;
+}
 
 
