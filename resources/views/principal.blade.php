@@ -69,13 +69,64 @@
         <li><a href="#perfil" data-toggle="tab">Próximos estrenos</a></li>
         <li><a href="#mensajes" data-toggle="tab">Las más valoradas</a></li>
     </ul>
+    
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="inicio">
+            <div class="row row_peliculas">
+            @foreach ($films3 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            <div class="see-more-principal">
+                <a href="/principal/españolas"> Ver más >> </a>
+            </div>
+        </div>
 
-    <!--Poner las pestañas-->
+        <div class="tab-pane fade" id="perfil">
+            <div class="row row_peliculas">
+            @foreach ($films4 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            <div class="see-more-principal">
+                <a href="/principal/valoradas"> Ver más >> </a>
+            </div>
+        </div>
 
+        <div class="tab-pane fade" id="mensajes">
+            <div class="row row_peliculas">
+            @foreach ($films5 as $film)
+                <div class="films_row">
+                    <div class="thumbnail">
+                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                        <div class="caption">
+                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+            <div class="see-more-principal">
+                <a href="/principal/valoradas"> Ver más >> </a>
+            </div>
+        </div>
 
-</div><!--.container-->
-
-
+    </div>
+</div>
 </div>
 
 <script src="js/jquery.js"></script>

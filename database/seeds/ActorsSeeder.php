@@ -58,7 +58,17 @@ class ActorsSeeder extends Seeder
             ['name'=> 'Josh Brolin', 'age' =>49 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
             ['name'=> 'John Travolta', 'age' =>63 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
             ['name'=> 'Uma Thurman', 'age' =>46 ,'nacionality'=>'Estadounidense','gender'=>'mujer'],
-        
+            ['name'=> 'Tom Hanks', 'age' =>60 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Aaron Eckhart', 'age' =>49 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Haley Joel Osment', 'age' =>28 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Milla Jovovich', 'age' =>41 ,'nacionality'=>'Ucraniense','gender'=>'mujer'],
+            ['name'=> 'Josh Brolin', 'age' =>49 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'John Travolta', 'age' =>63 ,'nacionality'=>'Estadounidense','gender'=>'hombre'],
+            ['name'=> 'Lewis MacDougall', 'age' =>14 ,'nacionality'=>'Británica','gender'=>'hombre'],
+            ['name'=> 'Dani Rovira', 'age' =>36 ,'nacionality'=>'Española','gender'=>'hombre'],
+            ['name'=> 'Clara Lago', 'age' =>27 ,'nacionality'=>'Española','gender'=>'mujer'],
+            ['name'=> 'Mario Casas', 'age' =>30 ,'nacionality'=>'Española','gender'=>'hombre'],
+            ['name'=> 'Belén Rueda', 'age' =>52 ,'nacionality'=>'Española','gender'=>'mujer'],
         ]);
         //
     }

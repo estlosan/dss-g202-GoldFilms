@@ -171,5 +171,35 @@ class FilmActorSeeder extends Seeder
         $film_id = DB::table('films')->where('name','Fast & Furious 7')->first();
         $actor_id = DB::table('actors')->where('name','Jason Statham')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Un monstruo viene a verme')->first();
+        $actor_id = DB::table('actors')->where('name','Lewis MacDougall')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        
+        $film_id = DB::table('films')->where('name','Ocho apellidos vascos')->first();
+        $actor_id = DB::table('actors')->where('name','Dani Rovira')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Clara Lago')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        
+        $film_id = DB::table('films')->where('name','Tengo ganas de ti')->first();
+        $actor_id = DB::table('actors')->where('name','Mario Casas')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Clara Lago')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        
+        $film_id = DB::table('films')->where('name','El orfanato')->first();
+        $actor_id = DB::table('actors')->where('name','Belén Rueda')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Perdiendo el norte')->first();
+        $actor_id = DB::table('actors')->where('name','Julián Lopez')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+
+        $film_id = DB::table('films')->where('name','Ahora o nunca')->first();
+        $actor_id = DB::table('actors')->where('name','Dani Rovira')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
+        $actor_id = DB::table('actors')->where('name','Clara Lago')->first();
+        DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);
     }
 }
