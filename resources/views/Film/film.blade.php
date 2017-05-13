@@ -57,6 +57,22 @@
 
         <dt>Críticas</dt>
         <dd>
+        @if(Auth::check())
+            <form method="post" action="{{url('/critic/add')}}">
+                {{csrf_field()}}
+                <input type="hidden" id="film_id" name="film_id" value="{{$film->id}}">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <textarea name="comment" class="form-control" placeholder="Escribe un comentario..."></textarea>
+                            <br />
+                            <button type="submit" class="btn btn-primary">Publicar</button>
+                        </div>
+
+                    </div>
+                </div>
+        @endif
+
          <div class="panel panel-default">
             @foreach ($film->critics as $critic)
                 <div class="panel-heading"> {{$critic->user->username}}
@@ -67,6 +83,7 @@
                 <div class="panel-body">
                     {{$critic->comment}}
                 </div>
+                
             @endforeach  
             </div>
             </dd>

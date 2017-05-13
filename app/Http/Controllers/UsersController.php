@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 
+
 class UsersController extends Controller
 {
     public function showUsers(){
@@ -67,5 +68,6 @@ class UsersController extends Controller
         return Redirect::to('/users');
 
     }
-    //
+    
+
 }

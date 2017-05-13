@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'],function(){
 
     //Criticas
     Route::get('/critic/delete/{id}', 'CriticsController@deleteComment');
+    Route::post('/critic/add', 'CriticsController@addComment');
 
     //Actores
     Route::get('/actors', 'ActorsController@showAllActors');
