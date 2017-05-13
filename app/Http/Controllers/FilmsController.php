@@ -165,8 +165,10 @@ class FilmsController extends Controller
         $films2 = \App\Film::where('rating','>=','8')->orderBy('year','desc')->get();
         $films4 = \App\Film::where('rating','>=','8')->orderBy('year','asc')->get();
         $films3 = \App\Film::where('rating','>=','8')->orderBy('rating','desc')->get();
+        $genres = \App\Genre::get();
+        $films5 = \App\Film::where('rating','>=','8')->orderBy('name','asc')->get();
 
-        return view('Film.film-valoradas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4]);
+        return view('Film.film-valoradas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4,'genres' => $genres, 'films5' => $films5]);
     }
 
     public function showEspanolasFilms(){
@@ -174,7 +176,12 @@ class FilmsController extends Controller
         $films2 = \App\Film::where('country','=','España')->orderBy('year','desc')->get();
         $films4 = \App\Film::where('country','=','España')->orderBy('year','asc')->get();
         $films3 = \App\Film::where('country','=','España')->orderBy('rating','desc')->get();
+        $genres = \App\Genre::get();
+        $films5 = \App\Film::where('country','=','España')->orderBy('name','asc')->get();
 
-        return view('Film.film-espanolas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4]);
+
+
+
+        return view('Film.film-espanolas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4, 'genres' => $genres, 'films5' => $films5]);
     }
 }

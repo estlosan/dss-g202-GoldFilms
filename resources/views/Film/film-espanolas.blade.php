@@ -21,6 +21,8 @@
       </ul>
     </li>
     <li><a href="#puntuacion" data-toggle="tab">Puntuación</a></li>
+    <li><a href="#genero" data-toggle="tab">Género</a></li>
+    <li><a href="#nombre" data-toggle="tab">Nombre</a></li>
   </ul>
 
   <div class="tab-content">
@@ -109,6 +111,68 @@
       
       <br>
       @foreach($films2 as $film)
+      <div class="movie-card">
+        <div class="caratula">
+            <a title="Pelicula"><img width="100" src="/images/{{$film->name}}.jpg"></a>
+        </div>
+        <div class="info-pelicula">
+            <div class="titulo-pelicula">
+                <a href="/films/{{$film->id}}" title="Pelicula"> {{$film->name}} </a>
+                ({{$film->year}})
+                <img src="/images/Paises/{{$film->country}}.png" title="País">
+            </div>
+            <div class="puntuacion-pelicula">
+                <div class="diseño-puntuacion"> {{$film->rating}} </div>
+            </div>
+            <div class="director">
+                {{$film->director}}
+            </div>
+        </div>
+            <hr />
+           
+        </div>
+        @endforeach
+    </div>
+
+    <div class="tab-pane fade" id="genero">
+      
+      <br>
+      @foreach($genres as $genre)
+        <div clas="hola">
+          <label class="letras_editar" for="name">{{$genre->genre}}</label>
+          <hr>
+        </div>
+        @foreach($genre->film as $film)
+          @if($film->country == 'España')
+            <div class="movie-card">
+              <div class="caratula">
+                  <a title="Pelicula"><img width="100" src="/images/{{$film->name}}.jpg"></a>
+              </div>
+              <div class="info-pelicula">
+                  <div class="titulo-pelicula">
+                      <a href="/films/{{$film->id}}" title="Pelicula"> {{$film->name}} </a>
+                      ({{$film->year}})
+                      <img src="/images/Paises/{{$film->country}}.png" title="País">
+                  </div>
+                  <div class="puntuacion-pelicula">
+                      <div class="diseño-puntuacion"> {{$film->rating}} </div>
+                  </div>
+                  <div class="director">
+                      {{$film->director}}
+                  </div>
+              </div>
+                  <hr />
+                
+              </div>
+          @endif
+          @endforeach
+          @endforeach
+      </div>
+
+    <div class="tab-pane fade" id="nombre">
+      
+      <br>
+      @foreach($films5 as $film)
       <div class="movie-card">
         <div class="caratula">
             <a title="Pelicula"><img width="100" src="/images/{{$film->name}}.jpg"></a>
