@@ -71,8 +71,7 @@
     </ul>
     
     <div class="tab-content">
-        <div class="tab-pane fade in active" id="inicio">
-            <div class="row row_peliculas">
+        <div class="tab-pane fade in active row_peliculas_principal" id="inicio">
             @foreach ($films3 as $film)
                 <div class="films_row">
                     <div class="thumbnail">
@@ -83,14 +82,12 @@
                     </div>
                 </div>
             @endforeach
-            </div>
             <div class="see-more-principal">
                 <a href="/principal/españolas"> Ver más >> </a>
             </div>
         </div>
 
-        <div class="tab-pane fade" id="perfil">
-            <div class="row row_peliculas">
+        <div class="tab-pane fade row_peliculas_principal" id="perfil">
             @foreach ($films4 as $film)
                 <div class="films_row">
                     <div class="thumbnail">
@@ -101,14 +98,12 @@
                     </div>
                 </div>
             @endforeach
-            </div>
             <div class="see-more-principal">
                 <a href="/principal/valoradas"> Ver más >> </a>
             </div>
         </div>
 
-        <div class="tab-pane fade" id="mensajes">
-            <div class="row row_peliculas">
+        <div class="tab-pane fade row_peliculas_principal" id="mensajes">
             @foreach ($films5 as $film)
                 <div class="films_row">
                     <div class="thumbnail">
@@ -119,7 +114,6 @@
                     </div>
                 </div>
             @endforeach
-            </div>
             <div class="see-more-principal">
                 <a href="/principal/valoradas"> Ver más >> </a>
             </div>

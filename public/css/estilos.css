@@ -120,6 +120,13 @@
     margin-top:10px;
 }
 
+.row_peliculas_principal{
+    text-align:center; 
+    margin-top:10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .row_actores{
     margin-top: 10px;
 }
@@ -265,7 +272,7 @@ ul.ntabs {
 }
 
 .div_carrousel{
-    width: 825px;
+    width: 800px;
     height: 400px;
     margin: auto;
 }
@@ -275,14 +282,19 @@ ul.ntabs {
 }
 
 .row_peliculas_principal{
-    width: 825px;
     height: auto;
+    width: auto;
+    margin: auto;
     margin-top: 15px; 
 }
 
 .filtros{
-    width: 825px;
-    height: 550px;
+    margin: auto;
+}
+
+.contenido-filtros{
+    width: auto;
+    height: auto;
 }
 
 .menu_usuarios{
