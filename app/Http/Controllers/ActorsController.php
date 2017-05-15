@@ -120,10 +120,9 @@ class ActorsController extends Controller
             );
 
             $actor = Actor::where('id', '=', $request->input('actor_changed'))->first();
-
             $films_array = [];
-            foreach(array($request->input('films')) as $film) {
-                $films_array[] = Actor::where('id', $film)->first()->id; 
+            foreach($request->input('films') as $film) {
+                $films_array[] = \App\Film::where('id', $film)->first()->id; 
             }
             $actor->films()->sync($films_array);
 
