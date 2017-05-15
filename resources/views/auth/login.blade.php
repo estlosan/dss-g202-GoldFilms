@@ -2,8 +2,21 @@
 
 @section('content')
 <div class="container">
+    <h1 class = "text-center">GoodFilms </h1>
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class = "col-md-4 col-md-offset-1 margin-top-18">
+            <div class="panel panel-default">
+                <div class="panel-heading">Registrarse</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="col-md-4 col-md-offset-1 margin-top-10">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -62,6 +75,13 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-8">
+            <a href="/quienSomos"> Quien somos</a>
+            </br>
+            <a href="/contacto"> Contacto </a>
         </div>
     </div>
 </div>
