@@ -86,3 +86,9 @@ Route::group(['middleware' => 'auth'],function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/condiciones', function(){
+        return view('politica');
+});
+
+Route::get('/contacto','ContactoController@contacto_form' );
+Route::get('/contact/new/create','ContactoController@envio_form' );

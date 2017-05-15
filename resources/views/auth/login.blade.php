@@ -79,7 +79,7 @@
     </div>
     <div class = "row">
         <div class = "col-md-8">
-            <a href="/quienSomos"> Quien somos</a>
+            <a href="/condiciones"> Politica de Privacidad de GoodFilms</a>
             </br>
             <a href="/contacto"> Contacto </a>
         </div>
