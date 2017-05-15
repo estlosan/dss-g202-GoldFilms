@@ -21,17 +21,23 @@
     <label class="letras_editar" for="name">{{$genre->genre}}</label>
     <hr>
     </div>
-    <?php $genre = \App\Genre::find($genre->id); ?>
+    <?php $genre = \App\Genre::find($genre->id); $count= 0;?>
     @foreach ($genre->film as $film)
-    <div class="films_row">
-        <div class="thumbnail">
-            <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
-                <div class="caption">
-                    <p><a style="font-weight: normal;" href="/films/{{$film->id}}"> {{$film->name}}</a></p>
-                </div>
-         </div>
-    </div>
+    @if($count < 4)
+        <div class="films_row">
+            <div class="thumbnail">
+                <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
+                    <div class="caption">
+                        <p><a style="font-weight: normal;" href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                    </div>
+            </div>
+        </div>
+    <?php $count++; ?>
+    @endif
     @endforeach
+    <div class="see-more-principal">
+        <a href="/genres/{{$genre->id}}"> Ver más >> </a>
+    </div>
     @endforeach
 
     <div class="paginacion">
