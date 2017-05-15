@@ -91,4 +91,4 @@ Route::get('/condiciones', function(){
 });
 
 Route::get('/contacto','ContactoController@contacto_form' );
-Route::get('/contact/new/create','ContactoController@envio_form' );
+Route::post('/contact/new/create','ContactoController@envio_form');

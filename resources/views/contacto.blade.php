@@ -1,53 +1,62 @@
-<!-- app/views/duck-form.blade.php -->
-<!doctype html>
-<html>
-<head>
-    <title>Laravel Form Validation!</title>
 
-    <!-- load bootstrap -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <style>
-        body    { padding-bottom:40px; padding-top:40px; }
-    </style>
-</head>
-<body class="container">
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="{{url('/contact/new/create')}}" role="form" method="POST">
+                {{ csrf_field()}}
+                {{ method_field('POST')}}
+                    <fieldset>
+                        <legend class="text-center header">Contact us</legend>
 
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="fname" type="text" placeholder="First Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="lname" type="text" placeholder="Last Name" class="form-control">
+                            </div>
+                        </div>
 
-        <div class="page-header">
-            <h1><span class="glyphicon glyphicon-flash"></span> Ducks Fly!</h1>
-        </div>    
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                            </div>
+                        </div>
 
-        <!-- FORM STARTS HERE -->
-        <form method="POST" action="{{url('contact/new/create')}}" novalidate>
-        
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" class="form-control" name="name" placeholder="Somebody Important">
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="messages" name="messages" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" value="Crear">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" name="email" placeholder="super@cool.com">
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" name="password">
-            </div>
-
-            <div class="form-group">
-                <label for="password_confirm">Confirm Password</label>
-                <input type="password" id="password_confirm" class="form-control" name="password_confirm">
-            </div>
-
-            <button type="submit" class="btn btn-success">Go Ducks Go!</button>
-            
-        </form>
-
+        </div>
     </div>
 </div>
 
-</body>
-</html>
+@endsection
+
