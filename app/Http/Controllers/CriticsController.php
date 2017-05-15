@@ -24,16 +24,16 @@ class CriticsController extends Controller
     public function addComment(Request $request){
         if($_POST)
         {
-        $comment = e($request->comment);
+            $comment = e($request->comment);
 
 
-        Critic::insert([
-            'comment' => $comment,
-            'user_id' => Auth::user()->id,
-            'film_id' => $request->input('film_id')
-        ]);
+            Critic::insert([
+                'comment' => $comment,
+                'user_id' => Auth::user()->id,
+                'film_id' => $request->input('film_id')
+            ]);
 
-        return Redirect::back();
+            return Redirect::back();
         }
     }
 }
