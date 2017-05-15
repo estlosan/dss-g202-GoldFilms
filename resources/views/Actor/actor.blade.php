@@ -28,20 +28,20 @@
       <dt>Nombre</dt>
       <dd>{{$actor->name}}</dd>
 
-      <dt>Edad</dt>
-      <dd>{{$actor->age}}</dd>
+      <dt style="margin-top: 10px">Edad</dt>
+      <dd style="margin-top: 18px">{{$actor->age}}</dd>
 
-      <dt>Nacionalidad</dt>
-      <dd>{{$actor->nacionality}}</dd>
+      <dt style="margin-top: 10px">Nacionalidad</dt>
+      <dd style="margin-top: 18px">{{$actor->nacionality}}</dd>
 
-      <dt>Sexo</dt>
-      <dd>{{$actor->gender}}</dd>
+      <dt style="margin-top: 10px">Sexo</dt>
+      <dd style="margin-top: 18px">{{$actor->gender}}</dd>
 
-      <dt>Peliculas</dt>
+      <dt style="margin-top:200px;">Peliculas</dt>
       <br>
-      <dd>
+      <dd style="margin-top: 210px; width: 805px; margin-left: 35px">
       @foreach ($actor->films as $film)
-        <div class="films_row">
+        <div class="films_row" style="margin-right: -15px;">
           <div class="thumbnail">
             <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
             <div class="caption">
