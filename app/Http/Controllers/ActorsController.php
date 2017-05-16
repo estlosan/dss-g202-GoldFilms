@@ -47,6 +47,7 @@ class ActorsController extends Controller
             'name' => 'required',
             'age' => 'required',
             'nacionality' => 'required',
+            'radio_button' => 'required'
             ]);
         $actor = new Actor;
         $actor->name = $request->input('name');
@@ -76,10 +77,11 @@ class ActorsController extends Controller
             return view('error');//Cambiar
         }
 
-        foreach(array($request->input('films')) as $film) {
-            $film_array[] = \App\Film::where('id', $film)->first()->id; 
-        }
-        $actor->films()->attach($film_array);
+         $films_array = [];
+            foreach($request->input('films') as $film) {
+                $films_array[] = \App\Film::where('id', $film)->first()->id; 
+            }
+            $actor->films()->sync($films_array);
         return Redirect::to('/actors');
     }
 

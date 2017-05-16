@@ -11,11 +11,20 @@ class ContactoController extends Controller
             return view('contacto');
     }
     public function envio_form(Request $request){
+
+            $this->validate($request,[
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'messages' => 'required'
+                ]);
             
             Mail::send('contactoSend',$request->all(),function($msj){
                 $msj->to('pruebadss@mail.com', 'Steve');
                 $msj->subject('Form de contacto');
             });
+            return Redirect::to('/');
 
     }
 }

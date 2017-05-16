@@ -24,7 +24,7 @@
     <div class="form-group">
         <label for="name" class="col-lg-1 control-label">Nombre</label>
             <div class="col-lg-6 formulario_peli">
-            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Usuario">
+            <input value="{{old('nombre') }}" type="text" name="nombre" class="form-control" id="nombre" placeholder="Usuario">
         {{-- ERROS NAME--}}
     @if ($errors->has('nombre'))
 
@@ -40,7 +40,7 @@
     <div class="form-group">
         <label for="name" class="col-lg-1 control-label">Contraseña</label>
             <div class="col-lg-6 formulario_peli">
-                <input type="password"  name="password" id="password" class="form-control"  placeholder="Contraseña">
+                <input value="{{old('password') }}" type="password"  name="password" id="password" class="form-control"  placeholder="Contraseña">
                 {{-- ERROS PASS--}}
                 @if ($errors->has('password'))
                 <div class="alert alert-danger" role="alert">
@@ -54,7 +54,7 @@
     <div class="form-group">
     <label for="name" class="col-lg-1 control-label">Email</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="email" name="email" id="email" class="form-control" placeholder="Example@email.com">
+            <input value="{{old('email') }}" type="email" name="email" id="email" class="form-control" placeholder="Example@email.com">
             {{-- ERRORS EMAIL --}}
 
             @if ($errors->has('email'))
