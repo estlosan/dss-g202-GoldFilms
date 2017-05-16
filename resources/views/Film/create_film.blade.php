@@ -23,7 +23,7 @@
     <div class="form-group">
     <label for="name" class="col-lg-1 control-label">Nombre</label>
     <div class="col-lg-6 formulario_peli">
-      <input type="name"class="form-control" name="name"id="name" placeholder="Nombre">
+      <input value="{{old('name') }}" type="name"class="form-control" name="name"id="name" placeholder="Nombre">
        @if ($errors->has('name'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
@@ -36,7 +36,7 @@ Pon un nombre de película</div>
   <div class="form-group">
     <label for="year" class="col-lg-1 control-label">Año</label>
     <div class="col-lg-6 formulario_peli">
-      <input type="number" class="form-control" name="year" id="year" placeholder="Año">
+      <input value="{{old('year') }}" type="number" class="form-control" name="year" id="year" placeholder="Año">
        @if ($errors->has('year'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
@@ -81,7 +81,7 @@ Pon un Tráiler de película</div>
     <div class="form-group">
         <label for="country" class="col-lg-1 control-label">País</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="name" class="form-control" name="country" id="country"  placeholder="País">
+            <input value="{{old('country') }}" type="name" class="form-control" name="country" id="country"  placeholder="País">
              @if ($errors->has('country'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
@@ -94,7 +94,7 @@ Añade un país válido a la película</div>
     <div class="form-group">
         <label for="director" class="col-lg-1 control-label">Director</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="name" class="form-control" name="director" id="director"  placeholder="Director">
+            <input value="{{old('director') }}" type="name" class="form-control" name="director" id="director"  placeholder="Director">
             @if ($errors->has('director'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
@@ -107,7 +107,7 @@ Añade un director a la película</div>
     <div class="form-group">
         <label for="rating" class="col-lg-1 control-label">Puntuación</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación">
+            <input value="{{old('rating') }}" type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación">
             @if ($errors->has('rating'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
