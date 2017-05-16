@@ -75,7 +75,8 @@
 
          <div class="panel panel-default">
             @foreach ($film->critics as $critic)
-                <div class="panel-heading"> {{$critic->user->username}}
+                <div class="panel-heading">
+                 <a href="/user/{{$critic->user->id}}"><b>{{$critic->user->username}}</b></a> 
                     @if(\Auth::user()->email == "admin@hotmail.com")
                         <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
                     @endif
