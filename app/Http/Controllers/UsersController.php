@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Support\Facades\Redirect;
-
-
+use App\Http\Controllers\Input;
 
 class UsersController extends Controller
 {
@@ -64,6 +64,26 @@ class UsersController extends Controller
         $user->email= $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->save();
+
+        $name=$_FILES['fileToUpload']['name'];  
+        $temp_name=$_FILES['fileToUpload']['tmp_name'];    
+        if(isset($name)){
+            if(!empty($name)){
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    $uploadOk = 1;
+                }
+                else {
+                    return view('error');//Cambiar
+                }      
+                $location = '../public/images/Users/';      
+                if(move_uploaded_file($temp_name, $location.$name)){
+
+                }
+            }       
+        }  else {
+            return view('error');//Cambiar
+        }
 
         return Redirect::to('/users');
 

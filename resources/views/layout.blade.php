@@ -59,10 +59,12 @@
     <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li id="menu-home"><a href="/principal">Home</a></li>
-            <li id="menu-films"><a href="/films">Films</a></li>
-            <li id="menu-actors"><a href="/actors">Actors</a></li>
-            <li id="menu-genres"><a href="/genres">Genres</a></li>
-            <li id="menu-users"><a href="/users">Users</a></li>
+            <li id="menu-films"><a href="/films">Películas</a></li>
+            <li id="menu-actors"><a href="/actors">Actores</a></li>
+            <li id="menu-genres"><a href="/genres">Géneros</a></li>
+            @if(\Auth::user()->email == "admin@hotmail.com")
+            <li id="menu-users"><a href="/users">Usuarios</a></li>
+            @endif
           </ul>
           <!--/Buscador-->
           <form class="navbar-form navbar-left"  action="/search" method="get">
