@@ -47,7 +47,8 @@ class ActorsController extends Controller
             'name' => 'required',
             'age' => 'required',
             'nacionality' => 'required',
-            'radio_button' => 'required'
+            'radio_button' => 'required',
+            'films' => 'required'
             ]);
         $actor = new Actor;
         $actor->name = $request->input('name');
@@ -76,12 +77,12 @@ class ActorsController extends Controller
         }  else {
             return view('error');//Cambiar
         }
-
-         $films_array = [];
+            $films_array = [];
             foreach($request->input('films') as $film) {
                 $films_array[] = \App\Film::where('id', $film)->first()->id; 
             }
             $actor->films()->sync($films_array);
+
         return Redirect::to('/actors');
     }
 
@@ -110,6 +111,13 @@ class ActorsController extends Controller
     }
 
     public function saveActor(Request $request, $id = null){
+        $this->validate($request,[
+            'name' => 'required',
+            'age' => 'required',
+            'nacionality' => 'required',
+            'radio_button' => 'required',
+            'films' => 'required'
+            ]);
         if($_POST)
         {
             Actor::where('id', '=', $request->input('actor_changed'))->update(

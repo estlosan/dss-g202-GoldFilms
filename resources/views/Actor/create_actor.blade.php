@@ -62,7 +62,7 @@ Añade una nacionalidad</div>
     <div class="form-group">
     <label for="genero" class="col-lg-1 control-label">Genero</label>
     <div class="col-lg-6 formulario_peli">
-        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre </label>
         <label class="radio-inline"><input type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
         @if ($errors->has('radio_button'))
     <div class="alert alert-danger" role="alert">

@@ -49,7 +49,13 @@ Pon un año de película válido</div>
   <div class="form-group">
     <label for="description" class="col-lg-1 control-label">Descripción</label>
     <div class="col-lg-6 formulario_peli">
-     <textarea class="form-control" rows="4" name="description" id="description" placeholder="Descripción"></textarea>
+     <textarea  class="form-control" rows="4" name="description" id="description" placeholder="Descripción">{{old('description') }}</textarea>
+     @if ($errors->has('description'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade una descripción a la película</div>
+@endif
     </div>
   </div>
 

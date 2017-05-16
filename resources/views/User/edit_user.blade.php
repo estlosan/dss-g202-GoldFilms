@@ -62,6 +62,13 @@
             <label for="name" class="col-lg-1 control-label">Nombre</label>
             <div class="col-lg-6 formulario_peli">
                 <input type="text" class="form-control placeholder_usuarios" name="nombre" id="nombre" value="{{$user->username}}" placeholder="{{$user->username}}">
+             {{-- ERROS NAME--}}
+                @if ($errors->has('nombre'))
+                <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+                <span class="sr-only">Error</span>
+                Introduzca un nombre </div>
+                @endif
             </div>
         </div>
 
@@ -69,6 +76,13 @@
             <label for="name" class="col-lg-1 control-label">Contraseña</label>
             <div class="col-lg-6 formulario_peli">
                 <input type="password" class="form-control placeholder_usuarios"  name="password" id="password" value="{{$user->password}}">
+                {{-- ERROS password--}}
+                @if ($errors->has('password'))
+                <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+                <span class="sr-only">Error</span>
+                Introduzca un nombre </div>
+                @endif
             </div>
         </div>
 
@@ -76,6 +90,13 @@
             <label for="name" class="col-lg-1 control-label">Email</label>
             <div class="col-lg-6 formulario_peli">
             <input type="email" class="form-control placeholder_usuarios" name="email" id="email" value="{{$user->email}}" placeholder="{{$user->email}}">
+            {{-- ERROS email--}}
+                @if ($errors->has('email'))
+                <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+                <span class="sr-only">Error</span>
+                Introduzca un email </div>
+                @endif
             </div>
         </div>
 

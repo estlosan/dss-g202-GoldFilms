@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <textarea class="form-control" id="messages" name="messages" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                <textarea class="form-control" id="messages" name="messages" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7">{{ old('messages')}}</textarea>
                              {{-- ERROS MESSAGE--}}
                         @if ($errors->has('messages'))
                             <div class="alert alert-danger" role="alert">

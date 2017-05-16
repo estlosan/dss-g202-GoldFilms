@@ -39,6 +39,12 @@ class UsersController extends Controller
 
 
     public function EditUserValidate(Request $request,$id){
+        $this->validate($request,[
+            'email' => 'required',
+            'nombre' =>'required',
+            'password' => 'required'
+        ]);
+        
         $user=User::findOrFail($id);
         $user->username=$request->input('nombre');
         $user->email=$request->input('email');
