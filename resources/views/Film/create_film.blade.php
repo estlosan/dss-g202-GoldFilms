@@ -21,7 +21,7 @@
     <br>
 
     <div class="form-group">
-    <label for="name" class="col-lg-1 control-label">Nombre:</label>
+    <label for="name" class="col-lg-1 control-label">Nombre</label>
     <div class="col-lg-6 formulario_peli">
       <input type="name"class="form-control" name="name"id="name" placeholder="Nombre">
        @if ($errors->has('name'))
@@ -34,7 +34,7 @@ Pon un nombre de película</div>
   </div>
 
   <div class="form-group">
-    <label for="year" class="col-lg-1 control-label">Año:</label>
+    <label for="year" class="col-lg-1 control-label">Año</label>
     <div class="col-lg-6 formulario_peli">
       <input type="number" class="form-control" name="year" id="year" placeholder="Año">
        @if ($errors->has('year'))
@@ -47,14 +47,14 @@ Pon un año de película válido</div>
   </div>
 
   <div class="form-group">
-    <label for="description" class="col-lg-1 control-label">Descripción:</label>
+    <label for="description" class="col-lg-1 control-label">Descripción</label>
     <div class="col-lg-6 formulario_peli">
      <textarea class="form-control" rows="4" name="description" id="description" placeholder="Descripción"></textarea>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="genre" class="col-lg-1 control-label">Género:</label>
+    <label for="genre" class="col-lg-1 control-label">Género</label>
       <div class="col-lg-6 formulario_peli">
         <select name="genre">
             @foreach($genres as $genre)
@@ -65,7 +65,21 @@ Pon un año de película válido</div>
   </div>
 
     <div class="form-group">
-        <label for="country" class="col-lg-1 control-label">País:</label>
+        <label for="country" class="col-lg-1 control-label">Tráiler</label>
+        <div class="col-lg-6 formulario_peli">
+            <input type="name" class="form-control" name="trailer" id="trailer"  placeholder="Tráiler">
+             @if ($errors->has('country'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Pon un Tráiler de película</div>
+@endif
+        </div>
+    </div>
+  
+
+    <div class="form-group">
+        <label for="country" class="col-lg-1 control-label">País</label>
         <div class="col-lg-6 formulario_peli">
             <input type="name" class="form-control" name="country" id="country"  placeholder="País">
              @if ($errors->has('country'))
@@ -78,7 +92,7 @@ Añade un país válido a la película</div>
     </div>
 
     <div class="form-group">
-        <label for="director" class="col-lg-1 control-label">Director:</label>
+        <label for="director" class="col-lg-1 control-label">Director</label>
         <div class="col-lg-6 formulario_peli">
             <input type="name" class="form-control" name="director" id="director"  placeholder="Director">
             @if ($errors->has('director'))
@@ -91,7 +105,7 @@ Añade un director a la película</div>
     </div>
 
     <div class="form-group">
-        <label for="rating" class="col-lg-1 control-label">Puntuación:</label>
+        <label for="rating" class="col-lg-1 control-label">Puntuación</label>
         <div class="col-lg-6 formulario_peli">
             <input type="number" class="form-control" name="rating" id="rating"  placeholder="Puntuación">
             @if ($errors->has('rating'))
@@ -104,7 +118,7 @@ Añade una puntuación a la película</div>
     </div>
 
      <div class="form-group">
-        <label for="rating" class="col-lg-1 control-label">Caratula:</label>
+        <label for="rating" class="col-lg-1 control-label">Caratula</label>
         <div class="col-lg-6 formulario_peli">
             <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
         </div>
@@ -131,7 +145,7 @@ Añade una puntuación a la película</div>
     </div>
 
     <div class="form-group">
-      <label for="rating" class="col-lg-1 control-label">Seleccione:</label>
+      <label for="rating" class="col-lg-1 control-label">Seleccione</label>
       <div class="col-lg-6 formulario_peli">
         <div class="button-group">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Actores</span> <span class="caret"></span>

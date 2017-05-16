@@ -14,7 +14,6 @@ class FilmActorSeeder extends Seeder
 
         DB::table('actor_film')->delete();
 
-
         $film_id = DB::table('films')->where('name','Saw')->first();
         $actor_id = DB::table('actors')->where('name','Cary Elwes')->first();
         DB::table('actor_film')->insert(['film_id' => $film_id->id ,'actor_id' => $actor_id->id]);

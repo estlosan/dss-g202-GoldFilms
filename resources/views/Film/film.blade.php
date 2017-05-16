@@ -13,7 +13,7 @@
 <div class="z-movie">
     <div class="margin-ntabs">
         <ul class="ntabs">
-            <li ><a href="https://www.youtube.com/watch?v=WrFTmZwe5wc" target="_blank">Tráiler&nbsp;</a></li>
+            <li ><a href="{{$film->trailer}}" target="_blank">Tráiler&nbsp;</a></li>
         </ul>
     </div>
 

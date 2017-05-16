@@ -44,6 +44,13 @@
   </div>
 
   <div class="form-group">
+    <label for="description" class="col-lg-1 control-label">Tráiler</label>
+    <div class="col-lg-6 formulario_peli">
+      <input type="name"class="form-control" name="trailer" id="trailer" placeholder="Tráiler" value="{{$film->trailer}}">
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="genre" class="col-lg-1 control-label">Género</label>
     <div class="col-lg-4 formulario_peli">
       <input type="name" class="form-control" name="genre_new" id="genre_new" disabled="disabled" placeholder="Género" value="{{$film->genre->genre}}">

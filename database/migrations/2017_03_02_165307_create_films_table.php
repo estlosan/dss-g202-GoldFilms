@@ -21,6 +21,7 @@ class CreateFilmsTable extends Migration
             $table->string('country');
             $table->string('director');
             $table->integer('rating');
+            $table->string('trailer');
             $table->integer('genre_id')->unsigned();
             $table->foreign('genre_id')->references('id')->on('genres');
             $table->timestamps();

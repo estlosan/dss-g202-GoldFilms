@@ -44,15 +44,16 @@ class FilmsController extends Controller
  	$this->validate($request,[
                 'name' => 'required|unique:films',
                 'year' => 'required',
+                'trailer' => 'required',
                 'description' => 'required',
                 'country' => 'required',
                 'rating' => 'required',
                 'director' => 'required',
-                'genre_id' =>'required',
         ]);
         $film = new Film;
         $film->name = $request->input('name');
         $film->year = $request->input('year');
+        $film->trailer = $request->input('trailer');
         $film->description = $request->input('description');
         $film->country = $request->input('country');
         $film->rating = $request->input('rating');
@@ -118,6 +119,7 @@ class FilmsController extends Controller
                 array(
                     'name' => $request->input('name'),
                     'year' => $request->input('year'),
+                    'trailer' => $request->input('trailer'),
                     'description' => $request->input('description'),
                     'country' => $request->input('country'),
                     'rating' => $request->input('rating'),
