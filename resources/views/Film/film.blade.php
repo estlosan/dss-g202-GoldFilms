@@ -46,11 +46,12 @@
         <dd><a href="/genres/{{$film->genre_id}}">{{$film->genre->genre}}</a></dd>
 
         <dt>Actores</dt>
-         @foreach ($film->actors as $actor)
             <dd>
+            @foreach ($film->actors as $actor)
                 <a href="/actors/{{$actor->id}}">{{$actor->name}}</a>
+            @endforeach
             </dd>
-        @endforeach
+        
 
         <dt>Descripción</dt>
         <dd>{{$film->description}}</dd>
@@ -74,7 +75,7 @@
         @endif
 
          <div class="panel panel-default">
-            @foreach ($film->critics as $critic)
+            @foreach ($critics as $critic)
                 <div class="panel-heading">
                  <a href="/user/{{$critic->user->id}}"><b>{{$critic->user->username}}</b></a> 
                     @if(\Auth::user()->email == "admin@hotmail.com")
