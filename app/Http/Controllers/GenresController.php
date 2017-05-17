@@ -22,6 +22,11 @@ class GenresController extends Controller
         $genres = DB::table('genres')->paginate(15);
         return view('Genre.delete_genre', ['genres' => $genres]);
     }
+
+    public function genresLayout(){
+        $genres = DB::table('genres')->get();
+        return view('layout', ['genres' => $genres]);
+    }
     
     public function deleteGenre(Request $request){
         if($_POST){

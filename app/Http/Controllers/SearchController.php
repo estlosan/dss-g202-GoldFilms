@@ -20,13 +20,13 @@ class SearchController extends BaseController {
             $films = [];
             $films2 = [];
 
-            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->paginate(8);
-
+            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->paginate(20);
+            
             if(sizeof($films) != 0){
                 return view('search', ['films' => $films]);
             }
             else{
-                $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->paginate(8);
+                $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->paginate(20);
 
                 if(sizeof($films2) != 0){
                     return view('search', ['films' => $films2]);

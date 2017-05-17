@@ -28,6 +28,19 @@
 
 }
 
+.seccion-sidenav{
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.titulo-sidenav{
+    padding: 6px 2px 0px 0px;
+    color: #666666;
+    margin: 5px 0 0 5px;
+    font-size: 1.2em;
+}
+
+
 .see-more-principal{
     text-align: right;
     display: block;

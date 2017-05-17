@@ -104,9 +104,30 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+      <div class="seccion-sidenav">
+        <div class="titulo-sidenav"> Géneros </div>
+          <ul>
+            <a href="/genres/1" style="margin-right: 30px;"> Terror</a>
+            <a href="/genres/2" style="margin-right: 30px;"> Suspense</a>
+            <a href="/genres/3" style="margin-right: 30px;"> Fantasía</a>
+            <a href="/genres/4" style="margin-right: 30px;"> Acción</a>
+            <a href="/genres/5" style="margin-right: 30px;"> Comedia</a>
+            <a href="/genres/6" style="margin-right: 30px;"> Drama</a>
+            <a href="/genres/7" style="margin-right: 30px;"> Crimen</a>
+            <a href="/genres/8" style="margin-right: 30px;"> Misterio</a>
+            <a href="/genres/9" style="margin-right: 30px;"> Documental</a>
+            <a href="/genres/10" style="margin-right: 30px;"> Ciencia ficción</a>
+            <a href="/genres/11" style="margin-right: 30px;"> Cine negro</a>
+          </ul>
+      </div>
+
+      <div class="seccion-sidenav">
+        <div class="titulo-sidenav"> Información </div>
+          <ul>
+            <a href="/contacto" style="margin-right: 30px;"> Contáctanos</a>
+          </ul>
+      </div>
+
     </div>
     <div class="col-sm-8 text-left"> 
       @yield('content')
