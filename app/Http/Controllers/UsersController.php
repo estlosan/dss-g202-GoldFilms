@@ -51,11 +51,34 @@ class UsersController extends Controller
         if($user->password != NULL){
         $user->password=bcrypt($request->input('password'));
         }
-        
+
+        $name=$_FILES['fileToUpload']['name'];  
+        $temp_name=$_FILES['fileToUpload']['tmp_name'];    
+        if(isset($name)){
+            if(!empty($name)){
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    $uploadOk = 1;
+                }
+                else {
+                    return view('error');//Cambiar
+                }      
+                $location = '../public/images/Users/';      
+                if(move_uploaded_file($temp_name, $location.$name)){
+
+                }
+            }       
+        }  else {
+            return view('error');//Cambiar
+        }
         $user->save();
 
-       return Redirect::to('/users');
-
+        if(\Auth::user()->email == "admin@hotmail.com"){
+            return Redirect::to('/users');
+        }
+        else{
+            return Redirect::to('/principal');
+        }
     }
 
     public function ValidateAddUser(Request $request){

@@ -8,7 +8,7 @@
 
 <h1>Editar usuario/a</h1>
 
-<form class="form-horizontal" action= "{{action('UsersController@EditUserValidate',[$user->id])}}"   method="POST">
+<form class="form-horizontal" action= "{{action('UsersController@EditUserValidate',[$user->id])}}" id="uploadForm" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
 {{ method_field('POST')}}
 
@@ -17,14 +17,11 @@
         <ul class="ntabs">
         </ul>
     </div>
-
+    
     <div id="right-column2">
         <div id="movie-main-image-container">
-             <a class="lightbox">
-                <img style="width: 200px; height: 210px; border-width: 2px;" src="/images/Users/{{$user->username}}.jpg" class="img-circle panel panel-primary">
-                <br>
-                <button input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" id="pictureFilm" aria-describedby="fileHelp" class="btn btn-primary" style="margin-left: 30px;">Cambiar imagen</button>
-            </a>
+            <img style="width: 200px; height: 210px; border-width: 2px;" src="/images/Users/{{$user->username}}.jpg" class="img-circle panel panel-primary">
+            <br>
         </div>
 
         <br>
@@ -90,6 +87,20 @@
             <label for="name" class="col-lg-1 control-label">Email</label>
             <div class="col-lg-6 formulario_peli">
             <input type="email" class="form-control placeholder_usuarios" name="email" id="email" value="{{$user->email}}" placeholder="{{$user->email}}">
+            {{-- ERROS email--}}
+                @if ($errors->has('email'))
+                <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+                <span class="sr-only">Error</span>
+                Introduzca un email </div>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group form_editar_user">
+            <label for="name" class="col-lg-1 control-label">Foto</label>
+            <div class="col-lg-6 formulario_peli">
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" id="pictureFilm" aria-describedby="fileHelp" style="margin-left: 50px;">
             {{-- ERROS email--}}
                 @if ($errors->has('email'))
                 <div class="alert alert-danger" role="alert">

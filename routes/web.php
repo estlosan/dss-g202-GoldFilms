@@ -41,8 +41,9 @@ Route::group(['middleware' => 'auth'],function(){
     });
 
     //USERS
-    Route::get('/users','UsersController@showUsers');
     Route::get('/user/{id}','UsersController@showUser');
+    Route::get('/users/edit_user/{id}','UsersController@EditUser');
+    Route::post('/users/edit_user{id}','UsersController@EditUserValidate');
     
     Route::group(['middleware' => 'admin'],function(){
     
@@ -73,11 +74,9 @@ Route::group(['middleware' => 'auth'],function(){
         Route::post('/genre/edit/save', 'GenresController@saveGenre');
 
         //Users ADMIN
-    
+        Route::get('/users','UsersController@showUsers');
         Route::get('/users/create_user','UsersController@AddUser');
         Route::post('/users/create_user','UsersController@ValidateAddUser');
-        Route::get('/users/edit_user/{id}','UsersController@EditUser');
-        Route::post('/users/edit_user{id}','UsersController@EditUserValidate');
         Route::get('users/delete_user/{id}','UsersController@DeleteUser');
 
     });
