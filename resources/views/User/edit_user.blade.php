@@ -21,7 +21,7 @@
     <div id="right-column2">
         <div id="movie-main-image-container">
              <a class="lightbox">
-                <img src="/images/Users/{{$user->username}}.jpg" class="img-circle">
+                <img style="width: 200px; height: 210px; border-width: 2px;" src="/images/Users/{{$user->username}}.jpg" class="img-circle panel panel-primary">
                 <br>
                 <button input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" id="pictureFilm" aria-describedby="fileHelp" class="btn btn-primary" style="margin-left: 30px;">Cambiar imagen</button>
             </a>

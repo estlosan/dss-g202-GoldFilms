@@ -20,7 +20,7 @@
     <div id="right-column">
         <div id="movie-main-image-container">
              <a class="lightbox">
-                <img itemprop="image" width="160" height="238" src="/images/{{$film->name}}.jpg">
+                <img class="panel panel-primary" style="border-width: 2px;" itemprop="image" width="160" height="238" src="/images/{{$film->name}}.jpg">
             </a>
         </div>
     </div>

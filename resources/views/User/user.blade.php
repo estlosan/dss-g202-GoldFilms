@@ -17,7 +17,7 @@
     <div id="right-column2">
         <div id="movie-main-image-container">
              <a class="lightbox">
-                <img src="/images/Users/{{$user->username}}.jpg" class="img-circle" style="width: 140px; height: 150px;">
+                <img src="/images/Users/{{$user->username}}.jpg" class="img-circle panel panel-primary" style="width: 140px; height: 150px; border-width: 2px;">
             </a>
         </div>
     </div>
@@ -52,9 +52,6 @@
     @foreach ($user->critics as $critic)
         <div class="panel-heading">
          <a href="/films/{{$critic->film->id}}"><b>{{$critic->film->name}}</b></a> 
-            @if(\Auth::user()->email == "admin@hotmail.com")
-                <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
-            @endif
         </div>
         <div class="panel-body">
             {{$critic->comment}}

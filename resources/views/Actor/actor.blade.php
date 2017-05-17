@@ -18,7 +18,7 @@
   <div id="right-column">
     <div id="movie-main-image-container">
           <a class="lightbox">
-            <img itemprop="image" width="180" height="238" src="/images/Actores/{{$actor->name}}.jpg">
+            <img class="panel panel-primary" style="border-width: 2px;" itemprop="image" width="180" height="238" src="/images/Actores/{{$actor->name}}.jpg">
         </a>
     </div>
   </div>
