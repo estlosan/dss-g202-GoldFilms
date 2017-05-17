@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class = "text-center">GoodFilms </h1>
+    <h1 class = "text-center">GoldFilms </h1>
     <div class="row">
         <div class = "col-md-4 col-md-offset-1 margin-top-18">
             <div class="panel panel-default">
@@ -79,7 +79,7 @@
     </div>
     <div class = "row">
         <div class = "col-md-8">
-            <a href="/condiciones"> Politica de Privacidad de GoodFilms</a>
+            <a href="/condiciones"> Politica de Privacidad de GoldFilms</a>
             </br>
             <a href="/contacto"> Contacto </a>
         </div>
