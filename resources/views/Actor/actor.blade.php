@@ -11,7 +11,7 @@
 <div class="z-movie">
   <div class="margin-ntabs">
     <ul class="ntabs">
-          <li ><a href="#">Biografia&nbsp;</a></li>
+          <li ><a href="{{$actor->biography}}" target="_blank">Biografia&nbsp;</a></li>
     </ul>
   </div>
 
