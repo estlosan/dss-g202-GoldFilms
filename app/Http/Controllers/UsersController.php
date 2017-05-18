@@ -84,7 +84,7 @@ class UsersController extends Controller
     public function ValidateAddUser(Request $request){
 
         $this->validate($request,[
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'nombre' =>'required',
             'password' => 'required'
         ]);
