@@ -37,7 +37,9 @@
 
         <label for="name" class="col-lg-1 control-label">Email</label>
         <dd>{{$user->email}}</dd>
-
+        @if(\Auth::user()->id == $user->id)
+        <a class="btn btn-primary" href="{{action('UsersController@EditUser',[$user->id])}}" role="button" class="btn btn-default">Editar</a>
+        @endif
       </dl>
     </div>
 
