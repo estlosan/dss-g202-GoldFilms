@@ -48,13 +48,16 @@ class ActorsController extends Controller
             'age' => 'required',
             'nacionality' => 'required',
             'radio_button' => 'required',
-            'films' => 'required'
+            'films' => 'required',
+            'biography' => 'required',
+            'fileToUpload' => 'required'
             ]);
         $actor = new Actor;
         $actor->name = $request->input('name');
         $actor->age = $request->input('age');
         $actor->nacionality = $request->input('nacionality');
         $actor->gender = $request->input('radio_button');
+        $actor->biography =$request->input('biography');
         $actor->save();
 
         $name       = $_FILES['fileToUpload']['name'];  
@@ -116,7 +119,8 @@ class ActorsController extends Controller
             'age' => 'required',
             'nacionality' => 'required',
             'radio_button' => 'required',
-            'films' => 'required'
+            'films' => 'required',
+            'biography' => 'required',
             ]);
         if($_POST)
         {
@@ -126,6 +130,7 @@ class ActorsController extends Controller
                     'age' => $request->input('age'),
                     'nacionality' => $request->input('nacionality'),
                     'gender' => $request->input('radio_button'),
+                    'biography' =>$request->input('biography')
                 )
             );
 

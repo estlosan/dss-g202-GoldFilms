@@ -34,7 +34,12 @@
       <input type="number" class="form-control" name="age" id="age" placeholder="Edad" value="{{$actor->age}}">
     </div>
   </div>
-
+   <div class="form-group">
+    <label for="biography" class="col-lg-1 control-label">Biografía</label>
+    <div class="col-lg-6 formulario_peli">
+      <input value="{{$actor->biography}}" type="url" class="form-control" name="biography"id="biography" placeholder="Ejeplo: https://es.wikipedia.org/wiki/Matt_Damon">
+      </div>
+    </div>
   <div class="form-group">
     <label for="description" class="col-lg-1 control-label">Nacionalidad</label>
     <div class="col-lg-6 formulario_peli">

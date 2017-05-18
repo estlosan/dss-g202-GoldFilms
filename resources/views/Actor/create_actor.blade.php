@@ -34,6 +34,19 @@ Pon un nombre válido</div>
   </div>
 
   <div class="form-group">
+    <label for="biography" class="col-lg-1 control-label">Biografía</label>
+    <div class="col-lg-6 formulario_peli">
+      <input value="{{old('biography') }}" type="url" class="form-control" name="biography"id="biography" placeholder="Ejeplo: https://es.wikipedia.org/wiki/Matt_Damon">
+       @if ($errors->has('biography'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Pon un enlace</div>
+@endif
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="year" class="col-lg-1 control-label">Edad</label>
     <div class="col-lg-6 formulario_peli">
       <input value="{{old('age') }}" type="number" class="form-control" name="age" id="age" placeholder="Inserta la edad">
@@ -62,8 +75,8 @@ Añade una nacionalidad</div>
     <div class="form-group">
     <label for="genero" class="col-lg-1 control-label">Genero</label>
     <div class="col-lg-6 formulario_peli">
-        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre">Hombre </label>
-        <label class="radio-inline"><input type="radio" name="radio_button" id="mujer_radio" value="mujer">Mujer</label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="hombre_radio" value="hombre" @if(old('radio_button')=="hombre") checked @endif>Hombre </label>
+        <label class="radio-inline"><input type="radio" name="radio_button" id="mujer_radio" value="mujer" @if(old('radio_button')=="mujer") checked @endif>Mujer</label>
         @if ($errors->has('radio_button'))
     <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
@@ -77,6 +90,12 @@ Añade el género</div>
         <label for="rating" class="col-lg-1 control-label">Foto</label>
         <div class="col-lg-6 formulario_peli">
             <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
+             @if ($errors->has('fileToUpload'))
+    <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+    <span class="sr-only">Error</span>
+Añade una imagen</div>
+@endif
         </div>
         <div class="container">
             <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>
@@ -113,6 +132,7 @@ Añade el género</div>
                     </li>
                   @endforeach
                 </ul>
+            </ul>
         </div>
       </div>
     </div>
