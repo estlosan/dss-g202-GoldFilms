@@ -8,19 +8,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+    /* Secciones laterales grises y centro blanco: es más fácil pintar todo de gris y el centro de blanco.
+     * clase content -> donde tenéis las tres columnas
+     * clase content-inner -> columna central que es "el interior de vuestro contenido"
+     */
+    .content {
+      background: #f1f1f1;
+    }
+    .content-inner {
+      background: #fff;
+    }
+
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
     
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 1050px;}
-    
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
       height: 100%;
     }
     
@@ -40,7 +47,12 @@
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content { height:auto; } 
+    }
+    html,body {
+      height:100%;
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
@@ -129,7 +141,7 @@
       </div>
 
     </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-sm-8 text-left content-inner"> 
       @yield('content')
     </div>
     <div class="col-sm-2 sidenav">

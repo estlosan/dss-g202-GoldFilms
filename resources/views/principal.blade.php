@@ -34,7 +34,7 @@
                         <div class="thumbnail">
                             <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
                             <div class="caption">
-                            <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                            <p><a href="/films/{{$film->id}}">{{$film->name}}</a></p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="thumbnail">
                         <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
                         <div class="caption">
-                        <p><a href="/films/{{$film->id}}"> {{$film->name}}</a></p>
+                            <p><a href="/films/{{$film->id}}">{{$film->name}}</a></p>
                         </div>
                     </div>
                 </div>
