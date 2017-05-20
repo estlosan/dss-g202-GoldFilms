@@ -17,51 +17,45 @@
   <br>
 
 <div class="contenido_principal">
-    <div class="div_carrousel">
-        <div id="Carousel" class="carousel slide" data-interval="10000">
+<br>
+<!-- Item slider-->
+<div class="container-fluid">
 
-        <ol class="carousel-indicators">
-            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#Carousel" data-slide-to="1"></li>
-        </ol>
-
-        <!-- Carousel items -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="itemslider">
         <div class="carousel-inner">
-            <div class="item active">
-                <div class="row">
-                    @foreach($films1 as $film)
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
-                            <div class="caption">
-                            <p><a href="/films/{{$film->id}}">{{$film->name}}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div><!--.row-->
-            </div><!--.item-->
 
-            <div class="item">
-               @foreach($films2 as $film)
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" style="width:150px; height:200px;"></a>
-                        <div class="caption">
-                            <p><a href="/films/{{$film->id}}">{{$film->name}}</a></p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div><!--.item-->
+          @foreach($films1 as $film)
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" class="img-responsive center-block" style="width:150px; height:200px;"></a>
+              <h4 class="text-center">{{$film->name}}</h4>
+            </div>
+          </div>
+          @endforeach
+          @foreach($films2 as $film)
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/films/{{$film->id}}"><img src="/images/{{$film->name}}.jpg" class="img-responsive center-block" style="width:150px; height:200px;"></a>
+              <h4 class="text-center">{{$film->name}}</h4>
+            </div>
+          </div>
+          @endforeach
 
-            </div><!--.carousel-inner-->
-            <a data-slide="prev" href="#Carousel" class="left carousel-control" ></a>
-            <a data-slide="next" href="#Carousel" class="right carousel-control" ></a>
+        </div>
 
-        </div><!--.carousel slide-->
-    </div><!--.div_carrousel-->
-</div><!--.container-->
+        <div id="slider-control">
+        <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive" style="margin-top: 40px;"></a>
+        <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive" style="margin-top: 40px;"></a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Item slider end-->
+
+</div>
 
 <div class="filtros">
     <ul class="nav nav-tabs">
@@ -126,15 +120,26 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('.Carousel').carousel()
-    });
+$(document).ready(function(){
 
-    $(document).ready(function(){
-        $("Carousel").carousel({
-         interval : 1000
-        });
-    });
+$('#itemslider').carousel({ interval: 3000 });
+
+$('.carousel-showmanymoveone .item').each(function(){
+var itemToClone = $(this);
+
+for (var i=1;i<6;i++) {
+itemToClone = itemToClone.next();
+
+if (!itemToClone.length) {
+itemToClone = $(this).siblings(':first');
+}
+
+itemToClone.children(':first-child').clone()
+.addClass("cloneditem-"+(i))
+.appendTo($(this));
+}
+});
+});
 
 window.onload = function() {
     document.getElementById('menu-home').className = 'active';

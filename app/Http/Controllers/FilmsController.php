@@ -148,7 +148,7 @@ class FilmsController extends Controller
         $films1 = [];
         $films2 = [];
         foreach($films as $film) {
-            if($count <= 3 ){
+            if($count < 1 ){
                 $films1[] = $film; 
             }
             else{
