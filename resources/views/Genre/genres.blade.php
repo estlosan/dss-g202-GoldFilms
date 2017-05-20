@@ -51,6 +51,8 @@
         <a class="btn btn-primary" href="/genre/edit">Editar</a>
         <a class="btn btn-danger"  href="/genre/delete">Borrar</a>        
     @endif
+    <br>
+    <br>
   </div>
 
 <script>
