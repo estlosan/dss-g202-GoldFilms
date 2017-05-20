@@ -120,6 +120,14 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav"><!--Columna izquierda-->
+
+      <div class="seccion-sidenav">
+        <div class="titulo-sidenav"> Películas </div>
+          <ul class="list-unstyled">
+            <li><a href="/principal/españolas" > Españolas</a></li>
+            <li><a href="/principal/valoradas" > Más Votadas</a></li>
+          </ul>
+      </div>
       <div class="seccion-sidenav">
         <div class="titulo-sidenav"> Géneros </div>
           <ul class="list-unstyled">
@@ -174,7 +182,20 @@
 </div>
 
 <footer>
-  <p>Contenido del pie de página</p>
+  <div style="text-align:center; padding: 10px;">
+    <a href="/contacto" style="color: #fff"> Contacto  |</a>
+    <a href="#" style="color: #fff">  ¿Quiénes somos? </a>
+
+  </div>
+
+  <div style="text-align:center; padding: 10px 2px;">
+    <span class="subtext">
+      @ 2017 GoldFilms | Todos los derechos reservados - All rights reserved
+    </span>
+
+  </div>
+
+
 </footer>
 
 </body>
