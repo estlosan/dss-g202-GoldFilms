@@ -7,7 +7,14 @@
 @section('content')
 
 <h1> Cartelera España </h1>
-<div class="panel">
+
+<div class="z-movie">
+    <div class="margin-ntabs">
+        <ul class="ntabs">
+        </ul>
+    </div>
+
+    <div class="panel">
 
 
 <div class="container" style="margin-right: 30px; margin-left: 10px;">
@@ -196,18 +203,17 @@
         @endforeach
     </div>
 
-
-
-  </div>
-  
+  </div> 
 </div>
 </div>
 
+</div>
 
+<script>
+    window.onload = function() {
+        document.getElementById('menu-films').className = 'active';
+    };
 
-
-
-
-
+</script>
 
 @endsection
