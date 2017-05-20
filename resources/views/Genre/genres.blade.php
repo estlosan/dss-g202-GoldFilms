@@ -17,10 +17,19 @@
   <br>
 
     @foreach ($genres as $genre)
+    <?php 
+        $genero = \App\Genre::find($genre->id);
+        $existe = 0;
+        foreach($genero->film as $film){
+            $existe++;
+        }
+     ?>
+    @if($existe != 0)
     <div clas="hola">
     <label class="letras_editar" for="name">{{$genre->genre}}</label>
     <hr>
     </div>
+    @endif
     <?php $genre = \App\Genre::find($genre->id); $count= 0;?>
     @foreach ($genre->film as $film)
     @if($count < 4)
@@ -32,12 +41,15 @@
                     </div>
             </div>
         </div>
-    <?php $count++; ?>
+    
     @endif
+    <?php $count++; ?>
     @endforeach
+    @if($count > 4)
     <div class="see-more-principal">
         <a href="/genres/{{$genre->id}}"> Ver más >> </a>
     </div>
+    @endif
     @endforeach
 
     <div class="paginacion">

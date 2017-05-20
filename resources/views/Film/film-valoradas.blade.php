@@ -145,10 +145,21 @@
       
       <br>
       @foreach($genres as $genre)
+        <?php 
+            $genero = \App\Genre::find($genre->id);
+            $existe = 0;
+            foreach($genero->film as $film){
+                if($film->country == 'España'){
+                    $existe++;
+                }
+            }
+        ?>
+        @if($existe > 0)
         <div clas="hola">
           <label class="letras_editar" for="name">{{$genre->genre}}</label>
           <hr>
         </div>
+        @endif
         @foreach($genre->film as $film)
           @if($film->rating >= '8')
             <div class="movie-card">

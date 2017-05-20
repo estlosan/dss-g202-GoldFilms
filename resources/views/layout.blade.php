@@ -139,13 +139,6 @@
           </ul>
       </div>
 
-      <div class="seccion-sidenav">
-        <div class="titulo-sidenav"> Información </div>
-          <ul>
-            <a href="/contacto" style="margin-right: 30px;"> Contáctanos</a>
-          </ul>
-      </div>
-
     </div>
     <div class="col-sm-8 text-left content-inner"><!--Centro-->
       @yield('content')

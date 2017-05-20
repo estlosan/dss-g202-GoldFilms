@@ -141,14 +141,23 @@
         @endforeach
     </div>
 
-    <div class="tab-pane fade" id="genero">
-      
+    <div class="tab-pane fade" id="genero">      
       <br>
       @foreach($genres as $genre)
+        <?php 
+            $existe = 0;
+            foreach($genre->film as $film){
+                if($film->country == 'España'){
+                    $existe++;
+                }
+            }
+        ?>
+        @if($existe > 0)
         <div clas="hola">
           <label class="letras_editar" for="name">{{$genre->genre}}</label>
           <hr>
         </div>
+        @endif
         @foreach($genre->film as $film)
           @if($film->country == 'España')
             <div class="movie-card">
