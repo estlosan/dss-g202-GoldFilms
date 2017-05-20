@@ -155,17 +155,17 @@
         </a>
       </div>
       <div class="well">
-        <a class="btn btn-social btn-facebook">
+        <a class="btn btn-block btn-social btn-facebook">
           <span class="fa fa-facebook"></span> Sigue a Goldfilms
         </a>
       </div>
       <div class="well">
-      <a class="btn btn-social btn-instagram">
+      <a class="btn btn-block btn-social btn-instagram">
           <span class="fa fa-instagram"></span> Sigue a Goldfilms
         </a>
         </div>
       <div class="well">
-        <a class="btn btn-social btn-tumblr">
+        <a class="btn btn-block btn-social btn-tumblr">
           <span class="fa fa-tumblr"></span> Sigue a Goldfilms
         </a>
       </div>
