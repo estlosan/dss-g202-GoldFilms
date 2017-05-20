@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="<?php echo asset('css/social-buttons.css')?>" type="text/css">
+  
   <style>
-    /* Secciones laterales grises y centro blanco: es más fácil pintar todo de gris y el centro de blanco.
-     * clase content -> donde tenéis las tres columnas
-     * clase content-inner -> columna central que es "el interior de vuestro contenido"
-     */
+  @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+
     .content {
       background: #f1f1f1;
     }
@@ -119,7 +119,7 @@
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav"><!--Columna izquierda-->
       <div class="seccion-sidenav">
         <div class="titulo-sidenav"> Géneros </div>
           <ul class="list-unstyled">
@@ -139,15 +139,35 @@
       </div>
 
     </div>
-    <div class="col-sm-8 text-left content-inner"> 
+    <div class="col-sm-8 text-left content-inner"><!--Centro-->
       @yield('content')
     </div>
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav"><!--Columna derecha-->
+    <div class="titulo-sidenav">
+     Nuestras redes sociales 
+     </div>
+
+     <br>
+     
       <div class="well">
-        <p>ADS</p>
+        <a class="btn btn-block btn-social btn-twitter">
+          <span class="fa fa-twitter"></span> Sigue a Goldfilms
+        </a>
       </div>
       <div class="well">
-        <p>ADS</p>
+        <a class="btn btn-social btn-facebook">
+          <span class="fa fa-facebook"></span> Sigue a Goldfilms
+        </a>
+      </div>
+      <div class="well">
+      <a class="btn btn-social btn-instagram">
+          <span class="fa fa-instagram"></span> Sigue a Goldfilms
+        </a>
+        </div>
+      <div class="well">
+        <a class="btn btn-social btn-tumblr">
+          <span class="fa fa-tumblr"></span> Sigue a Goldfilms
+        </a>
       </div>
     </div>
   </div>
