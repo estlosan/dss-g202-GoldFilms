@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
-                            <textarea name="comment" class="form-control" placeholder="Escribe un comentario..."></textarea>
+                            <textarea name="comment" class="form-control" placeholder="Escribe un comentario..." style="width: 500px;"></textarea>
                             <br />
                             <button type="submit" class="btn btn-primary">Publicar</button>
                         </div>

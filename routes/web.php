@@ -89,5 +89,9 @@ Route::get('/condiciones', function(){
         return view('politica');
 });
 
+Route::get('/quienes_somos', function(){
+        return view('quienes_somos');
+});
+
 Route::get('/contacto','ContactoController@contacto_form' );
 Route::post('/contact/new/create','ContactoController@envio_form');

@@ -53,7 +53,7 @@
 
                     <!--/Buscador-->
                     <form class="navbar-form navbar-left"  action="/search" method="get">
-                        <input type="text"  name="q" placeholder="Search film..."/>
+                        <input type="text"  name="q" placeholder="Buscar por nombre o año"/>
                         <button type="submit">Search</button>
                     </form>
                     @endif
