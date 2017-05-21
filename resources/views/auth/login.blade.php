@@ -82,6 +82,8 @@
             <a href="/condiciones"> Politica de Privacidad de GoldFilms</a>
             </br>
             <a href="/contacto"> Contacto </a>
+            </br>
+            <a href="/quien_somos"> ¿Quiénes somos? </a>
         </div>
     </div>
 </div>
