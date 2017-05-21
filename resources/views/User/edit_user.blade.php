@@ -100,14 +100,7 @@
         <div class="form-group form_editar_user">
             <label for="name" class="col-lg-1 control-label">Foto</label>
             <div class="col-lg-6 formulario_peli">
-            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" id="pictureFilm" aria-describedby="fileHelp" style="margin-left: 50px;">
-            {{-- ERROS email--}}
-                @if ($errors->has('email'))
-                <div class="alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
-                <span class="sr-only">Error</span>
-                Introduzca un email </div>
-                @endif
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" id="pictureFilm" aria-describedby="fileHelp" style="margin-left: 50px;">
             </div>
         </div>
 

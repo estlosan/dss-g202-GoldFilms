@@ -15,16 +15,17 @@ class SearchController extends BaseController {
         //El buscador busca por el nombre de la pelicula y por el año
         $keyword=Input::get('q');
 
-        if($keyword != NULL){
+       
 
-            $films = [];
-            $films2 = [];
-
-            $films = \App\Film::where('name', 'LIKE', "%$keyword%")->paginate(20);
+            $films = \App\Film::where('name', 'LIKE', "%$keyword%")
+            ->orWhere('year', 'LIKE', "%$keyword%")->paginate(15);
             
-            if(sizeof($films) != 0){
-                return view('search', ['films' => $films]);
-            }
+            if(count($films) != 0){
+                return view('search', ['films' => $films])->with('keyword',$keyword);
+            }else{
+                    return view('error');
+                }   
+            /*
             else{
                 $films2 = \App\Film::where('year', 'LIKE', "%$keyword%")->paginate(20);
 
@@ -35,10 +36,9 @@ class SearchController extends BaseController {
                     return view('error');
                 }                
             }
-        }
-        else{
-            return view('error');
-        }
+            */
+        
+        
     }
 }
 ?>

@@ -126,7 +126,7 @@ Añade una puntuación a la película</div>
      <div class="form-group">
         <label for="rating" class="col-lg-1 control-label">Caratula</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
         </div>
         <div class="container">
             <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>

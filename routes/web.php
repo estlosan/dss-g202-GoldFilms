@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'],function(){
 
     //Buscador
     Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
+    
 
     //Criticas
     Route::get('/critic/delete/{id}', 'CriticsController@deleteComment');

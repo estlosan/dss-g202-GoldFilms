@@ -28,7 +28,7 @@
     </div>
 
   <div class="paginate_films">
-    {{$films->links()}}
+    {{$films->appends(['keyword' => $keyword])->links()}}
   </div>
 
 </div>

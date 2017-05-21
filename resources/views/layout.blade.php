@@ -79,7 +79,7 @@
             @endif
           </ul>
           <!--/Buscador-->
-          <form class="navbar-form navbar-left"  action="/search" method="get">
+          <form class="navbar-form navbar-left"  action="{{action('SearchController@getSearch')}}"method="get">
             <input type="text"  name="q" placeholder="Buscar por nombre o año"/>
             <button type="submit">Search</button>
           </form>

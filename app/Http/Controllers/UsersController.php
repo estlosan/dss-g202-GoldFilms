@@ -48,12 +48,13 @@ class UsersController extends Controller
         $user=User::findOrFail($id);
         $user->username=$request->input('nombre');
         $user->email=$request->input('email');
-        if($user->password != NULL){
-        $user->password=bcrypt($request->input('password'));
-        }
+            if($user->password != $request->input('password')){
+                $user->password=bcrypt($request->input('password'));
+            }
 
         $name=$_FILES['fileToUpload']['name'];  
         $temp_name=$_FILES['fileToUpload']['tmp_name'];    
+
         if(isset($name)){
             if(!empty($name)){
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
