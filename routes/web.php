@@ -93,6 +93,9 @@ Route::get('/condiciones', function(){
 Route::get('/quienes_somos', function(){
         return view('quienes_somos');
 });
+Route::get('/quien_somos', function(){
+        return view('quien_somos');
+});
 
 Route::get('/contacto','ContactoController@contacto_form' );
 Route::post('/contact/new/create','ContactoController@envio_form');

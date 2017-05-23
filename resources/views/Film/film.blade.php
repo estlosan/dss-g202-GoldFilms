@@ -82,7 +82,7 @@
                         <input type="button" id="{{$critic->id}}" value="Borrar" onclick="eliminarComentario(this.id);">      
                     @endif
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" style="word-wrap: break-word;">
                     {{$critic->comment}}
                 </div>
                 
