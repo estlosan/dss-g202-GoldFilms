@@ -61,16 +61,16 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="/principal">GoldFilms</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li id="menu-home"><a href="/principal">Home</a></li>
+    <div  class="collapse navbar-collapse" id="myNavbar">
+          <ul  class="nav navbar-nav">
+            <li  id="menu-home"><a href="/principal">Home</a></li>
             <li id="menu-films"><a href="/films">Películas</a></li>
             <li id="menu-actors"><a href="/actors">Actores</a></li>
             <li id="menu-genres"><a href="/genres">Géneros</a></li>
