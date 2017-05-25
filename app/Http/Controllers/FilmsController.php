@@ -158,7 +158,7 @@ class FilmsController extends Controller
             
         }
         $films3 = \App\Film::where('country','=','España')->paginate(8);
-        $films4 = \App\Film::orderBy('year','desc')->paginate(8);
+        $films4 = \App\Film::where('year','=','2017')->paginate(8);
         $films5 = \App\Film::where('rating','>=','8')->paginate(8);
 
         return view('principal', ['films1' => $films1, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4,'films5' => $films5]);
@@ -187,5 +187,19 @@ class FilmsController extends Controller
 
 
         return view('Film.film-espanolas',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4, 'genres' => $genres, 'films5' => $films5]);
+    }
+
+        public function showEstrenosFilms(){
+        $films = \App\Film::where('year','=','2017')->get();
+        $films2 = \App\Film::where('year','=','2017')->orderBy('year','desc')->get();
+        $films4 = \App\Film::where('year','=','2017')->orderBy('year','asc')->get();
+        $films3 = \App\Film::where('year','=','2017')->orderBy('rating','desc')->get();
+        $genres = \App\Genre::get();
+        $films5 = \App\Film::where('year','=','2017')->orderBy('name','asc')->get();
+
+
+
+
+        return view('Film.proximos_estrenos',['films' => $films, 'films2' => $films2, 'films3' => $films3, 'films4' => $films4, 'genres' => $genres, 'films5' => $films5]);
     }
 }

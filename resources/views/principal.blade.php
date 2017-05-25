@@ -93,7 +93,7 @@
                 </div>
             @endforeach
             <div class="see-more-principal">
-                <a href="/principal/valoradas"> Ver más >> </a>
+                <a href="/principal/estrenos"> Ver más >> </a>
             </div>
         </div>
 
