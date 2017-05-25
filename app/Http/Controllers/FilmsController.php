@@ -61,7 +61,6 @@ class FilmsController extends Controller
         $film->rating = $request->input('rating');
         $film->director = $request->input('director');
         $film->genre_id = $request->input('genre');
-        $film->save();
 
         $name       = $_FILES['fileToUpload']['name'];  
         $temp_name  = $_FILES['fileToUpload']['tmp_name'];  
@@ -69,20 +68,21 @@ class FilmsController extends Controller
             if(!empty($name)){
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
                     $uploadOk = 1;
                 }
                 else {
-                    return view('error');//Cambiar
+                    return view('error_imagen');
                 }      
+                $namefile = $film->name. '.' . 'jpg';
                 $location = '../public/images/';      
-                if(move_uploaded_file($temp_name, $location.$name)){
-                    echo 'File uploaded successfully';
+                if(move_uploaded_file($temp_name, $location.$namefile)){
                 }
             }       
         }  else {
-            return view('error');//Cambiar
+            return view('error_imagen');
         }
+        
+        $film->save();
 
         foreach($request->input('actors') as $actor) {
             $actors_array[] = \App\Actor::where('id', $actor)->first()->id; 

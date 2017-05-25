@@ -62,15 +62,16 @@ class UsersController extends Controller
                     $uploadOk = 1;
                 }
                 else {
-                    return view('error');//Cambiar
+                    return view('error_imagen');
                 }      
+                $namefile = $user->username. '.' . 'jpg';
                 $location = '../public/images/Users/';      
-                if(move_uploaded_file($temp_name, $location.$name)){
+                if(move_uploaded_file($temp_name, $location.$namefile)){
 
                 }
             }       
         }  else {
-            return view('error');//Cambiar
+            return view('error_imagen');
         }
         $user->save();
 
@@ -93,10 +94,10 @@ class UsersController extends Controller
         $user->username = $request->input('nombre');
         $user->email= $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->save();
 
         $name=$_FILES['fileToUpload']['name'];  
-        $temp_name=$_FILES['fileToUpload']['tmp_name'];    
+        $temp_name=$_FILES['fileToUpload']['tmp_name'];
+
         if(isset($name)){
             if(!empty($name)){
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -104,20 +105,21 @@ class UsersController extends Controller
                     $uploadOk = 1;
                 }
                 else {
-                    return view('error');//Cambiar
+                    return view('error_imagen');
                 }      
+                $namefile = $user->username. '.' . 'jpg';
                 $location = '../public/images/Users/';      
-                if(move_uploaded_file($temp_name, $location.$name)){
+                if(move_uploaded_file($temp_name, $location.$namefile)){
 
                 }
             }       
         }  else {
-            return view('error');//Cambiar
+            return view('error_imagen');
         }
+
+        $user->save();
 
         return Redirect::to('/users');
 
     }
-    
-
 }

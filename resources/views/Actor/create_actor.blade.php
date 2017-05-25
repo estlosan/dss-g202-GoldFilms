@@ -89,32 +89,13 @@ Añade el género</div>
  <div class="form-group">
         <label for="rating" class="col-lg-1 control-label">Foto</label>
         <div class="col-lg-6 formulario_peli">
-            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg, image/png" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
              @if ($errors->has('fileToUpload'))
-    <div class="alert alert-danger" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
-    <span class="sr-only">Error</span>
-Añade una imagen</div>
-@endif
-        </div>
-        <div class="container">
-            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">¿Como subir una foto de un actor?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>El nombre de la imagen debe de ser el mismo que el nombre del actor o actriz.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            </div>
+            <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign"  aria-hidden="true" ></span>
+            <span class="sr-only">Error</span>
+        Añade una imagen</div>
+        @endif
         </div>
     </div>
 

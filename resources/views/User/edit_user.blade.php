@@ -23,36 +23,9 @@
             <img style="width: 200px; height: 210px; border-width: 2px;" src="/images/Users/{{$user->username}}.jpg" class="img-circle panel panel-primary">
             <br>
         </div>
-
-        <br>
-
-         <div class="container">
-            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal" style="margin-left:40px;">Información</button>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">¿Como cambiar una foto de perfil?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>El nombre de la imagen debe de ser el mismo que el nombre de usuario.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-
-
-       
+    </div>     
 
     <br>
-
 
     <div id="left-column2">
         <div class="form-group form_editar_user">

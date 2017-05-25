@@ -58,7 +58,6 @@ class ActorsController extends Controller
         $actor->nacionality = $request->input('nacionality');
         $actor->gender = $request->input('radio_button');
         $actor->biography =$request->input('biography');
-        $actor->save();
 
         $name       = $_FILES['fileToUpload']['name'];  
         $temp_name  = $_FILES['fileToUpload']['tmp_name'];  
@@ -66,25 +65,27 @@ class ActorsController extends Controller
             if(!empty($name)){
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
                     $uploadOk = 1;
                 }
                 else {
-                    return view('error');//Cambiar
+                    return view('error_imagen');
                 }      
+                $namefile = $actor->name. '.' . 'jpg';
                 $location = '../public/images/Actores/';      
-                if(move_uploaded_file($temp_name, $location.$name)){
-                    echo 'File uploaded successfully';
+                if(move_uploaded_file($temp_name, $location.$namefile)){
                 }
             }       
         }  else {
-            return view('error');//Cambiar
+            return view('error_imagen');
         }
-            $films_array = [];
-            foreach($request->input('films') as $film) {
-                $films_array[] = \App\Film::where('id', $film)->first()->id; 
-            }
-            $actor->films()->sync($films_array);
+
+        $actor->save();
+
+        $films_array = [];
+        foreach($request->input('films') as $film) {
+            $films_array[] = \App\Film::where('id', $film)->first()->id; 
+        }
+        $actor->films()->sync($films_array);
 
         return Redirect::to('/actors');
     }

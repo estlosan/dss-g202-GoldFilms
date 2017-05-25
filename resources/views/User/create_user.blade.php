@@ -71,26 +71,6 @@
         <div class="col-lg-6 formulario_peli">
             <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" class="form-control-file" id="pictureFilm" aria-describedby="fileHelp">
         </div>
-        <div class="container">
-            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Información</button>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">¿Como subir una foto de perfil?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>El nombre de la imagen debe de ser el mismo que el nombre de usuario.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
     </div>
 
     <div class="form-group">
