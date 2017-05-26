@@ -2,4 +2,4 @@ He modificado el archivo env.example para que funcione el correo, como me coment
 También se incluye la contraseña y el correo para comprobar que se envia el correo
 correctamente ya que la emisión y la recepción se realiza con el mismo correo.
 
-Saludos.
+Un saludo.
